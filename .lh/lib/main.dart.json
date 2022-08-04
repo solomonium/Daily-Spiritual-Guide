@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 2,
+            "activePatchIndex": 13,
             "patches": [
                 {
                     "date": 1659575562768,
@@ -16,6 +16,50 @@
                 {
                     "date": 1659576130570,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,10 @@\n import 'package:flutter/material.dart';\n+import 'package:flutter_riverpod/flutter_riverpod.dart';\n import 'package:spiritual_daily_guide/presentations/homepage.dart';\n \n void main() {\n-  runApp(const MyApp());\n+  runApp(const ProviderScope(child: MyApp()));\n }\n \n class MyApp extends StatelessWidget {\n   const MyApp({Key? key}) : super(key: key);\n"
+                },
+                {
+                    "date": 1659580558736,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,8 +12,9 @@\n   @override\n   Widget build(BuildContext context) {\n     return MaterialApp(\n       title: 'Flutter Demo',\n+      debugShowCheckedModeBanner: false,\n       theme: ThemeData(\n         primarySwatch: Colors.blue,\n       ),\n       home: const MyHomePage(title: 'Flutter Demo Home Page'),\n"
+                },
+                {
+                    "date": 1659645395136,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n \n   @override\n   Widget build(BuildContext context) {\n     return MaterialApp(\n-      title: 'Flutter Demo',\n+      title: 'Daily Spiritual Guide',\n       debugShowCheckedModeBanner: false,\n       theme: ThemeData(\n         primarySwatch: Colors.blue,\n       ),\n"
+                },
+                {
+                    "date": 1659645430030,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,8 +16,8 @@\n       debugShowCheckedModeBanner: false,\n       theme: ThemeData(\n         primarySwatch: Colors.blue,\n       ),\n-      home: const MyHomePage(title: 'Flutter Demo Home Page'),\n+      home: const MyHomePage(),\n     );\n   }\n }\n"
+                },
+                {
+                    "date": 1659645506280,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     return MaterialApp(\n       title: 'Daily Spiritual Guide',\n       debugShowCheckedModeBanner: false,\n       theme: ThemeData(\n-        primarySwatch: Colors.blue,\n+        primaryColor: Colors.purpleAccent,\n       ),\n       home: const MyHomePage(),\n     );\n   }\n"
+                },
+                {
+                    "date": 1659645522597,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     return MaterialApp(\n       title: 'Daily Spiritual Guide',\n       debugShowCheckedModeBanner: false,\n       theme: ThemeData(\n-        primaryColor: Colors.purpleAccent,\n+        primarySwatch: Colors.blue,\n       ),\n       home: const MyHomePage(),\n     );\n   }\n"
+                },
+                {
+                    "date": 1659645531362,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     return MaterialApp(\n       title: 'Daily Spiritual Guide',\n       debugShowCheckedModeBanner: false,\n       theme: ThemeData(\n-        primarySwatch: Colors.blue,\n+        primarySwatch: Colors.purple,\n       ),\n       home: const MyHomePage(),\n     );\n   }\n"
+                },
+                {
+                    "date": 1659645560009,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     return MaterialApp(\n       title: 'Daily Spiritual Guide',\n       debugShowCheckedModeBanner: false,\n       theme: ThemeData(\n-        primarySwatch: Colors.purple,\n+        primaryColor: Colors.purple.shade300,\n       ),\n       home: const MyHomePage(),\n     );\n   }\n"
+                },
+                {
+                    "date": 1659645650230,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,11 +13,12 @@\n   Widget build(BuildContext context) {\n     return MaterialApp(\n       title: 'Daily Spiritual Guide',\n       debugShowCheckedModeBanner: false,\n-      theme: ThemeData(\n-        primaryColor: Colors.purple.shade300,\n-      ),\n+      color: Colors.purple.shade300,\n+      // theme: ThemeData(\n+      //   primarySwatch: Colors.purple.shade300,\n+      // ),\n       home: const MyHomePage(),\n     );\n   }\n }\n"
+                },
+                {
+                    "date": 1659645676204,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,11 +14,11 @@\n     return MaterialApp(\n       title: 'Daily Spiritual Guide',\n       debugShowCheckedModeBanner: false,\n       color: Colors.purple.shade300,\n-      // theme: ThemeData(\n-      //   primarySwatch: Colors.purple.shade300,\n-      // ),\n+      theme: ThemeData(\n+        primarySwatch: Colors.purple,\n+      ),\n       home: const MyHomePage(),\n     );\n   }\n }\n"
+                },
+                {
+                    "date": 1659645712803,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n       title: 'Daily Spiritual Guide',\n       debugShowCheckedModeBanner: false,\n       color: Colors.purple.shade300,\n       theme: ThemeData(\n-        primarySwatch: Colors.purple,\n+        primaryColor: Colors.purple.withOpacity(0.5),\n       ),\n       home: const MyHomePage(),\n     );\n   }\n"
+                },
+                {
+                    "date": 1659645796474,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n       title: 'Daily Spiritual Guide',\n       debugShowCheckedModeBanner: false,\n       color: Colors.purple.shade300,\n       theme: ThemeData(\n-        primaryColor: Colors.purple.withOpacity(0.5),\n+        primarySwatch: Colors.purple,\n       ),\n       home: const MyHomePage(),\n     );\n   }\n"
                 }
             ],
             "date": 1659575562768,
