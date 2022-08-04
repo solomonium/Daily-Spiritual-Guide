@@ -1,0 +1,26 @@
+{
+    "sourceFile": "lib/main.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1659575562768,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1659575731244,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import 'package:flutter/material.dart';\n+import 'package:spiritual_daily_guide/presentations/homepage.dart';\n \n void main() {\n   runApp(const MyApp());\n }\n@@ -17,51 +18,4 @@\n       home: const MyHomePage(title: 'Flutter Demo Home Page'),\n     );\n   }\n }\n-\n-class MyHomePage extends StatefulWidget {\n-  const MyHomePage({Key? key, required this.title}) : super(key: key);\n-\n-  final String title;\n-\n-  @override\n-  State<MyHomePage> createState() => _MyHomePageState();\n-}\n-\n-class _MyHomePageState extends State<MyHomePage> {\n-  int _counter = 0;\n-\n-  void _incrementCounter() {\n-    setState(() {\n-      _counter++;\n-    });\n-  }\n-\n-  @override\n-  Widget build(BuildContext context) {\n-    return Scaffold(\n-      appBar: AppBar(\n-        title: Text(widget.title),\n-      ),\n-      body: Center(\n-        child: Column(\n-          mainAxisAlignment: MainAxisAlignment.center,\n-          children: <Widget>[\n-            const Text(\n-              'You have pushed the button this many times:',\n-            ),\n-            Text(\n-              '$_counter',\n-              style: Theme.of(context).textTheme.headline4,\n-            ),\n-          ],\n-        ),\n-      ),\n-      floatingActionButton: FloatingActionButton(\n-        onPressed: _incrementCounter,\n-        tooltip: 'Increment',\n-        child: const Icon(Icons.add),\n-      ),\n-    );\n-  }\n-}\n"
+                },
+                {
+                    "date": 1659576130570,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,10 @@\n import 'package:flutter/material.dart';\n+import 'package:flutter_riverpod/flutter_riverpod.dart';\n import 'package:spiritual_daily_guide/presentations/homepage.dart';\n \n void main() {\n-  runApp(const MyApp());\n+  runApp(const ProviderScope(child: MyApp()));\n }\n \n class MyApp extends StatelessWidget {\n   const MyApp({Key? key}) : super(key: key);\n"
+                }
+            ],
+            "date": 1659575562768,
+            "name": "Commit-0",
+            "content": "import 'package:flutter/material.dart';\n\nvoid main() {\n  runApp(const MyApp());\n}\n\nclass MyApp extends StatelessWidget {\n  const MyApp({Key? key}) : super(key: key);\n\n  @override\n  Widget build(BuildContext context) {\n    return MaterialApp(\n      title: 'Flutter Demo',\n      theme: ThemeData(\n        primarySwatch: Colors.blue,\n      ),\n      home: const MyHomePage(title: 'Flutter Demo Home Page'),\n    );\n  }\n}\n\nclass MyHomePage extends StatefulWidget {\n  const MyHomePage({Key? key, required this.title}) : super(key: key);\n\n  final String title;\n\n  @override\n  State<MyHomePage> createState() => _MyHomePageState();\n}\n\nclass _MyHomePageState extends State<MyHomePage> {\n  int _counter = 0;\n\n  void _incrementCounter() {\n    setState(() {\n      _counter++;\n    });\n  }\n\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      appBar: AppBar(\n        title: Text(widget.title),\n      ),\n      body: Center(\n        child: Column(\n          mainAxisAlignment: MainAxisAlignment.center,\n          children: <Widget>[\n            const Text(\n              'You have pushed the button this many times:',\n            ),\n            Text(\n              '$_counter',\n              style: Theme.of(context).textTheme.headline4,\n            ),\n          ],\n        ),\n      ),\n      floatingActionButton: FloatingActionButton(\n        onPressed: _incrementCounter,\n        tooltip: 'Increment',\n        child: const Icon(Icons.add),\n      ),\n    );\n  }\n}\n"
+        }
+    ]
+}
