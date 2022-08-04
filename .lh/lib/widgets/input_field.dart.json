@@ -1,0 +1,18 @@
+{
+    "sourceFile": "lib/widgets/input_field.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1659580245337,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1659580245337,
+            "name": "Commit-0",
+            "content": "import 'package:flutter/material.dart';\nimport 'package:google_fonts/google_fonts.dart';\nimport 'package:spiritual_daily_guide/widgets/app_text.dart';\n\nimport 'helper_tools.dart';\n\nclass InputFieldWidget extends StatelessWidget {\n  Icon? icon;\n  final TextInputType textInputType;\n  final String labelText;\n  final TextEditingController textController;\n  final bool autoFocus;\n  final String? Function(String?)? validate;\n  bool isPassword;\n  String? hintText;\n  final TextInputAction textInputAction;\n\n  InputFieldWidget(\n      {Key? key,\n      this.icon,\n      this.isPassword = false,\n      required this.textInputType,\n      required this.labelText,\n      required this.textController,\n      required this.autoFocus,\n      this.validate,\n      this.hintText,\n      required this.textInputAction})\n      : super(key: key);\n\n  @override\n  Widget build(BuildContext context) {\n    return Container(\n      // color: AppColors.backgroundColor,\n      child: Column(\n        crossAxisAlignment: CrossAxisAlignment.start,\n        children: [\n          AppText(\n            text: labelText,\n            // color: AppColors.appTextColor,\n          ),\n          addVerticalSpace(12),\n          SizedBox(\n            height: 52,\n            child: TextFormField(\n              controller: textController,\n              validator: validate,\n              textInputAction: textInputAction,\n              keyboardType: textInputType,\n              decoration: InputDecoration(\n                errorStyle: const TextStyle(\n                    // fontSize: 0,\n                    //   color: Colors.transparent,\n                    height: 0.7),\n                errorBorder: OutlineInputBorder(\n                  borderSide: const BorderSide(\n                      // color: AppColors.bannerTextColor, width: 0.9\n                      ),\n                  borderRadius: BorderRadius.circular(11),\n                ),\n                contentPadding:\n                    const EdgeInsets.symmetric(vertical: 15, horizontal: 16),\n                focusedBorder: OutlineInputBorder(\n                    borderSide: const BorderSide(\n                        // color: AppColors.borderColor, width: 0.9\n                        ),\n                    borderRadius: BorderRadius.circular(12)),\n                enabledBorder: OutlineInputBorder(\n                    borderSide: const BorderSide(\n                        // color: AppColors.borderColor, width: 0.9\n                        ),\n                    borderRadius: BorderRadius.circular(12)),\n                filled: true,\n                hintText: hintText,\n                hintStyle: GoogleFonts.nunitoSans(\n                  fontWeight: FontWeight.w400,\n                  fontSize: 16.0,\n                  height: 1,\n                  // color: AppColors.hintTextColor,\n                ),\n                fillColor: Colors.white,\n              ),\n            ),\n          ),\n        ],\n      ),\n    );\n  }\n}\n"
+        }
+    ]
+}

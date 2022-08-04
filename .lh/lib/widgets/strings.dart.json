@@ -1,0 +1,18 @@
+{
+    "sourceFile": "lib/widgets/strings.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1659579873848,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1659579873848,
+            "name": "Commit-0",
+            "content": "import 'package:intl/intl.dart';\nimport 'package:validators/validators.dart';\n\nclass StringUtil {\n  static final compactCurrencyFormat =\n      NumberFormat.compactLong(locale: \"en_US\");\n  static final currencyFormat = NumberFormat.currency(locale: \"en_NG\");\n  static final nairaFormat =\n      NumberFormat.currency(locale: \"en_NG\", symbol: \"₦\");\n\n  static bool isPhone(value) => matches(value, r'^(\\+?234|0)?[789]\\d{9}$');\n}\n\nextension CapExtension on String {\n  String get inCaps => '${this[0].toUpperCase()}${substring(1)}';\n  String get allInCaps => toUpperCase();\n  String get capitalize => split(\" \").map((str) => str.inCaps).join(\" \");\n}\n\nextension DecimalPlaces on num {\n  String get zeroPlaces => toStringAsFixed(0);\n  String toDecimalPlaces(int fractionDigits) {\n    return toStringAsFixed(fractionDigits);\n  }\n}\n\nextension MoneyExtension on String {\n  String get stripLocale => substring(3);\n}\n"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "sourceFile": "lib/widgets/app_text.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1659579676792,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1659579676792,
+            "name": "Commit-0",
+            "content": "import 'package:flutter/material.dart';\nimport 'package:google_fonts/google_fonts.dart';\n\nclass AppText extends StatelessWidget {\n  double size;\n  FontWeight? fontWeight;\n  final String text;\n  final Color? color;\n  final TextAlign? textAlign;\n  TextOverflow? overflow;\n  TextTheme? textTheme;\n\n  AppText(\n      {Key? key,\n      this.size = 16,\n      this.fontWeight,\n      this.textAlign = TextAlign.left,\n      required this.text,\n      this.textTheme,\n      this.overflow,\n      this.color})\n      : super(key: key);\n\n  @override\n  Widget build(BuildContext context) {\n    return Text(\n      text,\n      overflow: overflow,\n      textAlign: textAlign,\n      style: GoogleFonts.nunitoSans(\n        color: color,\n        fontSize: size,\n        fontWeight: fontWeight,\n        textStyle: Theme.of(context).textTheme.bodyText1,\n      ),\n    );\n  }\n}\n"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "sourceFile": "lib/widgets/validator.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1659579904246,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1659579904246,
+            "name": "Commit-0",
+            "content": "import 'package:spiritual_daily_guide/widgets/strings.dart';\nimport 'package:validators/validators.dart';\n\nclass Validator {\n  static String? phone(value) {\n    if (value.isEmpty) {\n      return 'Please provide a phone number!';\n    }\n    if (!StringUtil.isPhone(value)) {\n      return 'Please enter a valid phone number!';\n    }\n    return null;\n  }\n\n  static String? email(value) {\n    if (value.isEmpty) {\n      return 'Please provide your email address!';\n    }\n    if (!isEmail(value)) {\n      return 'Please enter a valid email!';\n    }\n    return null;\n  }\n\n  static String? emailValidate(value) {\n    if (value.isEmpty) {\n      return (\"Please Enter Your Email\");\n    }\n    // reg expression for email validation\n    if (!RegExp(\"^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]\").hasMatch(value)) {\n      return (\"Please Enter a valid email\");\n    }\n    return null;\n  }\n\n  static String? password(value) {\n    if (value.isEmpty) {\n      return 'Please provide your password!';\n    }\n    if (value.length < 3 || value.length > 100) {\n      return 'Password must be between 3 - 100 characters!';\n    }\n    return null;\n  }\n\n  static String? noEmptyText(value) {\n    if (value.isEmpty) {\n      return 'Field cannot be empty';\n    }\n    return null;\n  }\n\n  static String? noEmptyDropdown(value) {\n    if (value == null || value.isEmpty) {\n      return 'Please select an option';\n    }\n    return null;\n  }\n\n  static String? phoneOrEmail(value) {\n    if (value.isEmpty) {\n      return 'Please provide an email or phone number!';\n    }\n    if (!isEmail(value) && !StringUtil.isPhone(value)) {\n      return 'Please enter a valid email or phone number!';\n    }\n    return null;\n  }\n}\n"
+        }
+    ]
+}

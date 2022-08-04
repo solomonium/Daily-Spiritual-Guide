@@ -1,0 +1,18 @@
+{
+    "sourceFile": "lib/widgets/line.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1659580330369,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1659580330369,
+            "name": "Commit-0",
+            "content": "import 'package:flutter/material.dart';\n\nclass Line extends StatelessWidget {\n  final double width;\n  double? height;\n  // Color color;\n\n  Line({\n    Key? key,\n    required this.width,\n    this.height = 1.0,\n    // this.color = AppColors.lineColor\n  }) : super(key: key);\n\n  @override\n  Widget build(BuildContext context) {\n    return Padding(\n      padding: const EdgeInsets.symmetric(horizontal: 0.0),\n      child: SizedBox(\n        height: height, width: width, //color: color\n      ),\n    );\n  }\n}\n"
+        }
+    ]
+}
