@@ -1,0 +1,22 @@
+{
+    "sourceFile": "lib/presentations/page_3.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1659735586719,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1659735595667,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n \n class _Page3State extends State<Page3> {\n   @override\n   Widget build(BuildContext context) {\n-    return Scaffold(\n+    return const Scaffold(\n       backgroundColor: Colors.greenAccent,\n     );\n   }\n }\n"
+                }
+            ],
+            "date": 1659735586719,
+            "name": "Commit-0",
+            "content": "import 'package:flutter/material.dart';\nimport 'package:flutter/src/foundation/key.dart';\nimport 'package:flutter/src/widgets/framework.dart';\n\nclass Page3 extends StatefulWidget {\n  const Page3({Key? key}) : super(key: key);\n\n  @override\n  State<Page3> createState() => _Page3State();\n}\n\nclass _Page3State extends State<Page3> {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      backgroundColor: Colors.greenAccent,\n    );\n  }\n}\n"
+        }
+    ]
+}

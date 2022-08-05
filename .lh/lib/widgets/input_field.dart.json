@@ -3,11 +3,27 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 4,
             "patches": [
                 {
                     "date": 1659580245337,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1659726615496,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n         crossAxisAlignment: CrossAxisAlignment.start,\n         children: [\n           AppText(\n             text: labelText,\n-            // color: AppColors.appTextColor,\n+            color: Colors.white,\n           ),\n           addVerticalSpace(12),\n           SizedBox(\n             height: 52,\n"
+                },
+                {
+                    "date": 1659726637679,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n         crossAxisAlignment: CrossAxisAlignment.start,\n         children: [\n           AppText(\n             text: labelText,\n-            color: Colors.white,\n+            color: Colors.purpleAccent,\n           ),\n           addVerticalSpace(12),\n           SizedBox(\n             height: 52,\n"
+                },
+                {
+                    "date": 1659726647485,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n         crossAxisAlignment: CrossAxisAlignment.start,\n         children: [\n           AppText(\n             text: labelText,\n-            color: Colors.purpleAccent,\n+            color: Colors.red,\n           ),\n           addVerticalSpace(12),\n           SizedBox(\n             height: 52,\n"
+                },
+                {
+                    "date": 1659726655859,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n         crossAxisAlignment: CrossAxisAlignment.start,\n         children: [\n           AppText(\n             text: labelText,\n-            color: Colors.red,\n+            color: Colors.white,\n           ),\n           addVerticalSpace(12),\n           SizedBox(\n             height: 52,\n"
                 }
             ],
             "date": 1659580245337,

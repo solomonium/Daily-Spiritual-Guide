@@ -1,0 +1,18 @@
+{
+    "sourceFile": "lib/presentations/page_2.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1659735498566,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1659735498566,
+            "name": "Commit-0",
+            "content": "import 'package:flutter/material.dart';\nimport 'package:flutter/src/foundation/key.dart';\nimport 'package:flutter/src/widgets/framework.dart';\n\nclass Page2 extends StatefulWidget {\n  const Page2({Key? key}) : super(key: key);\n\n  @override\n  State<Page2> createState() => _Page2State();\n}\n\nclass _Page2State extends State<Page2> {\n  @override\n  Widget build(BuildContext context) {\n    return const Scaffold(\n      backgroundColor: Colors.blue,\n    );\n  }\n}\n"
+        }
+    ]
+}

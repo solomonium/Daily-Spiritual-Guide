@@ -1,0 +1,22 @@
+{
+    "sourceFile": "lib/presentations/settings_page.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1659735296908,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1659735325267,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,16 +1,16 @@\n import 'package:flutter/material.dart';\n import 'package:flutter/src/foundation/key.dart';\n import 'package:flutter/src/widgets/framework.dart';\n \n-class MyWidget extends StatefulWidget {\n-  const MyWidget({Key? key}) : super(key: key);\n+class SettingsPage extends StatefulWidget {\n+  const SettingsPage({Key? key}) : super(key: key);\n \n   @override\n-  State<MyWidget> createState() => _MyWidgetState();\n+  State<SettingsPage> createState() => _SettingsPageState();\n }\n \n-class _MyWidgetState extends State<MyWidget> {\n+class _SettingsPageState extends State<SettingsPage> {\n   @override\n   Widget build(BuildContext context) {\n     return const Scaffold(\n       backgroundColor: Colors.amber,\n"
+                }
+            ],
+            "date": 1659735296908,
+            "name": "Commit-0",
+            "content": "import 'package:flutter/material.dart';\nimport 'package:flutter/src/foundation/key.dart';\nimport 'package:flutter/src/widgets/framework.dart';\n\nclass MyWidget extends StatefulWidget {\n  const MyWidget({Key? key}) : super(key: key);\n\n  @override\n  State<MyWidget> createState() => _MyWidgetState();\n}\n\nclass _MyWidgetState extends State<MyWidget> {\n  @override\n  Widget build(BuildContext context) {\n    return const Scaffold(\n      backgroundColor: Colors.amber,\n    );\n  }\n}\n"
+        }
+    ]
+}

@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 13,
+            "activePatchIndex": 14,
             "patches": [
                 {
                     "date": 1659575562768,
@@ -60,6 +60,10 @@
                 {
                     "date": 1659645796474,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n       title: 'Daily Spiritual Guide',\n       debugShowCheckedModeBanner: false,\n       color: Colors.purple.shade300,\n       theme: ThemeData(\n-        primaryColor: Colors.purple.withOpacity(0.5),\n+        primarySwatch: Colors.purple,\n       ),\n       home: const MyHomePage(),\n     );\n   }\n"
+                },
+                {
+                    "date": 1659731877766,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import 'package:flutter/material.dart';\n import 'package:flutter_riverpod/flutter_riverpod.dart';\n-import 'package:spiritual_daily_guide/presentations/homepage.dart';\n+import 'package:spiritual_daily_guide/presentations/signIn_page.dart';\n \n void main() {\n   runApp(const ProviderScope(child: MyApp()));\n }\n@@ -17,8 +17,8 @@\n       color: Colors.purple.shade300,\n       theme: ThemeData(\n         primarySwatch: Colors.purple,\n       ),\n-      home: const MyHomePage(),\n+      home: const SignInPage(),\n     );\n   }\n }\n"
                 }
             ],
             "date": 1659575562768,
