@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 170,
+            "activePatchIndex": 183,
             "patches": [
                 {
                     "date": 1659575717121,
@@ -688,6 +688,58 @@
                 {
                     "date": 1659733785245,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n class _HomePageState extends State<HomePage> {\n   @override\n   Widget build(BuildContext context) {\n     return Scaffold(\n-      backgroundColor: Colors.amber,\n+      backgroundColor: Colors.blueGrey,\n       body: Center(\n         child: Container(\n           width: 200,\n           height: 200,\n"
+                },
+                {
+                    "date": 1659767836261,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import 'package:flutter/material.dart';\n+import 'package:spiritual_daily_guide/widgets/app_large_text.dart';\n \n class HomePage extends StatefulWidget {\n   const HomePage({Key? key}) : super(key: key);\n \n@@ -10,16 +11,10 @@\n class _HomePageState extends State<HomePage> {\n   @override\n   Widget build(BuildContext context) {\n     return Scaffold(\n-      backgroundColor: Colors.blueGrey,\n-      body: Center(\n-        child: Container(\n-          width: 200,\n-          height: 200,\n-          color: Colors.red,\n-          child: Column(),\n-        ),\n-      ),\n-    );\n+        backgroundColor: Colors.blueGrey,\n+        body: Column(\n+          children: [AppLargeText(text: 'Hi, Jeremy')],\n+        ));\n   }\n }\n"
+                },
+                {
+                    "date": 1659767848039,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,11 @@\n   @override\n   Widget build(BuildContext context) {\n     return Scaffold(\n         backgroundColor: Colors.blueGrey,\n-        body: Column(\n-          children: [AppLargeText(text: 'Hi, Jeremy')],\n+        body: SafeArea(\n+          child: Column(\n+            children: [AppLargeText(text: 'Hi, Jeremy')],\n+          ),\n         ));\n   }\n }\n"
+                },
+                {
+                    "date": 1659767866742,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,10 +13,13 @@\n   Widget build(BuildContext context) {\n     return Scaffold(\n         backgroundColor: Colors.blueGrey,\n         body: SafeArea(\n-          child: Column(\n-            children: [AppLargeText(text: 'Hi, Jeremy')],\n+          child: Padding(\n+            padding: const EdgeInsets.all(15.0),\n+            child: Column(\n+              children: [AppLargeText(text: 'Hi, Jeremy')],\n+            ),\n           ),\n         ));\n   }\n }\n"
+                },
+                {
+                    "date": 1659767895710,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n         body: SafeArea(\n           child: Padding(\n             padding: const EdgeInsets.all(15.0),\n             child: Column(\n-              children: [AppLargeText(text: 'Hi, Jeremy')],\n+              children: [AppLargeText(text: 'Hi, Jeremy!')],\n             ),\n           ),\n         ));\n   }\n"
+                },
+                {
+                    "date": 1659767924191,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n import 'package:flutter/material.dart';\n import 'package:spiritual_daily_guide/widgets/app_large_text.dart';\n+import 'package:spiritual_daily_guide/widgets/helper_tools.dart';\n \n class HomePage extends StatefulWidget {\n   const HomePage({Key? key}) : super(key: key);\n \n@@ -16,9 +17,12 @@\n         body: SafeArea(\n           child: Padding(\n             padding: const EdgeInsets.all(15.0),\n             child: Column(\n-              children: [AppLargeText(text: 'Hi, Jeremy!')],\n+              children: [\n+                AppLargeText(text: 'Hi, Jeremy!'),\n+                addVerticalSpace(10)\n+              ],\n             ),\n           ),\n         ));\n   }\n"
+                },
+                {
+                    "date": 1659767968247,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n import 'package:flutter/material.dart';\n import 'package:spiritual_daily_guide/widgets/app_large_text.dart';\n+import 'package:spiritual_daily_guide/widgets/app_text.dart';\n import 'package:spiritual_daily_guide/widgets/helper_tools.dart';\n \n class HomePage extends StatefulWidget {\n   const HomePage({Key? key}) : super(key: key);\n@@ -19,9 +20,10 @@\n             padding: const EdgeInsets.all(15.0),\n             child: Column(\n               children: [\n                 AppLargeText(text: 'Hi, Jeremy!'),\n-                addVerticalSpace(10)\n+                addVerticalSpace(10),\n+                AppText(text: 'Let God make lead you today!')\n               ],\n             ),\n           ),\n         ));\n"
+                },
+                {
+                    "date": 1659767997448,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n           child: Padding(\n             padding: const EdgeInsets.all(15.0),\n             child: Column(\n               children: [\n-                AppLargeText(text: 'Hi, Jeremy!'),\n+                AppText(text: 'Hi, Jeremy!'),\n                 addVerticalSpace(10),\n                 AppText(text: 'Let God make lead you today!')\n               ],\n             ),\n"
+                },
+                {
+                    "date": 1659768004948,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n           child: Padding(\n             padding: const EdgeInsets.all(15.0),\n             child: Column(\n               children: [\n-                AppText(text: 'Hi, Jeremy!'),\n+                AppLargeText(text: 'Hi, Jeremy!'),\n                 addVerticalSpace(10),\n                 AppText(text: 'Let God make lead you today!')\n               ],\n             ),\n"
+                },
+                {
+                    "date": 1659768086889,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,9 @@\n         body: SafeArea(\n           child: Padding(\n             padding: const EdgeInsets.all(15.0),\n             child: Column(\n+              crossAxisAlignment: CrossAxisAlignment.start,\n               children: [\n                 AppLargeText(text: 'Hi, Jeremy!'),\n                 addVerticalSpace(10),\n                 AppText(text: 'Let God make lead you today!')\n"
+                },
+                {
+                    "date": 1659768502256,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n class _HomePageState extends State<HomePage> {\n   @override\n   Widget build(BuildContext context) {\n     return Scaffold(\n-        backgroundColor: Colors.blueGrey,\n+        backgroundColor: Colors.white.withOpacity(0.5),\n         body: SafeArea(\n           child: Padding(\n             padding: const EdgeInsets.all(15.0),\n             child: Column(\n"
+                },
+                {
+                    "date": 1659768513195,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n class _HomePageState extends State<HomePage> {\n   @override\n   Widget build(BuildContext context) {\n     return Scaffold(\n-        backgroundColor: Colors.white.withOpacity(0.5),\n+        backgroundColor: Colors.white.withOpacity(0.8),\n         body: SafeArea(\n           child: Padding(\n             padding: const EdgeInsets.all(15.0),\n             child: Column(\n"
+                },
+                {
+                    "date": 1659768539090,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n class _HomePageState extends State<HomePage> {\n   @override\n   Widget build(BuildContext context) {\n     return Scaffold(\n-        backgroundColor: Colors.white.withOpacity(0.8),\n+        backgroundColor: Colors.blueAccent.withOpacity(0.4),\n         body: SafeArea(\n           child: Padding(\n             padding: const EdgeInsets.all(15.0),\n             child: Column(\n"
+                },
+                {
+                    "date": 1659768615702,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n               crossAxisAlignment: CrossAxisAlignment.start,\n               children: [\n                 AppLargeText(text: 'Hi, Jeremy!'),\n                 addVerticalSpace(10),\n-                AppText(text: 'Let God make lead you today!')\n+                AppText(text: 'Let God lead you today!')\n               ],\n             ),\n           ),\n         ));\n"
                 }
             ],
             "date": 1659575717121,

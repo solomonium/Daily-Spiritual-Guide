@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 1,
+            "activePatchIndex": 2,
             "patches": [
                 {
                     "date": 1659735586719,
@@ -12,6 +12,10 @@
                 {
                     "date": 1659735595667,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n \n class _Page3State extends State<Page3> {\n   @override\n   Widget build(BuildContext context) {\n-    return Scaffold(\n+    return const Scaffold(\n       backgroundColor: Colors.greenAccent,\n     );\n   }\n }\n"
+                },
+                {
+                    "date": 1659767369963,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,16 +1,16 @@\n import 'package:flutter/material.dart';\n import 'package:flutter/src/foundation/key.dart';\n import 'package:flutter/src/widgets/framework.dart';\n \n-class Page3 extends StatefulWidget {\n-  const Page3({Key? key}) : super(key: key);\n+class Favorites extends StatefulWidget {\n+  const Favorites({Key? key}) : super(key: key);\n \n   @override\n-  State<Page3> createState() => _Page3State();\n+  State<Favorites> createState() => _FavoritesState();\n }\n \n-class _Page3State extends State<Page3> {\n+class _FavoritesState extends State<Favorites> {\n   @override\n   Widget build(BuildContext context) {\n     return const Scaffold(\n       backgroundColor: Colors.greenAccent,\n"
                 }
             ],
             "date": 1659735586719,

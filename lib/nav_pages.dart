@@ -14,8 +14,8 @@ class Dashboard extends StatefulWidget {
 class _DashboardState extends State<Dashboard> {
   List pages = const [
     HomePage(),
-    Page2(),
-    Page3(),
+    Bible(),
+    Favorites(),
     SettingsPage(),
   ];
 
@@ -50,49 +50,29 @@ class _DashboardState extends State<Dashboard> {
               icon: Padding(
                 padding: EdgeInsets.only(top: 14.0, bottom: 7),
                 child: SizedBox(
-                    width: 18, height: 18, child: Icon(Icons.home_filled)
-                    //  SvgPicture.asset(
-                    //   'assets/icons/home.svg',
-                    // )
-                    ),
+                    width: 18, height: 18, child: Icon(Icons.home_filled)),
               )),
           BottomNavigationBarItem(
-              label: "Work",
+              label: "Bible",
               icon: Padding(
                 padding: EdgeInsets.only(top: 14.0, bottom: 7),
-                child: SizedBox(width: 18, height: 18, child: Icon(Icons.work)
-                    // SvgPicture.asset(
-                    //   'assets/icons/work.svg',
-                    // )
-                    ),
+                child: SizedBox(width: 18, height: 18, child: Icon(Icons.work)),
               )),
-          // BottomNavigationBarItem(
-          //     label: "",
-          //     icon: Padding(
-          //       padding: const EdgeInsets.only(top: 14.0),
-          //       child: SizedBox(
-          //           width: 32,
-          //           height: 32,
-          //           child:
-          //               SvgPicture.asset('assets/icons/center-add-icon.svg')),
-          //     )),
           BottomNavigationBarItem(
-              label: "PPM",
+              label: "Favorites",
               icon: Padding(
                 padding: EdgeInsets.only(top: 14.0, bottom: 7),
                 child: SizedBox(
-                    width: 18, height: 18, child: Icon(Icons.engineering_sharp)
-                    // SvgPicture.asset('assets/icons/ppm.svg')
-                    ),
+                    width: 18,
+                    height: 18,
+                    child: Icon(Icons.engineering_sharp)),
               )),
           BottomNavigationBarItem(
               label: "Settings",
               icon: Padding(
                 padding: EdgeInsets.only(top: 14.0, bottom: 7),
-                child:
-                    SizedBox(width: 18, height: 18, child: Icon(Icons.settings)
-                        // SvgPicture.asset('assets/icons/settings.svg')
-                        ),
+                child: SizedBox(
+                    width: 18, height: 18, child: Icon(Icons.settings)),
               )),
         ],
       ),

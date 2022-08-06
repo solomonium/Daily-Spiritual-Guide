@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
-class Page3 extends StatefulWidget {
-  const Page3({Key? key}) : super(key: key);
+class Favorites extends StatefulWidget {
+  const Favorites({Key? key}) : super(key: key);
 
   @override
-  State<Page3> createState() => _Page3State();
+  State<Favorites> createState() => _FavoritesState();
 }
 
-class _Page3State extends State<Page3> {
+class _FavoritesState extends State<Favorites> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(

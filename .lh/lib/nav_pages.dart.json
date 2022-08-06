@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 2,
+            "activePatchIndex": 9,
             "patches": [
                 {
                     "date": 1659735641565,
@@ -16,6 +16,34 @@
                 {
                     "date": 1659735888246,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,10 +43,10 @@\n         selectedLabelStyle: const TextStyle(fontWeight: FontWeight.w300),\n         showUnselectedLabels: true,\n         showSelectedLabels: true,\n         elevation: 4,\n-        items: [\n-          const BottomNavigationBarItem(\n+        items: const [\n+          BottomNavigationBarItem(\n               label: \"Home\",\n               icon: Padding(\n                 padding: EdgeInsets.only(top: 14.0, bottom: 7),\n                 child: SizedBox(\n@@ -55,9 +55,9 @@\n                     //   'assets/icons/home.svg',\n                     // )\n                     ),\n               )),\n-          const BottomNavigationBarItem(\n+          BottomNavigationBarItem(\n               label: \"Work\",\n               icon: Padding(\n                 padding: EdgeInsets.only(top: 14.0, bottom: 7),\n                 child: SizedBox(width: 18, height: 18, child: Icon(Icons.work)\n@@ -65,28 +65,28 @@\n                     //   'assets/icons/work.svg',\n                     // )\n                     ),\n               )),\n+          // BottomNavigationBarItem(\n+          //     label: \"\",\n+          //     icon: Padding(\n+          //       padding: const EdgeInsets.only(top: 14.0),\n+          //       child: SizedBox(\n+          //           width: 32,\n+          //           height: 32,\n+          //           child:\n+          //               SvgPicture.asset('assets/icons/center-add-icon.svg')),\n+          //     )),\n           BottomNavigationBarItem(\n-              label: \"\",\n-              icon: Padding(\n-                padding: const EdgeInsets.only(top: 14.0),\n-                child: SizedBox(\n-                    width: 32,\n-                    height: 32,\n-                    child:\n-                        SvgPicture.asset('assets/icons/center-add-icon.svg')),\n-              )),\n-          const BottomNavigationBarItem(\n               label: \"PPM\",\n               icon: Padding(\n                 padding: EdgeInsets.only(top: 14.0, bottom: 7),\n                 child: SizedBox(\n                     width: 18, height: 18, child: Icon(Icons.engineering_sharp)\n                     // SvgPicture.asset('assets/icons/ppm.svg')\n                     ),\n               )),\n-          const BottomNavigationBarItem(\n+          BottomNavigationBarItem(\n               label: \"Settings\",\n               icon: Padding(\n                 padding: EdgeInsets.only(top: 14.0, bottom: 7),\n                 child:\n"
+                },
+                {
+                    "date": 1659767163964,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n \n class _DashboardState extends State<Dashboard> {\n   List pages = const [\n     HomePage(),\n-    Page2(),\n+    Bible(),\n     Page3(),\n     SettingsPage(),\n   ];\n \n"
+                },
+                {
+                    "date": 1659767180206,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,9 +56,9 @@\n                     // )\n                     ),\n               )),\n           BottomNavigationBarItem(\n-              label: \"Work\",\n+              label: \"Bible\",\n               icon: Padding(\n                 padding: EdgeInsets.only(top: 14.0, bottom: 7),\n                 child: SizedBox(width: 18, height: 18, child: Icon(Icons.work)\n                     // SvgPicture.asset(\n"
+                },
+                {
+                    "date": 1659767209138,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,24 +59,10 @@\n           BottomNavigationBarItem(\n               label: \"Bible\",\n               icon: Padding(\n                 padding: EdgeInsets.only(top: 14.0, bottom: 7),\n-                child: SizedBox(width: 18, height: 18, child: Icon(Icons.work)\n-                    // SvgPicture.asset(\n-                    //   'assets/icons/work.svg',\n-                    // )\n-                    ),\n+                child: SizedBox(width: 18, height: 18, child: Icon(Icons.work)),\n               )),\n-          // BottomNavigationBarItem(\n-          //     label: \"\",\n-          //     icon: Padding(\n-          //       padding: const EdgeInsets.only(top: 14.0),\n-          //       child: SizedBox(\n-          //           width: 32,\n-          //           height: 32,\n-          //           child:\n-          //               SvgPicture.asset('assets/icons/center-add-icon.svg')),\n-          //     )),\n           BottomNavigationBarItem(\n               label: \"PPM\",\n               icon: Padding(\n                 padding: EdgeInsets.only(top: 14.0, bottom: 7),\n"
+                },
+                {
+                    "date": 1659767218169,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,20 +66,18 @@\n               label: \"PPM\",\n               icon: Padding(\n                 padding: EdgeInsets.only(top: 14.0, bottom: 7),\n                 child: SizedBox(\n-                    width: 18, height: 18, child: Icon(Icons.engineering_sharp)\n-                    // SvgPicture.asset('assets/icons/ppm.svg')\n-                    ),\n+                    width: 18,\n+                    height: 18,\n+                    child: Icon(Icons.engineering_sharp)),\n               )),\n           BottomNavigationBarItem(\n               label: \"Settings\",\n               icon: Padding(\n                 padding: EdgeInsets.only(top: 14.0, bottom: 7),\n-                child:\n-                    SizedBox(width: 18, height: 18, child: Icon(Icons.settings)\n-                        // SvgPicture.asset('assets/icons/settings.svg')\n-                        ),\n+                child: SizedBox(\n+                    width: 18, height: 18, child: Icon(Icons.settings)),\n               )),\n         ],\n       ),\n     );\n"
+                },
+                {
+                    "date": 1659767223689,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,13 +49,9 @@\n               label: \"Home\",\n               icon: Padding(\n                 padding: EdgeInsets.only(top: 14.0, bottom: 7),\n                 child: SizedBox(\n-                    width: 18, height: 18, child: Icon(Icons.home_filled)\n-                    //  SvgPicture.asset(\n-                    //   'assets/icons/home.svg',\n-                    // )\n-                    ),\n+                    width: 18, height: 18, child: Icon(Icons.home_filled)),\n               )),\n           BottomNavigationBarItem(\n               label: \"Bible\",\n               icon: Padding(\n"
+                },
+                {
+                    "date": 1659767234843,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -58,9 +58,9 @@\n                 padding: EdgeInsets.only(top: 14.0, bottom: 7),\n                 child: SizedBox(width: 18, height: 18, child: Icon(Icons.work)),\n               )),\n           BottomNavigationBarItem(\n-              label: \"PPM\",\n+              label: \"Favorites\",\n               icon: Padding(\n                 padding: EdgeInsets.only(top: 14.0, bottom: 7),\n                 child: SizedBox(\n                     width: 18,\n"
+                },
+                {
+                    "date": 1659767355688,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n class _DashboardState extends State<Dashboard> {\n   List pages = const [\n     HomePage(),\n     Bible(),\n-    Page3(),\n+    Favorites(),\n     SettingsPage(),\n   ];\n \n   int currentIndex = 0;\n"
                 }
             ],
             "date": 1659735641565,

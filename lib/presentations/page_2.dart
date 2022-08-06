@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
-class Page2 extends StatefulWidget {
-  const Page2({Key? key}) : super(key: key);
+class Bible extends StatefulWidget {
+  const Bible({Key? key}) : super(key: key);
 
   @override
-  State<Page2> createState() => _Page2State();
+  State<Bible> createState() => _BibleState();
 }
 
-class _Page2State extends State<Page2> {
+class _BibleState extends State<Bible> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
