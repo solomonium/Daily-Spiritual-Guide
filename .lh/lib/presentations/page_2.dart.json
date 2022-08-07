@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 1,
+            "activePatchIndex": 29,
             "patches": [
                 {
                     "date": 1659735498566,
@@ -12,6 +12,118 @@
                 {
                     "date": 1659767163965,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,16 +1,16 @@\n import 'package:flutter/material.dart';\n import 'package:flutter/src/foundation/key.dart';\n import 'package:flutter/src/widgets/framework.dart';\n \n-class Page2 extends StatefulWidget {\n-  const Page2({Key? key}) : super(key: key);\n+class Bible extends StatefulWidget {\n+  const Bible({Key? key}) : super(key: key);\n \n   @override\n-  State<Page2> createState() => _Page2State();\n+  State<Bible> createState() => _BibleState();\n }\n \n-class _Page2State extends State<Page2> {\n+class _BibleState extends State<Bible> {\n   @override\n   Widget build(BuildContext context) {\n     return const Scaffold(\n       backgroundColor: Colors.blue,\n"
+                },
+                {
+                    "date": 1659843299947,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n import 'package:flutter/material.dart';\n import 'package:flutter/src/foundation/key.dart';\n import 'package:flutter/src/widgets/framework.dart';\n+import 'package:spiritual_daily_guide/widgets/app_text.dart';\n \n class Bible extends StatefulWidget {\n   const Bible({Key? key}) : super(key: key);\n \n@@ -11,9 +12,9 @@\n \n class _BibleState extends State<Bible> {\n   @override\n   Widget build(BuildContext context) {\n-    return const Scaffold(\n-      backgroundColor: Colors.blue,\n-    );\n+    return Scaffold(\n+        backgroundColor: Colors.blue,\n+        appBar: AppBar(title: AppText(text: 'Shimmer Effect')));\n   }\n }\n"
+                },
+                {
+                    "date": 1659843376751,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,18 @@\n class _BibleState extends State<Bible> {\n   @override\n   Widget build(BuildContext context) {\n     return Scaffold(\n-        backgroundColor: Colors.blue,\n-        appBar: AppBar(title: AppText(text: 'Shimmer Effect')));\n+      backgroundColor: Colors.blue,\n+      appBar: AppBar(title: AppText(text: 'Shimmer Effect')),\n+      body: Column(\n+        children: [\n+          Container(\n+            width: 300,\n+            height: 50,\n+            color: Colors.white,\n+          )\n+        ],\n+      ),\n+    );\n   }\n }\n"
+                },
+                {
+                    "date": 1659843392841,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,16 +15,18 @@\n   Widget build(BuildContext context) {\n     return Scaffold(\n       backgroundColor: Colors.blue,\n       appBar: AppBar(title: AppText(text: 'Shimmer Effect')),\n-      body: Column(\n-        children: [\n-          Container(\n-            width: 300,\n-            height: 50,\n-            color: Colors.white,\n-          )\n-        ],\n+      body: Center(\n+        child: Column(\n+          children: [\n+            Container(\n+              width: 300,\n+              height: 50,\n+              color: Colors.white,\n+            )\n+          ],\n+        ),\n       ),\n     );\n   }\n }\n"
+                },
+                {
+                    "date": 1659843414360,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,10 @@\n import 'package:flutter/src/foundation/key.dart';\n import 'package:flutter/src/widgets/framework.dart';\n import 'package:spiritual_daily_guide/widgets/app_text.dart';\n \n+import '../widgets/app_large_text.dart';\n+\n class Bible extends StatefulWidget {\n   const Bible({Key? key}) : super(key: key);\n \n   @override\n@@ -14,9 +16,9 @@\n   @override\n   Widget build(BuildContext context) {\n     return Scaffold(\n       backgroundColor: Colors.blue,\n-      appBar: AppBar(title: AppText(text: 'Shimmer Effect')),\n+      appBar: AppBar(title: AppLargeText(text: 'Shimmer Effect')),\n       body: Center(\n         child: Column(\n           children: [\n             Container(\n"
+                },
+                {
+                    "date": 1659843428173,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,17 +17,20 @@\n   Widget build(BuildContext context) {\n     return Scaffold(\n       backgroundColor: Colors.blue,\n       appBar: AppBar(title: AppLargeText(text: 'Shimmer Effect')),\n-      body: Center(\n-        child: Column(\n-          children: [\n-            Container(\n-              width: 300,\n-              height: 50,\n-              color: Colors.white,\n-            )\n-          ],\n+      body: Padding(\n+        padding: const EdgeInsets.all(8.0),\n+        child: Center(\n+          child: Column(\n+            children: [\n+              Container(\n+                width: 300,\n+                height: 50,\n+                color: Colors.white,\n+              )\n+            ],\n+          ),\n         ),\n       ),\n     );\n   }\n"
+                },
+                {
+                    "date": 1659843535958,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n import 'package:flutter/material.dart';\n import 'package:flutter/src/foundation/key.dart';\n import 'package:flutter/src/widgets/framework.dart';\n+import 'package:shimmer/shimmer.dart';\n import 'package:spiritual_daily_guide/widgets/app_text.dart';\n \n import '../widgets/app_large_text.dart';\n \n@@ -22,12 +23,16 @@\n         padding: const EdgeInsets.all(8.0),\n         child: Center(\n           child: Column(\n             children: [\n-              Container(\n-                width: 300,\n-                height: 50,\n-                color: Colors.white,\n+              Shimmer.fromColors(\n+                baseColor: Colors.grey,\n+                highlightColor: Colors.red,\n+                child: Container(\n+                  width: 300,\n+                  height: 50,\n+                  color: Colors.white,\n+                ),\n               )\n             ],\n           ),\n         ),\n"
+                },
+                {
+                    "date": 1659843570407,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n           child: Column(\n             children: [\n               Shimmer.fromColors(\n                 baseColor: Colors.grey,\n-                highlightColor: Colors.red,\n+                highlightColor: Colors.white,\n                 child: Container(\n                   width: 300,\n                   height: 50,\n                   color: Colors.white,\n"
+                },
+                {
+                    "date": 1659843608975,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,10 +24,10 @@\n         child: Center(\n           child: Column(\n             children: [\n               Shimmer.fromColors(\n-                baseColor: Colors.grey,\n-                highlightColor: Colors.white,\n+                baseColor: Colors.grey[500]!,\n+                highlightColor: Colors.grey[100]!,\n                 child: Container(\n                   width: 300,\n                   height: 50,\n                   color: Colors.white,\n"
+                },
+                {
+                    "date": 1659843797354,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,12 +31,21 @@\n                   width: 300,\n                   height: 50,\n                   color: Colors.white,\n                 ),\n-              )\n+              ),\n+              ListView.builder(itemBuilder: (context, index) {\n+                return buildFoodShimmer();\n+              })\n             ],\n           ),\n         ),\n       ),\n     );\n   }\n+\n+  Widget buildFoodShimmer() {\n+    return ListTile(\n+      title: AppText(text: 'Title'),\n+    );\n+  }\n }\n"
+                },
+                {
+                    "date": 1659843832363,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,11 +32,14 @@\n                   height: 50,\n                   color: Colors.white,\n                 ),\n               ),\n-              ListView.builder(itemBuilder: (context, index) {\n-                return buildFoodShimmer();\n-              })\n+              ListView.builder(\n+                  shrinkWrap: true,\n+                  itemCount: 5,\n+                  itemBuilder: (context, index) {\n+                    return buildFoodShimmer();\n+                  })\n             ],\n           ),\n         ),\n       ),\n"
+                },
+                {
+                    "date": 1659844413360,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n import 'package:shimmer/shimmer.dart';\n import 'package:spiritual_daily_guide/widgets/app_text.dart';\n \n import '../widgets/app_large_text.dart';\n+import '../widgets/shimmer_widget.dart';\n \n class Bible extends StatefulWidget {\n   const Bible({Key? key}) : super(key: key);\n \n@@ -46,9 +47,7 @@\n     );\n   }\n \n   Widget buildFoodShimmer() {\n-    return ListTile(\n-      title: AppText(text: 'Title'),\n-    );\n+    return const ListTile(title: ShimmerWidget.rectangular(height: 16));\n   }\n }\n"
+                },
+                {
+                    "date": 1659844464865,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,7 +47,9 @@\n     );\n   }\n \n   Widget buildFoodShimmer() {\n-    return const ListTile(title: ShimmerWidget.rectangular(height: 16));\n+    return const ListTile(\n+      title: ShimmerWidget.rectangular(height: 16),\n+    );\n   }\n }\n"
+                },
+                {
+                    "date": 1659844489623,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,7 +49,8 @@\n \n   Widget buildFoodShimmer() {\n     return const ListTile(\n       title: ShimmerWidget.rectangular(height: 16),\n+      subtitle: ShimmerWidget.rectangular(height: 14),\n     );\n   }\n }\n"
+                },
+                {
+                    "date": 1659845088315,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,8 +48,9 @@\n   }\n \n   Widget buildFoodShimmer() {\n     return const ListTile(\n+      leading: ShimmerWidget.cirular(height: 16),\n       title: ShimmerWidget.rectangular(height: 16),\n       subtitle: ShimmerWidget.rectangular(height: 14),\n     );\n   }\n"
+                },
+                {
+                    "date": 1659845303754,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,9 +48,12 @@\n   }\n \n   Widget buildFoodShimmer() {\n     return const ListTile(\n-      leading: ShimmerWidget.cirular(height: 16),\n+      leading: ShimmerWidget.cirular(\n+        height: 64,\n+        width: 64,\n+      ),\n       title: ShimmerWidget.rectangular(height: 16),\n       subtitle: ShimmerWidget.rectangular(height: 14),\n     );\n   }\n"
+                },
+                {
+                    "date": 1659845538402,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,17 +24,8 @@\n         padding: const EdgeInsets.all(8.0),\n         child: Center(\n           child: Column(\n             children: [\n-              Shimmer.fromColors(\n-                baseColor: Colors.grey[500]!,\n-                highlightColor: Colors.grey[100]!,\n-                child: Container(\n-                  width: 300,\n-                  height: 50,\n-                  color: Colors.white,\n-                ),\n-              ),\n               ListView.builder(\n                   shrinkWrap: true,\n                   itemCount: 5,\n                   itemBuilder: (context, index) {\n"
+                },
+                {
+                    "date": 1659845560818,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n           child: Column(\n             children: [\n               ListView.builder(\n                   shrinkWrap: true,\n-                  itemCount: 5,\n+                  itemCount: 10,\n                   itemBuilder: (context, index) {\n                     return buildFoodShimmer();\n                   })\n             ],\n"
+                },
+                {
+                    "date": 1659845572227,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n       appBar: AppBar(title: AppLargeText(text: 'Shimmer Effect')),\n       body: Padding(\n         padding: const EdgeInsets.all(8.0),\n         child: Center(\n-          child: Column(\n+          child: ListView(\n             children: [\n               ListView.builder(\n                   shrinkWrap: true,\n                   itemCount: 10,\n"
+                },
+                {
+                    "date": 1659845701008,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,14 +38,16 @@\n     );\n   }\n \n   Widget buildFoodShimmer() {\n-    return const ListTile(\n+    return ListTile(\n       leading: ShimmerWidget.cirular(\n         height: 64,\n         width: 64,\n+        shapeBorder:\n+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),\n       ),\n-      title: ShimmerWidget.rectangular(height: 16),\n-      subtitle: ShimmerWidget.rectangular(height: 14),\n+      title: const ShimmerWidget.rectangular(height: 16),\n+      subtitle: const ShimmerWidget.rectangular(height: 14),\n     );\n   }\n }\n"
+                },
+                {
+                    "date": 1659845708691,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n       leading: ShimmerWidget.cirular(\n         height: 64,\n         width: 64,\n         shapeBorder:\n-            RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),\n+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),\n       ),\n       title: const ShimmerWidget.rectangular(height: 16),\n       subtitle: const ShimmerWidget.rectangular(height: 14),\n     );\n"
+                },
+                {
+                    "date": 1659845713843,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n       leading: ShimmerWidget.cirular(\n         height: 64,\n         width: 64,\n         shapeBorder:\n-            RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),\n+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),\n       ),\n       title: const ShimmerWidget.rectangular(height: 16),\n       subtitle: const ShimmerWidget.rectangular(height: 14),\n     );\n"
+                },
+                {
+                    "date": 1659846293182,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,9 +45,12 @@\n         width: 64,\n         shapeBorder:\n             RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),\n       ),\n-      title: const ShimmerWidget.rectangular(height: 16),\n+      title: ShimmerWidget.rectangular(\n+        height: 16,\n+        width: MediaQuery.of(context).size.width * 0.3,\n+      ),\n       subtitle: const ShimmerWidget.rectangular(height: 14),\n     );\n   }\n }\n"
+                },
+                {
+                    "date": 1659846338971,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,11 +45,14 @@\n         width: 64,\n         shapeBorder:\n             RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),\n       ),\n-      title: ShimmerWidget.rectangular(\n-        height: 16,\n-        width: MediaQuery.of(context).size.width * 0.3,\n+      title: Align(\n+        alignment: Alignment.centerLeft,\n+        child: ShimmerWidget.rectangular(\n+          height: 16,\n+          width: MediaQuery.of(context).size.width * 0.3,\n+        ),\n       ),\n       subtitle: const ShimmerWidget.rectangular(height: 14),\n     );\n   }\n"
+                },
+                {
+                    "date": 1659846345981,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,9 +49,9 @@\n       title: Align(\n         alignment: Alignment.centerLeft,\n         child: ShimmerWidget.rectangular(\n           height: 16,\n-          width: MediaQuery.of(context).size.width * 0.3,\n+          width: MediaQuery.of(context).size.width * 0.5,\n         ),\n       ),\n       subtitle: const ShimmerWidget.rectangular(height: 14),\n     );\n"
+                },
+                {
+                    "date": 1659846359789,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n           child: ListView(\n             children: [\n               ListView.builder(\n                   shrinkWrap: true,\n-                  itemCount: 10,\n+                  itemCount: 1,\n                   itemBuilder: (context, index) {\n                     return buildFoodShimmer();\n                   })\n             ],\n"
+                },
+                {
+                    "date": 1659846814565,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,8 +37,9 @@\n       ),\n     );\n   }\n \n+// This Shimmer effect is loaded from the future method using a boolean value to set the state\n   Widget buildFoodShimmer() {\n     return ListTile(\n       leading: ShimmerWidget.cirular(\n         height: 64,\n"
+                },
+                {
+                    "date": 1659846845311,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,15 +23,15 @@\n       body: Padding(\n         padding: const EdgeInsets.all(8.0),\n         child: Center(\n           child: ListView(\n-            children: [\n-              ListView.builder(\n-                  shrinkWrap: true,\n-                  itemCount: 1,\n-                  itemBuilder: (context, index) {\n-                    return buildFoodShimmer();\n-                  })\n+            children: const [\n+              // ListView.builder(\n+              //     shrinkWrap: true,\n+              //     itemCount: 1,\n+              //     itemBuilder: (context, index) {\n+              //       return buildFoodShimmer();\n+              //     })\n             ],\n           ),\n         ),\n       ),\n"
+                },
+                {
+                    "date": 1659846860495,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,15 +23,15 @@\n       body: Padding(\n         padding: const EdgeInsets.all(8.0),\n         child: Center(\n           child: ListView(\n-            children: const [\n-              // ListView.builder(\n-              //     shrinkWrap: true,\n-              //     itemCount: 1,\n-              //     itemBuilder: (context, index) {\n-              //       return buildFoodShimmer();\n-              //     })\n+            children: [\n+              ListView.builder(\n+                  shrinkWrap: true,\n+                  itemCount: 1,\n+                  itemBuilder: (context, index) {\n+                    return buildFoodShimmer();\n+                  })\n             ],\n           ),\n         ),\n       ),\n"
                 }
             ],
             "date": 1659735498566,

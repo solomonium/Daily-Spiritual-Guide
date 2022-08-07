@@ -1,0 +1,78 @@
+{
+    "sourceFile": "lib/widgets/shimmer_widget.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 15,
+            "patches": [
+                {
+                    "date": 1659844077951,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1659844235831,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,13 @@\n import 'package:flutter/src/foundation/key.dart';\n import 'package:flutter/src/widgets/framework.dart';\n \n class ShimmerWidget extends StatelessWidget {\n-  const ShimmerWidget({Key? key}) : super(key: key);\n+  final double width;\n+  final double height;\n+  const ShimmerWidget.rectangular(\n+      {Key? key, this.width = double.infinity, required this.height})\n+      : super(key: key);\n \n   @override\n   Widget build(BuildContext context) {}\n }\n"
+                },
+                {
+                    "date": 1659844245572,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,11 +3,13 @@\n \n class ShimmerWidget extends StatelessWidget {\n   final double width;\n   final double height;\n-  const ShimmerWidget.rectangular(\n-      {Key? key, this.width = double.infinity, required this.height})\n-      : super(key: key);\n+  const ShimmerWidget.rectangular({\n+    Key? key,\n+    this.width = double.infinity,\n+    required this.height,\n+  }) : super(key: key);\n \n   @override\n   Widget build(BuildContext context) {}\n }\n"
+                },
+                {
+                    "date": 1659844311742,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n+import 'package:flutter/material.dart';\n import 'package:flutter/src/foundation/key.dart';\n import 'package:flutter/src/widgets/framework.dart';\n \n class ShimmerWidget extends StatelessWidget {\n@@ -10,6 +11,11 @@\n     required this.height,\n   }) : super(key: key);\n \n   @override\n-  Widget build(BuildContext context) {}\n+  Widget build(BuildContext context) {\n+    return Container(\n+      width: width,\n+      height: height,\n+    );\n+  }\n }\n"
+                },
+                {
+                    "date": 1659844319225,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n   }) : super(key: key);\n \n   @override\n   Widget build(BuildContext context) {\n-    return Container(\n+    return SizedBox(\n       width: width,\n       height: height,\n     );\n   }\n"
+                },
+                {
+                    "date": 1659844327153,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,5 @@\n import 'package:flutter/material.dart';\n-import 'package:flutter/src/foundation/key.dart';\n-import 'package:flutter/src/widgets/framework.dart';\n \n class ShimmerWidget extends StatelessWidget {\n   final double width;\n   final double height;\n"
+                },
+                {
+                    "date": 1659844382806,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,10 +10,11 @@\n   }) : super(key: key);\n \n   @override\n   Widget build(BuildContext context) {\n-    return SizedBox(\n+    return Container(\n       width: width,\n       height: height,\n+      color: Colors.grey,\n     );\n   }\n }\n"
+                },
+                {
+                    "date": 1659844588835,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import 'package:flutter/material.dart';\n+import 'package:shimmer/shimmer.dart';\n \n class ShimmerWidget extends StatelessWidget {\n   final double width;\n   final double height;\n@@ -10,11 +11,15 @@\n   }) : super(key: key);\n \n   @override\n   Widget build(BuildContext context) {\n-    return Container(\n-      width: width,\n-      height: height,\n-      color: Colors.grey,\n+    return Shimmer.fromColors(\n+      baseColor: Colors.grey[500]!,\n+      highlightColor: Colors.grey[100]!,\n+      child: Container(\n+        width: width,\n+        height: height,\n+        color: Colors.grey,\n+      ),\n     );\n   }\n }\n"
+                },
+                {
+                    "date": 1659844978250,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,15 +1,24 @@\n import 'package:flutter/material.dart';\n+import 'package:flutter/widgets.dart';\n import 'package:shimmer/shimmer.dart';\n \n class ShimmerWidget extends StatelessWidget {\n   final double width;\n   final double height;\n-  const ShimmerWidget.rectangular({\n-    Key? key,\n-    this.width = double.infinity,\n-    required this.height,\n-  }) : super(key: key);\n+  final ShapeBorder shapeBorder;\n+  const ShimmerWidget.rectangular(\n+      {Key? key,\n+      this.width = double.infinity,\n+      required this.height,\n+      this.shapeBorder = const RoundedRectangleBorder()})\n+      : super(key: key);\n+  const ShimmerWidget.cirular(\n+      {Key? key,\n+      this.width = double.infinity,\n+      required this.height,\n+      this.shapeBorder = const CircleBorder()})\n+      : super(key: key);\n \n   @override\n   Widget build(BuildContext context) {\n     return Shimmer.fromColors(\n"
+                },
+                {
+                    "date": 1659845182435,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n       this.shapeBorder = const RoundedRectangleBorder()})\n       : super(key: key);\n   const ShimmerWidget.cirular(\n       {Key? key,\n-      this.width = double.infinity,\n+      required this.width,\n       required this.height,\n       this.shapeBorder = const CircleBorder()})\n       : super(key: key);\n \n"
+                },
+                {
+                    "date": 1659845256646,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n       highlightColor: Colors.grey[100]!,\n       child: Container(\n         width: width,\n         height: height,\n-        color: Colors.grey,\n+        decoration: ShapeDecoration(color: Colors.grey, shape: shapeBorder),\n       ),\n     );\n   }\n }\n"
+                },
+                {
+                    "date": 1659846104154,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,5 @@\n import 'package:flutter/material.dart';\n-import 'package:flutter/widgets.dart';\n import 'package:shimmer/shimmer.dart';\n \n class ShimmerWidget extends StatelessWidget {\n   final double width;\n@@ -26,9 +25,12 @@\n       highlightColor: Colors.grey[100]!,\n       child: Container(\n         width: width,\n         height: height,\n-        decoration: ShapeDecoration(color: Colors.grey, shape: shapeBorder),\n+        decoration: ShapeDecoration(\n+          color: Colors.grey,\n+          shape: shapeBorder,\n+        ),\n       ),\n     );\n   }\n }\n"
+                },
+                {
+                    "date": 1659846146945,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,8 +22,9 @@\n   Widget build(BuildContext context) {\n     return Shimmer.fromColors(\n       baseColor: Colors.grey[500]!,\n       highlightColor: Colors.grey[100]!,\n+      period: const Duration(seconds: 3),\n       child: Container(\n         width: width,\n         height: height,\n         decoration: ShapeDecoration(\n"
+                },
+                {
+                    "date": 1659846152662,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n   Widget build(BuildContext context) {\n     return Shimmer.fromColors(\n       baseColor: Colors.grey[500]!,\n       highlightColor: Colors.grey[100]!,\n-      period: const Duration(seconds: 3),\n+      period: const Duration(seconds: 10),\n       child: Container(\n         width: width,\n         height: height,\n         decoration: ShapeDecoration(\n"
+                },
+                {
+                    "date": 1659846158369,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n   Widget build(BuildContext context) {\n     return Shimmer.fromColors(\n       baseColor: Colors.grey[500]!,\n       highlightColor: Colors.grey[100]!,\n-      period: const Duration(seconds: 10),\n+      period: const Duration(seconds: 20),\n       child: Container(\n         width: width,\n         height: height,\n         decoration: ShapeDecoration(\n"
+                },
+                {
+                    "date": 1659846163661,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n   Widget build(BuildContext context) {\n     return Shimmer.fromColors(\n       baseColor: Colors.grey[500]!,\n       highlightColor: Colors.grey[100]!,\n-      period: const Duration(seconds: 20),\n+      period: const Duration(seconds: 1),\n       child: Container(\n         width: width,\n         height: height,\n         decoration: ShapeDecoration(\n"
+                }
+            ],
+            "date": 1659844077951,
+            "name": "Commit-0",
+            "content": "import 'package:flutter/src/foundation/key.dart';\nimport 'package:flutter/src/widgets/framework.dart';\n\nclass ShimmerWidget extends StatelessWidget {\n  const ShimmerWidget({Key? key}) : super(key: key);\n\n  @override\n  Widget build(BuildContext context) {}\n}\n"
+        }
+    ]
+}
