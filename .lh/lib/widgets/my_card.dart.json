@@ -1,0 +1,62 @@
+{
+    "sourceFile": "lib/widgets/my_card.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 11,
+            "patches": [
+                {
+                    "date": 1659918103293,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1659918679504,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,14 @@\n \n class MyCard extends StatelessWidget {\n   final double width;\n   final double height;\n-  const MyCard({Key? key, required this.width, required this.height})\n+  final Widget child;\n+  const MyCard(\n+      {Key? key,\n+      required this.width,\n+      required this.height,\n+      required this.child})\n       : super(key: key);\n \n   @override\n   Widget build(BuildContext context) {\n"
+                },
+                {
+                    "date": 1659919327138,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,7 +26,8 @@\n           begin: Alignment.topLeft,\n           end: Alignment.bottomRight,\n         ),\n       ),\n+      child: child,\n     );\n   }\n }\n"
+                },
+                {
+                    "date": 1659922081885,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n       decoration: BoxDecoration(\n         borderRadius: BorderRadius.circular(25),\n         gradient: LinearGradient(\n           colors: [\n-            const Color.fromARGB(255, 211, 58, 238).withOpacity(0.6),\n+            Colors.purpleAccent[400]!,\n             const Color.fromARGB(255, 223, 155, 211)\n           ],\n           begin: Alignment.topLeft,\n           end: Alignment.bottomRight,\n"
+                },
+                {
+                    "date": 1659922100973,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n       decoration: BoxDecoration(\n         borderRadius: BorderRadius.circular(25),\n         gradient: LinearGradient(\n           colors: [\n-            Colors.purpleAccent[400]!,\n+            Colors.deepPurpleAccent[400]!,\n             const Color.fromARGB(255, 223, 155, 211)\n           ],\n           begin: Alignment.topLeft,\n           end: Alignment.bottomRight,\n"
+                },
+                {
+                    "date": 1659922138293,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,12 +18,9 @@\n       height: height,\n       decoration: BoxDecoration(\n         borderRadius: BorderRadius.circular(25),\n         gradient: LinearGradient(\n-          colors: [\n-            Colors.deepPurpleAccent[400]!,\n-            const Color.fromARGB(255, 223, 155, 211)\n-          ],\n+          colors: [Colors.deepPurpleAccent[400]!, Colors.transparent],\n           begin: Alignment.topLeft,\n           end: Alignment.bottomRight,\n         ),\n       ),\n"
+                },
+                {
+                    "date": 1659922184992,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,12 +17,12 @@\n       width: width,\n       height: height,\n       decoration: BoxDecoration(\n         borderRadius: BorderRadius.circular(25),\n-        gradient: LinearGradient(\n+        gradient: RadialGradient(\n           colors: [Colors.deepPurpleAccent[400]!, Colors.transparent],\n-          begin: Alignment.topLeft,\n-          end: Alignment.bottomRight,\n+          // begin: Alignment.topLeft,\n+          // end: Alignment.bottomRight,\n         ),\n       ),\n       child: child,\n     );\n"
+                },
+                {
+                    "date": 1659922210669,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,11 @@\n       height: height,\n       decoration: BoxDecoration(\n         borderRadius: BorderRadius.circular(25),\n         gradient: RadialGradient(\n-          colors: [Colors.deepPurpleAccent[400]!, Colors.transparent],\n+          colors: [\n+            Colors.deepPurpleAccent[400]!,\n+          ],\n           // begin: Alignment.topLeft,\n           // end: Alignment.bottomRight,\n         ),\n       ),\n"
+                },
+                {
+                    "date": 1659922221362,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,9 @@\n       decoration: BoxDecoration(\n         borderRadius: BorderRadius.circular(25),\n         gradient: RadialGradient(\n           colors: [\n+            Colors.transparent,\n             Colors.deepPurpleAccent[400]!,\n           ],\n           // begin: Alignment.topLeft,\n           // end: Alignment.bottomRight,\n"
+                },
+                {
+                    "date": 1659922239113,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n         borderRadius: BorderRadius.circular(25),\n         gradient: RadialGradient(\n           colors: [\n             Colors.transparent,\n-            Colors.deepPurpleAccent[400]!,\n+            Colors.deepPurpleAccent[400]!.withOpacity(.5),\n           ],\n           // begin: Alignment.topLeft,\n           // end: Alignment.bottomRight,\n         ),\n"
+                },
+                {
+                    "date": 1659922247672,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n         borderRadius: BorderRadius.circular(25),\n         gradient: RadialGradient(\n           colors: [\n             Colors.transparent,\n-            Colors.deepPurpleAccent[400]!.withOpacity(.5),\n+            Colors.deepPurpleAccent[400]!.withOpacity(.7),\n           ],\n           // begin: Alignment.topLeft,\n           // end: Alignment.bottomRight,\n         ),\n"
+                },
+                {
+                    "date": 1659922264314,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n         borderRadius: BorderRadius.circular(25),\n         gradient: RadialGradient(\n           colors: [\n             Colors.transparent,\n-            Colors.deepPurpleAccent[400]!.withOpacity(.7),\n+            Colors.deepPurpleAccent[400]!.withOpacity(.6),\n           ],\n           // begin: Alignment.topLeft,\n           // end: Alignment.bottomRight,\n         ),\n"
+                }
+            ],
+            "date": 1659918103293,
+            "name": "Commit-0",
+            "content": "import 'package:flutter/material.dart';\n\nclass MyCard extends StatelessWidget {\n  final double width;\n  final double height;\n  const MyCard({Key? key, required this.width, required this.height})\n      : super(key: key);\n\n  @override\n  Widget build(BuildContext context) {\n    return Container(\n      width: width,\n      height: height,\n      decoration: BoxDecoration(\n        borderRadius: BorderRadius.circular(25),\n        gradient: LinearGradient(\n          colors: [\n            const Color.fromARGB(255, 211, 58, 238).withOpacity(0.6),\n            const Color.fromARGB(255, 223, 155, 211)\n          ],\n          begin: Alignment.topLeft,\n          end: Alignment.bottomRight,\n        ),\n      ),\n    );\n  }\n}\n"
+        }
+    ]
+}

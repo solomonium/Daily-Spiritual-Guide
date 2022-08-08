@@ -2,7 +2,6 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:spiritual_daily_guide/nav_pages.dart';
-import 'package:spiritual_daily_guide/presentations/homepage.dart';
 import 'package:spiritual_daily_guide/widgets/app_text.dart';
 import 'package:spiritual_daily_guide/widgets/helper_tools.dart';
 import 'package:spiritual_daily_guide/widgets/input_field.dart';
@@ -25,6 +24,7 @@ class _SignInPageState extends State<SignInPage> {
   bool nameVisibilty = false;
   bool confirmPinVisibilty = false;
   bool isSignIn = true;
+  bool verifying = false;
 
   void _incrementCounter() {
     setState(() {
@@ -119,11 +119,15 @@ class _SignInPageState extends State<SignInPage> {
                                                     const Dashboard()),
                                           );
                                         },
-                                        child: AppText(
-                                          text: 'Sign In',
-                                          size: 20,
-                                          color: Colors.white,
-                                        ))
+                                        child: verifying
+                                            ? const Center(
+                                                child:
+                                                    CircularProgressIndicator())
+                                            : AppText(
+                                                text: 'Sign In',
+                                                size: 20,
+                                                color: Colors.white,
+                                              ))
                                     : ElevatedButton(
                                         onPressed: () {},
                                         child: AppText(

@@ -56,16 +56,17 @@ class _DashboardState extends State<Dashboard> {
               label: "Bible",
               icon: Padding(
                 padding: EdgeInsets.only(top: 14.0, bottom: 7),
-                child: SizedBox(width: 18, height: 18, child: Icon(Icons.work)),
+                child: SizedBox(
+                    width: 18,
+                    height: 18,
+                    child: Icon(Icons.menu_book_rounded)),
               )),
           BottomNavigationBarItem(
               label: "Favorites",
               icon: Padding(
                 padding: EdgeInsets.only(top: 14.0, bottom: 7),
                 child: SizedBox(
-                    width: 18,
-                    height: 18,
-                    child: Icon(Icons.engineering_sharp)),
+                    width: 18, height: 18, child: Icon(Icons.favorite)),
               )),
           BottomNavigationBarItem(
               label: "Settings",

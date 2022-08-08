@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 2,
+            "activePatchIndex": 17,
             "patches": [
                 {
                     "date": 1659731868624,
@@ -16,6 +16,66 @@
                 {
                     "date": 1659736022538,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n import 'dart:ui';\n \n import 'package:flutter/material.dart';\n+import 'package:spiritual_daily_guide/nav_pages.dart';\n import 'package:spiritual_daily_guide/presentations/homepage.dart';\n import 'package:spiritual_daily_guide/widgets/app_text.dart';\n import 'package:spiritual_daily_guide/widgets/helper_tools.dart';\n import 'package:spiritual_daily_guide/widgets/input_field.dart';\n@@ -114,9 +115,9 @@\n                                           Navigator.push(\n                                             context,\n                                             MaterialPageRoute(\n                                                 builder: (context) =>\n-                                                    const HomePage()),\n+                                                    const Dashboard()),\n                                           );\n                                         },\n                                         child: AppText(\n                                           text: 'Sign In',\n"
+                },
+                {
+                    "date": 1659847300705,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,8 +24,9 @@\n   int _counter = 0;\n   bool nameVisibilty = false;\n   bool confirmPinVisibilty = false;\n   bool isSignIn = true;\n+  bool verify = false;\n \n   void _incrementCounter() {\n     setState(() {\n       _counter++;\n"
+                },
+                {
+                    "date": 1659847540417,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n   int _counter = 0;\n   bool nameVisibilty = false;\n   bool confirmPinVisibilty = false;\n   bool isSignIn = true;\n-  bool verify = false;\n+  bool verifying = false;\n \n   void _incrementCounter() {\n     setState(() {\n       _counter++;\n@@ -112,14 +112,17 @@\n                                 addVerticalSpace(30),\n                                 isSignIn\n                                     ? ElevatedButton(\n                                         onPressed: () {\n-                                          Navigator.push(\n-                                            context,\n-                                            MaterialPageRoute(\n-                                                builder: (context) =>\n-                                                    const Dashboard()),\n-                                          );\n+                                          if (verifying) {\n+                                            CircularProgressIndicator();\n+                                            Navigator.push(\n+                                              context,\n+                                              MaterialPageRoute(\n+                                                  builder: (context) =>\n+                                                      const Dashboard()),\n+                                            );\n+                                          }\n                                         },\n                                         child: AppText(\n                                           text: 'Sign In',\n                                           size: 20,\n"
+                },
+                {
+                    "date": 1659847565668,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n   int _counter = 0;\n   bool nameVisibilty = false;\n   bool confirmPinVisibilty = false;\n   bool isSignIn = true;\n-  bool verifying = false;\n+  bool verifying = true;\n \n   void _incrementCounter() {\n     setState(() {\n       _counter++;\n"
+                },
+                {
+                    "date": 1659847591764,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -113,9 +113,9 @@\n                                 isSignIn\n                                     ? ElevatedButton(\n                                         onPressed: () {\n                                           if (verifying) {\n-                                            CircularProgressIndicator();\n+                                            const CircularProgressIndicator();\n                                             Navigator.push(\n                                               context,\n                                               MaterialPageRoute(\n                                                   builder: (context) =>\n"
+                },
+                {
+                    "date": 1659847661832,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n   int _counter = 0;\n   bool nameVisibilty = false;\n   bool confirmPinVisibilty = false;\n   bool isSignIn = true;\n-  bool verifying = true;\n+  bool verifying = false;\n \n   void _incrementCounter() {\n     setState(() {\n       _counter++;\n"
+                },
+                {
+                    "date": 1659847702673,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n   int _counter = 0;\n   bool nameVisibilty = false;\n   bool confirmPinVisibilty = false;\n   bool isSignIn = true;\n-  bool verifying = false;\n+  bool verifying = true;\n \n   void _incrementCounter() {\n     setState(() {\n       _counter++;\n"
+                },
+                {
+                    "date": 1659847813851,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -120,8 +120,10 @@\n                                               MaterialPageRoute(\n                                                   builder: (context) =>\n                                                       const Dashboard()),\n                                             );\n+                                          } else {\n+                                            const CircularProgressIndicator();\n                                           }\n                                         },\n                                         child: AppText(\n                                           text: 'Sign In',\n"
+                },
+                {
+                    "date": 1659847825545,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -113,9 +113,8 @@\n                                 isSignIn\n                                     ? ElevatedButton(\n                                         onPressed: () {\n                                           if (verifying) {\n-                                            const CircularProgressIndicator();\n                                             Navigator.push(\n                                               context,\n                                               MaterialPageRoute(\n                                                   builder: (context) =>\n"
+                },
+                {
+                    "date": 1659847840729,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -120,9 +120,11 @@\n                                                   builder: (context) =>\n                                                       const Dashboard()),\n                                             );\n                                           } else {\n-                                            const CircularProgressIndicator();\n+                                            const Center(\n+                                                child:\n+                                                    CircularProgressIndicator());\n                                           }\n                                         },\n                                         child: AppText(\n                                           text: 'Sign In',\n"
+                },
+                {
+                    "date": 1659847860106,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,8 @@\n import 'dart:ui';\n \n import 'package:flutter/material.dart';\n import 'package:spiritual_daily_guide/nav_pages.dart';\n-import 'package:spiritual_daily_guide/presentations/homepage.dart';\n import 'package:spiritual_daily_guide/widgets/app_text.dart';\n import 'package:spiritual_daily_guide/widgets/helper_tools.dart';\n import 'package:spiritual_daily_guide/widgets/input_field.dart';\n \n"
+                },
+                {
+                    "date": 1659847867573,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n   int _counter = 0;\n   bool nameVisibilty = false;\n   bool confirmPinVisibilty = false;\n   bool isSignIn = true;\n-  bool verifying = true;\n+  bool verifying = false;\n \n   void _incrementCounter() {\n     setState(() {\n       _counter++;\n"
+                },
+                {
+                    "date": 1659847938652,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -111,9 +111,9 @@\n                                 addVerticalSpace(30),\n                                 isSignIn\n                                     ? ElevatedButton(\n                                         onPressed: () {\n-                                          if (verifying) {\n+                                          if (verifying == true) {\n                                             Navigator.push(\n                                               context,\n                                               MaterialPageRoute(\n                                                   builder: (context) =>\n"
+                },
+                {
+                    "date": 1659848024672,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -111,20 +111,14 @@\n                                 addVerticalSpace(30),\n                                 isSignIn\n                                     ? ElevatedButton(\n                                         onPressed: () {\n-                                          if (verifying == true) {\n-                                            Navigator.push(\n-                                              context,\n-                                              MaterialPageRoute(\n-                                                  builder: (context) =>\n-                                                      const Dashboard()),\n-                                            );\n-                                          } else {\n-                                            const Center(\n-                                                child:\n-                                                    CircularProgressIndicator());\n-                                          }\n+                                          Navigator.push(\n+                                            context,\n+                                            MaterialPageRoute(\n+                                                builder: (context) =>\n+                                                    const Dashboard()),\n+                                          );\n                                         },\n                                         child: AppText(\n                                           text: 'Sign In',\n                                           size: 20,\n"
+                },
+                {
+                    "date": 1659848088831,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -118,13 +118,15 @@\n                                                 builder: (context) =>\n                                                     const Dashboard()),\n                                           );\n                                         },\n-                                        child: AppText(\n-                                          text: 'Sign In',\n-                                          size: 20,\n-                                          color: Colors.white,\n-                                        ))\n+                                        child: verifying\n+                                            ? const CircularProgressIndicator()\n+                                            : AppText(\n+                                                text: 'Sign In',\n+                                                size: 20,\n+                                                color: Colors.white,\n+                                              ))\n                                     : ElevatedButton(\n                                         onPressed: () {},\n                                         child: AppText(\n                                           text: 'Sign Up',\n"
+                },
+                {
+                    "date": 1659848106737,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -119,9 +119,11 @@\n                                                     const Dashboard()),\n                                           );\n                                         },\n                                         child: verifying\n-                                            ? const CircularProgressIndicator()\n+                                            ? const Center(\n+                                                child:\n+                                                    CircularProgressIndicator())\n                                             : AppText(\n                                                 text: 'Sign In',\n                                                 size: 20,\n                                                 color: Colors.white,\n"
                 }
             ],
             "date": 1659731868624,
