@@ -1,8 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:shimmer/shimmer.dart';
-import 'package:spiritual_daily_guide/widgets/app_text.dart';
 
 import '../widgets/app_large_text.dart';
 import '../widgets/shimmer_widget.dart';

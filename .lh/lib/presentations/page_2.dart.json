@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 29,
+            "activePatchIndex": 30,
             "patches": [
                 {
                     "date": 1659735498566,
@@ -124,6 +124,10 @@
                 {
                     "date": 1659846860495,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,15 +23,15 @@\n       body: Padding(\n         padding: const EdgeInsets.all(8.0),\n         child: Center(\n           child: ListView(\n-            children: const [\n-              // ListView.builder(\n-              //     shrinkWrap: true,\n-              //     itemCount: 1,\n-              //     itemBuilder: (context, index) {\n-              //       return buildFoodShimmer();\n-              //     })\n+            children: [\n+              ListView.builder(\n+                  shrinkWrap: true,\n+                  itemCount: 1,\n+                  itemBuilder: (context, index) {\n+                    return buildFoodShimmer();\n+                  })\n             ],\n           ),\n         ),\n       ),\n"
+                },
+                {
+                    "date": 1660345278711,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,5 @@\n import 'package:flutter/material.dart';\n-import 'package:flutter/src/foundation/key.dart';\n-import 'package:flutter/src/widgets/framework.dart';\n-import 'package:shimmer/shimmer.dart';\n-import 'package:spiritual_daily_guide/widgets/app_text.dart';\n \n import '../widgets/app_large_text.dart';\n import '../widgets/shimmer_widget.dart';\n \n"
                 }
             ],
             "date": 1659735498566,

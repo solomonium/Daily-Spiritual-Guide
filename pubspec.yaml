@@ -63,6 +63,10 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/DSG_bg.jpeg
+    - assets/spirit_of_God.png
+    - assets/spirit_1.png
+    - assets/spirit of God.jpeg
+    - assets/Holy spirit.jpeg
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

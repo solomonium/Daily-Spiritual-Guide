@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 17,
+            "activePatchIndex": 35,
             "patches": [
                 {
                     "date": 1659731868624,
@@ -76,6 +76,78 @@
                 {
                     "date": 1659848106737,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -119,9 +119,11 @@\n                                                     const Dashboard()),\n                                           );\n                                         },\n                                         child: verifying\n-                                            ? const CircularProgressIndicator()\n+                                            ? const Center(\n+                                                child:\n+                                                    CircularProgressIndicator())\n                                             : AppText(\n                                                 text: 'Sign In',\n                                                 size: 20,\n                                                 color: Colors.white,\n"
+                },
+                {
+                    "date": 1659923032290,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,9 +66,9 @@\n                         filter: ImageFilter.blur(sigmaX: 2, sigmaY: 2),\n                         child: Container(\n                           // height: MediaQuery.of(context).size.height * 0.65,\n                           width: MediaQuery.of(context).size.width * 0.8,\n-                          color: Colors.grey.withOpacity(0.5),\n+                          color: Colors.grey.withOpacity(0.7),\n                           child: Padding(\n                             padding: const EdgeInsets.symmetric(\n                                 vertical: 0, horizontal: 30),\n                             child: ListView(\n"
+                },
+                {
+                    "date": 1659923038924,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,9 +66,9 @@\n                         filter: ImageFilter.blur(sigmaX: 2, sigmaY: 2),\n                         child: Container(\n                           // height: MediaQuery.of(context).size.height * 0.65,\n                           width: MediaQuery.of(context).size.width * 0.8,\n-                          color: Colors.grey.withOpacity(0.7),\n+                          color: Colors.grey.withOpacity(0.3),\n                           child: Padding(\n                             padding: const EdgeInsets.symmetric(\n                                 vertical: 0, horizontal: 30),\n                             child: ListView(\n"
+                },
+                {
+                    "date": 1659923046838,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,9 +66,9 @@\n                         filter: ImageFilter.blur(sigmaX: 2, sigmaY: 2),\n                         child: Container(\n                           // height: MediaQuery.of(context).size.height * 0.65,\n                           width: MediaQuery.of(context).size.width * 0.8,\n-                          color: Colors.grey.withOpacity(0.3),\n+                          color: Colors.grey.withOpacity(0.2),\n                           child: Padding(\n                             padding: const EdgeInsets.symmetric(\n                                 vertical: 0, horizontal: 30),\n                             child: ListView(\n"
+                },
+                {
+                    "date": 1659923060636,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,9 +66,9 @@\n                         filter: ImageFilter.blur(sigmaX: 2, sigmaY: 2),\n                         child: Container(\n                           // height: MediaQuery.of(context).size.height * 0.65,\n                           width: MediaQuery.of(context).size.width * 0.8,\n-                          color: Colors.grey.withOpacity(0.2),\n+                          color: Colors.grey.withOpacity(0.1),\n                           child: Padding(\n                             padding: const EdgeInsets.symmetric(\n                                 vertical: 0, horizontal: 30),\n                             child: ListView(\n"
+                },
+                {
+                    "date": 1659923077166,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,9 +66,9 @@\n                         filter: ImageFilter.blur(sigmaX: 2, sigmaY: 2),\n                         child: Container(\n                           // height: MediaQuery.of(context).size.height * 0.65,\n                           width: MediaQuery.of(context).size.width * 0.8,\n-                          color: Colors.grey.withOpacity(0.1),\n+                          color: Colors.grey.withOpacity(0.0),\n                           child: Padding(\n                             padding: const EdgeInsets.symmetric(\n                                 vertical: 0, horizontal: 30),\n                             child: ListView(\n"
+                },
+                {
+                    "date": 1659923088837,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,9 +66,9 @@\n                         filter: ImageFilter.blur(sigmaX: 2, sigmaY: 2),\n                         child: Container(\n                           // height: MediaQuery.of(context).size.height * 0.65,\n                           width: MediaQuery.of(context).size.width * 0.8,\n-                          color: Colors.grey.withOpacity(0.0),\n+                          color: Colors.grey.withOpacity(0.3),\n                           child: Padding(\n                             padding: const EdgeInsets.symmetric(\n                                 vertical: 0, horizontal: 30),\n                             child: ListView(\n"
+                },
+                {
+                    "date": 1659923252636,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,10 @@\n         Container(\n           width: double.infinity,\n           decoration: const BoxDecoration(\n             image: DecorationImage(\n-                image: AssetImage(\"assets/DSG_bg.jpeg\"), fit: BoxFit.cover),\n+                image: AssetImage(\"assets/Holy spirit.jpeg\"),\n+                fit: BoxFit.cover),\n           ),\n         ),\n         Align(\n           alignment: Alignment.center,\n"
+                },
+                {
+                    "date": 1659923273100,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,10 +43,9 @@\n         Container(\n           width: double.infinity,\n           decoration: const BoxDecoration(\n             image: DecorationImage(\n-                image: AssetImage(\"assets/Holy spirit.jpeg\"),\n-                fit: BoxFit.cover),\n+                image: AssetImage(\"assets/Holy spirit.jpeg\"), fit: BoxFit.fill),\n           ),\n         ),\n         Align(\n           alignment: Alignment.center,\n"
+                },
+                {
+                    "date": 1659923288258,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,10 @@\n         Container(\n           width: double.infinity,\n           decoration: const BoxDecoration(\n             image: DecorationImage(\n-                image: AssetImage(\"assets/Holy spirit.jpeg\"), fit: BoxFit.fill),\n+                image: AssetImage(\"assets/Holy spirit.jpeg\"),\n+                fit: BoxFit.contain),\n           ),\n         ),\n         Align(\n           alignment: Alignment.center,\n"
+                },
+                {
+                    "date": 1659923307329,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n           width: double.infinity,\n           decoration: const BoxDecoration(\n             image: DecorationImage(\n                 image: AssetImage(\"assets/Holy spirit.jpeg\"),\n-                fit: BoxFit.contain),\n+                fit: BoxFit.fitHeight),\n           ),\n         ),\n         Align(\n           alignment: Alignment.center,\n"
+                },
+                {
+                    "date": 1659923335509,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n         Container(\n           width: double.infinity,\n           decoration: const BoxDecoration(\n             image: DecorationImage(\n-                image: AssetImage(\"assets/Holy spirit.jpeg\"),\n+                image: AssetImage(\"assets/spirit of God.jpeg\"),\n                 fit: BoxFit.fitHeight),\n           ),\n         ),\n         Align(\n"
+                },
+                {
+                    "date": 1659923375399,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n         Container(\n           width: double.infinity,\n           decoration: const BoxDecoration(\n             image: DecorationImage(\n-                image: AssetImage(\"assets/spirit of God.jpeg\"),\n+                image: AssetImage(\"assets/spirit_1.png\"),\n                 fit: BoxFit.fitHeight),\n           ),\n         ),\n         Align(\n"
+                },
+                {
+                    "date": 1659923402343,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n         Container(\n           width: double.infinity,\n           decoration: const BoxDecoration(\n             image: DecorationImage(\n-                image: AssetImage(\"assets/spirit_1.png\"),\n+                image: AssetImage(\"assets/spirit_of_God.png\"),\n                 fit: BoxFit.fitHeight),\n           ),\n         ),\n         Align(\n"
+                },
+                {
+                    "date": 1659923420655,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n           width: double.infinity,\n           decoration: const BoxDecoration(\n             image: DecorationImage(\n                 image: AssetImage(\"assets/spirit_of_God.png\"),\n-                fit: BoxFit.fitHeight),\n+                fit: BoxFit.cover),\n           ),\n         ),\n         Align(\n           alignment: Alignment.center,\n"
+                },
+                {
+                    "date": 1659923452293,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,10 +43,9 @@\n         Container(\n           width: double.infinity,\n           decoration: const BoxDecoration(\n             image: DecorationImage(\n-                image: AssetImage(\"assets/spirit_of_God.png\"),\n-                fit: BoxFit.cover),\n+                image: AssetImage(\"assets/DSG_bg\"), fit: BoxFit.cover),\n           ),\n         ),\n         Align(\n           alignment: Alignment.center,\n"
+                },
+                {
+                    "date": 1659923473338,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n         Container(\n           width: double.infinity,\n           decoration: const BoxDecoration(\n             image: DecorationImage(\n-                image: AssetImage(\"assets/DSG_bg\"), fit: BoxFit.cover),\n+                image: AssetImage(\"assets/DSG_bg.jpeg\"), fit: BoxFit.cover),\n           ),\n         ),\n         Align(\n           alignment: Alignment.center,\n"
+                },
+                {
+                    "date": 1659923653458,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n         Container(\n           width: double.infinity,\n           decoration: const BoxDecoration(\n             image: DecorationImage(\n-                image: AssetImage(\"assets/DSG_bg.jpeg\"), fit: BoxFit.cover),\n+                image: AssetImage(\"assets/bgVideo2.mp4\"), fit: BoxFit.cover),\n           ),\n         ),\n         Align(\n           alignment: Alignment.center,\n"
+                },
+                {
+                    "date": 1659923797259,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n         Container(\n           width: double.infinity,\n           decoration: const BoxDecoration(\n             image: DecorationImage(\n-                image: AssetImage(\"assets/bgVideo2.mp4\"), fit: BoxFit.cover),\n+                image: AssetImage(\"assets/DSG_bg.jpeg\"), fit: BoxFit.cover),\n           ),\n         ),\n         Align(\n           alignment: Alignment.center,\n"
                 }
             ],
             "date": 1659731868624,

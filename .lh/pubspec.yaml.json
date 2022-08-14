@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 3,
+            "activePatchIndex": 7,
             "patches": [
                 {
                     "date": 1659635001261,
@@ -20,6 +20,22 @@
                 {
                     "date": 1659842963445,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,12 +37,8 @@\n   google_fonts: ^3.0.1\n   validators: ^3.0.0\n   intl: ^0.17.0\n   shimmer: ^2.0.0\n-  stacked: ^2.3.15\n-  stacked_services: ^0.9.4\n-  build_runner: ^2.2.0\n-  stacked_generator: ^0.7.15\n \n dev_dependencies:\n   flutter_test:\n     sdk: flutter\n"
+                },
+                {
+                    "date": 1659922948334,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -62,8 +62,10 @@\n \n   # To add assets to your application, add an assets section, like this:\n   assets:\n     - assets/DSG_bg.jpeg\n+    - assets/spirit_of_God.png\n+    - assets/spirit_1.png\n   #   - images/a_dot_ham.jpeg\n \n   # An image asset can refer to one or more resolution-specific \"variants\", see\n   # https://flutter.dev/assets-and-images/#resolution-aware\n"
+                },
+                {
+                    "date": 1659923212748,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -64,8 +64,10 @@\n   assets:\n     - assets/DSG_bg.jpeg\n     - assets/spirit_of_God.png\n     - assets/spirit_1.png\n+    - assets/spirit of God.jpeg\n+    - assets/Holy spirit.jpeg\n   #   - images/a_dot_ham.jpeg\n \n   # An image asset can refer to one or more resolution-specific \"variants\", see\n   # https://flutter.dev/assets-and-images/#resolution-aware\n"
+                },
+                {
+                    "date": 1659923626712,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,8 +66,9 @@\n     - assets/spirit_of_God.png\n     - assets/spirit_1.png\n     - assets/spirit of God.jpeg\n     - assets/Holy spirit.jpeg\n+    - assets/bgVideo2.mp4\n   #   - images/a_dot_ham.jpeg\n \n   # An image asset can refer to one or more resolution-specific \"variants\", see\n   # https://flutter.dev/assets-and-images/#resolution-aware\n"
+                },
+                {
+                    "date": 1659923946890,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,9 +66,8 @@\n     - assets/spirit_of_God.png\n     - assets/spirit_1.png\n     - assets/spirit of God.jpeg\n     - assets/Holy spirit.jpeg\n-    - assets/bgVideo2.mp4\n   #   - images/a_dot_ham.jpeg\n \n   # An image asset can refer to one or more resolution-specific \"variants\", see\n   # https://flutter.dev/assets-and-images/#resolution-aware\n"
                 }
             ],
             "date": 1659635001260,
