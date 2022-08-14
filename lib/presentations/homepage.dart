@@ -18,7 +18,6 @@ class _HomePageState extends State<HomePage> {
     return SafeArea(
       child: Scaffold(
           endDrawer: Drawer(
-            backgroundColor: Colors.red,
             child: ListView(
               children: const [
                 ListTile(
