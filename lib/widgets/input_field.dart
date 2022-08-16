@@ -37,7 +37,7 @@ class InputFieldWidget extends StatelessWidget {
         children: [
           AppText(
             text: labelText,
-            color: Colors.white,
+            color: Colors.black,
           ),
           addVerticalSpace(12),
           SizedBox(

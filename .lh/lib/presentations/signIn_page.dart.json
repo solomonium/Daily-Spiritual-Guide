@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 35,
+            "activePatchIndex": 79,
             "patches": [
                 {
                     "date": 1659731868624,
@@ -148,6 +148,182 @@
                 {
                     "date": 1659923797259,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n         Container(\n           width: double.infinity,\n           decoration: const BoxDecoration(\n             image: DecorationImage(\n-                image: AssetImage(\"assets/bgVideo2.mp4\"), fit: BoxFit.cover),\n+                image: AssetImage(\"assets/DSG_bg.jpeg\"), fit: BoxFit.cover),\n           ),\n         ),\n         Align(\n           alignment: Alignment.center,\n"
+                },
+                {
+                    "date": 1660597839288,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,12 +41,8 @@\n     return Scaffold(\n       body: Stack(children: [\n         Container(\n           width: double.infinity,\n-          decoration: const BoxDecoration(\n-            image: DecorationImage(\n-                image: AssetImage(\"assets/DSG_bg.jpeg\"), fit: BoxFit.cover),\n-          ),\n         ),\n         Align(\n           alignment: Alignment.center,\n           child: Center(\n"
+                },
+                {
+                    "date": 1660598042273,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,8 +40,9 @@\n   Widget build(BuildContext context) {\n     return Scaffold(\n       body: Stack(children: [\n         Container(\n+          color: Color.fromRGBO(113, 21, 156, 0),\n           width: double.infinity,\n         ),\n         Align(\n           alignment: Alignment.center,\n"
+                },
+                {
+                    "date": 1660598057224,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n   Widget build(BuildContext context) {\n     return Scaffold(\n       body: Stack(children: [\n         Container(\n-          color: Color.fromRGBO(113, 21, 156, 0),\n+          color: Color.fromRGBO(113, 21, 156, 1),\n           width: double.infinity,\n         ),\n         Align(\n           alignment: Alignment.center,\n"
+                },
+                {
+                    "date": 1660598118795,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -63,9 +63,9 @@\n                         filter: ImageFilter.blur(sigmaX: 2, sigmaY: 2),\n                         child: Container(\n                           // height: MediaQuery.of(context).size.height * 0.65,\n                           width: MediaQuery.of(context).size.width * 0.8,\n-                          color: Colors.grey.withOpacity(0.3),\n+                          color: Colors.white.withOpacity(0.3),\n                           child: Padding(\n                             padding: const EdgeInsets.symmetric(\n                                 vertical: 0, horizontal: 30),\n                             child: ListView(\n"
+                },
+                {
+                    "date": 1660598144937,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -63,9 +63,9 @@\n                         filter: ImageFilter.blur(sigmaX: 2, sigmaY: 2),\n                         child: Container(\n                           // height: MediaQuery.of(context).size.height * 0.65,\n                           width: MediaQuery.of(context).size.width * 0.8,\n-                          color: Colors.white.withOpacity(0.3),\n+                          color: Colors.white.withOpacity(0),\n                           child: Padding(\n                             padding: const EdgeInsets.symmetric(\n                                 vertical: 0, horizontal: 30),\n                             child: ListView(\n"
+                },
+                {
+                    "date": 1660598152501,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -63,9 +63,9 @@\n                         filter: ImageFilter.blur(sigmaX: 2, sigmaY: 2),\n                         child: Container(\n                           // height: MediaQuery.of(context).size.height * 0.65,\n                           width: MediaQuery.of(context).size.width * 0.8,\n-                          color: Colors.white.withOpacity(0),\n+                          color: Colors.white.withOpacity(0.9),\n                           child: Padding(\n                             padding: const EdgeInsets.symmetric(\n                                 vertical: 0, horizontal: 30),\n                             child: ListView(\n"
+                },
+                {
+                    "date": 1660598279350,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -63,9 +63,9 @@\n                         filter: ImageFilter.blur(sigmaX: 2, sigmaY: 2),\n                         child: Container(\n                           // height: MediaQuery.of(context).size.height * 0.65,\n                           width: MediaQuery.of(context).size.width * 0.8,\n-                          color: Colors.white.withOpacity(0.9),\n+                          color: Colors.white.withOpacity(0.7),\n                           child: Padding(\n                             padding: const EdgeInsets.symmetric(\n                                 vertical: 0, horizontal: 30),\n                             child: ListView(\n"
+                },
+                {
+                    "date": 1660598288125,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -63,9 +63,9 @@\n                         filter: ImageFilter.blur(sigmaX: 2, sigmaY: 2),\n                         child: Container(\n                           // height: MediaQuery.of(context).size.height * 0.65,\n                           width: MediaQuery.of(context).size.width * 0.8,\n-                          color: Colors.white.withOpacity(0.7),\n+                          color: Colors.white.withOpacity(0.6),\n                           child: Padding(\n                             padding: const EdgeInsets.symmetric(\n                                 vertical: 0, horizontal: 30),\n                             child: ListView(\n"
+                },
+                {
+                    "date": 1660599068357,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,8 +42,12 @@\n       body: Stack(children: [\n         Container(\n           color: Color.fromRGBO(113, 21, 156, 1),\n           width: double.infinity,\n+          decoration: const BoxDecoration(\n+            image: DecorationImage(\n+                image: AssetImage(\"assets/DSG_bg.jpeg\"), fit: BoxFit.cover),\n+          ),\n         ),\n         Align(\n           alignment: Alignment.center,\n           child: Center(\n"
+                },
+                {
+                    "date": 1660599085633,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n   Widget build(BuildContext context) {\n     return Scaffold(\n       body: Stack(children: [\n         Container(\n-          color: Color.fromRGBO(113, 21, 156, 1),\n+          // color: Color.fromRGBO(113, 21, 156, 1),\n           width: double.infinity,\n           decoration: const BoxDecoration(\n             image: DecorationImage(\n                 image: AssetImage(\"assets/DSG_bg.jpeg\"), fit: BoxFit.cover),\n"
+                },
+                {
+                    "date": 1660600297236,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n           // color: Color.fromRGBO(113, 21, 156, 1),\n           width: double.infinity,\n           decoration: const BoxDecoration(\n             image: DecorationImage(\n-                image: AssetImage(\"assets/DSG_bg.jpeg\"), fit: BoxFit.cover),\n+                image: AssetImage(\"assets/DSG_bg1.jpeg\"), fit: BoxFit.cover),\n           ),\n         ),\n         Align(\n           alignment: Alignment.center,\n"
+                },
+                {
+                    "date": 1660600327197,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n           // color: Color.fromRGBO(113, 21, 156, 1),\n           width: double.infinity,\n           decoration: const BoxDecoration(\n             image: DecorationImage(\n-                image: AssetImage(\"assets/DSG_bg1.jpeg\"), fit: BoxFit.cover),\n+                image: AssetImage(\"assets/DSG_bg1.jpg\"), fit: BoxFit.cover),\n           ),\n         ),\n         Align(\n           alignment: Alignment.center,\n"
+                },
+                {
+                    "date": 1660600432370,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,9 +67,9 @@\n                         filter: ImageFilter.blur(sigmaX: 2, sigmaY: 2),\n                         child: Container(\n                           // height: MediaQuery.of(context).size.height * 0.65,\n                           width: MediaQuery.of(context).size.width * 0.8,\n-                          color: Colors.white.withOpacity(0.6),\n+                          color: Colors.white.withOpacity(0.7),\n                           child: Padding(\n                             padding: const EdgeInsets.symmetric(\n                                 vertical: 0, horizontal: 30),\n                             child: ListView(\n"
+                },
+                {
+                    "date": 1660600442669,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,9 +67,9 @@\n                         filter: ImageFilter.blur(sigmaX: 2, sigmaY: 2),\n                         child: Container(\n                           // height: MediaQuery.of(context).size.height * 0.65,\n                           width: MediaQuery.of(context).size.width * 0.8,\n-                          color: Colors.white.withOpacity(0.7),\n+                          color: Colors.white.withOpacity(0.4),\n                           child: Padding(\n                             padding: const EdgeInsets.symmetric(\n                                 vertical: 0, horizontal: 30),\n                             child: ListView(\n"
+                },
+                {
+                    "date": 1660600499822,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,10 +27,8 @@\n   bool verifying = false;\n \n   void _incrementCounter() {\n     setState(() {\n-      _counter++;\n-      print(_counter);\n       nameVisibilty = !nameVisibilty;\n       confirmPinVisibilty = !confirmPinVisibilty;\n       isSignIn = !isSignIn;\n     });\n"
+                },
+                {
+                    "date": 1660600538516,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -65,9 +65,11 @@\n                         filter: ImageFilter.blur(sigmaX: 2, sigmaY: 2),\n                         child: Container(\n                           // height: MediaQuery.of(context).size.height * 0.65,\n                           width: MediaQuery.of(context).size.width * 0.8,\n-                          color: Colors.white.withOpacity(0.4),\n+                          color:\n+                              Color.fromRGBO(113, 21, 156, 1).withOpacity(0.4),\n+                          // color: Colors.white.withOpacity(0.4),\n                           child: Padding(\n                             padding: const EdgeInsets.symmetric(\n                                 vertical: 0, horizontal: 30),\n                             child: ListView(\n"
+                },
+                {
+                    "date": 1660600559728,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,9 +66,9 @@\n                         child: Container(\n                           // height: MediaQuery.of(context).size.height * 0.65,\n                           width: MediaQuery.of(context).size.width * 0.8,\n                           color:\n-                              Color.fromRGBO(113, 21, 156, 1).withOpacity(0.4),\n+                              Color.fromRGBO(113, 21, 156, 1).withOpacity(0.7),\n                           // color: Colors.white.withOpacity(0.4),\n                           child: Padding(\n                             padding: const EdgeInsets.symmetric(\n                                 vertical: 0, horizontal: 30),\n"
+                },
+                {
+                    "date": 1660600571351,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,9 +66,9 @@\n                         child: Container(\n                           // height: MediaQuery.of(context).size.height * 0.65,\n                           width: MediaQuery.of(context).size.width * 0.8,\n                           color:\n-                              Color.fromRGBO(113, 21, 156, 1).withOpacity(0.7),\n+                              Color.fromRGBO(113, 21, 156, 1).withOpacity(0.1),\n                           // color: Colors.white.withOpacity(0.4),\n                           child: Padding(\n                             padding: const EdgeInsets.symmetric(\n                                 vertical: 0, horizontal: 30),\n"
+                },
+                {
+                    "date": 1660600577804,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,9 +66,9 @@\n                         child: Container(\n                           // height: MediaQuery.of(context).size.height * 0.65,\n                           width: MediaQuery.of(context).size.width * 0.8,\n                           color:\n-                              Color.fromRGBO(113, 21, 156, 1).withOpacity(0.1),\n+                              Color.fromRGBO(113, 21, 156, 1).withOpacity(0.3),\n                           // color: Colors.white.withOpacity(0.4),\n                           child: Padding(\n                             padding: const EdgeInsets.symmetric(\n                                 vertical: 0, horizontal: 30),\n"
+                },
+                {
+                    "date": 1660600583128,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,9 +66,9 @@\n                         child: Container(\n                           // height: MediaQuery.of(context).size.height * 0.65,\n                           width: MediaQuery.of(context).size.width * 0.8,\n                           color:\n-                              Color.fromRGBO(113, 21, 156, 1).withOpacity(0.3),\n+                              Color.fromRGBO(113, 21, 156, 1).withOpacity(0.7),\n                           // color: Colors.white.withOpacity(0.4),\n                           child: Padding(\n                             padding: const EdgeInsets.symmetric(\n                                 vertical: 0, horizontal: 30),\n"
+                },
+                {
+                    "date": 1660600597147,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,9 +66,9 @@\n                         child: Container(\n                           // height: MediaQuery.of(context).size.height * 0.65,\n                           width: MediaQuery.of(context).size.width * 0.8,\n                           color:\n-                              Color.fromRGBO(113, 21, 156, 1).withOpacity(0.7),\n+                              Color.fromRGBO(113, 21, 156, 1).withOpacity(0.6),\n                           // color: Colors.white.withOpacity(0.4),\n                           child: Padding(\n                             padding: const EdgeInsets.symmetric(\n                                 vertical: 0, horizontal: 30),\n"
+                },
+                {
+                    "date": 1660600614658,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -65,10 +65,10 @@\n                         filter: ImageFilter.blur(sigmaX: 2, sigmaY: 2),\n                         child: Container(\n                           // height: MediaQuery.of(context).size.height * 0.65,\n                           width: MediaQuery.of(context).size.width * 0.8,\n-                          color:\n-                              Color.fromRGBO(113, 21, 156, 1).withOpacity(0.6),\n+                          color: Color.fromARGB(255, 172, 128, 193)\n+                              .withOpacity(0.5),\n                           // color: Colors.white.withOpacity(0.4),\n                           child: Padding(\n                             padding: const EdgeInsets.symmetric(\n                                 vertical: 0, horizontal: 30),\n"
+                },
+                {
+                    "date": 1660600627939,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -65,9 +65,9 @@\n                         filter: ImageFilter.blur(sigmaX: 2, sigmaY: 2),\n                         child: Container(\n                           // height: MediaQuery.of(context).size.height * 0.65,\n                           width: MediaQuery.of(context).size.width * 0.8,\n-                          color: Color.fromARGB(255, 172, 128, 193)\n+                          color: Color.fromARGB(255, 107, 74, 123)\n                               .withOpacity(0.5),\n                           // color: Colors.white.withOpacity(0.4),\n                           child: Padding(\n                             padding: const EdgeInsets.symmetric(\n"
+                },
+                {
+                    "date": 1660600633653,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -65,9 +65,9 @@\n                         filter: ImageFilter.blur(sigmaX: 2, sigmaY: 2),\n                         child: Container(\n                           // height: MediaQuery.of(context).size.height * 0.65,\n                           width: MediaQuery.of(context).size.width * 0.8,\n-                          color: Color.fromARGB(255, 107, 74, 123)\n+                          color: Color.fromARGB(255, 203, 151, 229)\n                               .withOpacity(0.5),\n                           // color: Colors.white.withOpacity(0.4),\n                           child: Padding(\n                             padding: const EdgeInsets.symmetric(\n"
+                },
+                {
+                    "date": 1660600643756,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,9 +66,9 @@\n                         child: Container(\n                           // height: MediaQuery.of(context).size.height * 0.65,\n                           width: MediaQuery.of(context).size.width * 0.8,\n                           color: Color.fromARGB(255, 203, 151, 229)\n-                              .withOpacity(0.5),\n+                              .withOpacity(0.7),\n                           // color: Colors.white.withOpacity(0.4),\n                           child: Padding(\n                             padding: const EdgeInsets.symmetric(\n                                 vertical: 0, horizontal: 30),\n"
+                },
+                {
+                    "date": 1660600649770,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,9 +66,9 @@\n                         child: Container(\n                           // height: MediaQuery.of(context).size.height * 0.65,\n                           width: MediaQuery.of(context).size.width * 0.8,\n                           color: Color.fromARGB(255, 203, 151, 229)\n-                              .withOpacity(0.7),\n+                              .withOpacity(0.4),\n                           // color: Colors.white.withOpacity(0.4),\n                           child: Padding(\n                             padding: const EdgeInsets.symmetric(\n                                 vertical: 0, horizontal: 30),\n"
+                },
+                {
+                    "date": 1660600865142,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,9 +42,9 @@\n           // color: Color.fromRGBO(113, 21, 156, 1),\n           width: double.infinity,\n           decoration: const BoxDecoration(\n             image: DecorationImage(\n-                image: AssetImage(\"assets/DSG_bg1.jpg\"), fit: BoxFit.cover),\n+                image: AssetImage(\"assets/DSG_2.jpg\"), fit: BoxFit.cover),\n           ),\n         ),\n         Align(\n           alignment: Alignment.center,\n"
+                },
+                {
+                    "date": 1660600874410,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,9 +42,9 @@\n           // color: Color.fromRGBO(113, 21, 156, 1),\n           width: double.infinity,\n           decoration: const BoxDecoration(\n             image: DecorationImage(\n-                image: AssetImage(\"assets/DSG_2.jpg\"), fit: BoxFit.cover),\n+                image: AssetImage(\"assets/DSG_2.png\"), fit: BoxFit.cover),\n           ),\n         ),\n         Align(\n           alignment: Alignment.center,\n"
+                },
+                {
+                    "date": 1660600946341,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,10 +40,11 @@\n       body: Stack(children: [\n         Container(\n           // color: Color.fromRGBO(113, 21, 156, 1),\n           width: double.infinity,\n-          decoration: const BoxDecoration(\n-            image: DecorationImage(\n+          decoration: BoxDecoration(\n+            backgroundBlendMode: BlendMode.darken,\n+            image: const DecorationImage(\n                 image: AssetImage(\"assets/DSG_2.png\"), fit: BoxFit.cover),\n           ),\n         ),\n         Align(\n"
+                },
+                {
+                    "date": 1660600987036,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,9 +41,9 @@\n         Container(\n           // color: Color.fromRGBO(113, 21, 156, 1),\n           width: double.infinity,\n           decoration: BoxDecoration(\n-            backgroundBlendMode: BlendMode.darken,\n+            // backgroundBlendMode: BlendMode,\n             image: const DecorationImage(\n                 image: AssetImage(\"assets/DSG_2.png\"), fit: BoxFit.cover),\n           ),\n         ),\n"
+                },
+                {
+                    "date": 1660600995232,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,11 +40,11 @@\n       body: Stack(children: [\n         Container(\n           // color: Color.fromRGBO(113, 21, 156, 1),\n           width: double.infinity,\n-          decoration: BoxDecoration(\n+          decoration: const BoxDecoration(\n             // backgroundBlendMode: BlendMode,\n-            image: const DecorationImage(\n+            image: DecorationImage(\n                 image: AssetImage(\"assets/DSG_2.png\"), fit: BoxFit.cover),\n           ),\n         ),\n         Align(\n"
+                },
+                {
+                    "date": 1660601035794,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,11 +38,11 @@\n   Widget build(BuildContext context) {\n     return Scaffold(\n       body: Stack(children: [\n         Container(\n-          // color: Color.fromRGBO(113, 21, 156, 1),\n           width: double.infinity,\n           decoration: const BoxDecoration(\n+            color: Color.fromRGBO(113, 21, 156, 1),\n             // backgroundBlendMode: BlendMode,\n             image: DecorationImage(\n                 image: AssetImage(\"assets/DSG_2.png\"), fit: BoxFit.cover),\n           ),\n"
+                },
+                {
+                    "date": 1660601122905,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,12 @@\n           decoration: const BoxDecoration(\n             color: Color.fromRGBO(113, 21, 156, 1),\n             // backgroundBlendMode: BlendMode,\n             image: DecorationImage(\n-                image: AssetImage(\"assets/DSG_2.png\"), fit: BoxFit.cover),\n+                colorFilter: ColorFilter.mode(\n+                    Color.fromRGBO(113, 21, 156, 1), BlendMode.darken),\n+                image: AssetImage(\"assets/DSG_2.png\"),\n+                fit: BoxFit.cover),\n           ),\n         ),\n         Align(\n           alignment: Alignment.center,\n"
+                },
+                {
+                    "date": 1660601145746,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,10 +43,9 @@\n           decoration: const BoxDecoration(\n             color: Color.fromRGBO(113, 21, 156, 1),\n             // backgroundBlendMode: BlendMode,\n             image: DecorationImage(\n-                colorFilter: ColorFilter.mode(\n-                    Color.fromRGBO(113, 21, 156, 1), BlendMode.darken),\n+                colorFilter: ColorFilter.mode(Colors.white, BlendMode.darken),\n                 image: AssetImage(\"assets/DSG_2.png\"),\n                 fit: BoxFit.cover),\n           ),\n         ),\n"
+                },
+                {
+                    "date": 1660601153357,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n           decoration: const BoxDecoration(\n             color: Color.fromRGBO(113, 21, 156, 1),\n             // backgroundBlendMode: BlendMode,\n             image: DecorationImage(\n-                colorFilter: ColorFilter.mode(Colors.white, BlendMode.darken),\n+                colorFilter: ColorFilter.mode(Colors.grey, BlendMode.darken),\n                 image: AssetImage(\"assets/DSG_2.png\"),\n                 fit: BoxFit.cover),\n           ),\n         ),\n"
+                },
+                {
+                    "date": 1660601167062,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n           decoration: const BoxDecoration(\n             color: Color.fromRGBO(113, 21, 156, 1),\n             // backgroundBlendMode: BlendMode,\n             image: DecorationImage(\n-                colorFilter: ColorFilter.mode(Colors.grey, BlendMode.darken),\n+                colorFilter: ColorFilter.mode(Colors.black, BlendMode.darken),\n                 image: AssetImage(\"assets/DSG_2.png\"),\n                 fit: BoxFit.cover),\n           ),\n         ),\n"
+                },
+                {
+                    "date": 1660601206181,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,14 +39,15 @@\n     return Scaffold(\n       body: Stack(children: [\n         Container(\n           width: double.infinity,\n-          decoration: const BoxDecoration(\n-            color: Color.fromRGBO(113, 21, 156, 1),\n+          decoration: BoxDecoration(\n+            // color: Color.fromRGBO(113, 21, 156, 1),\n             // backgroundBlendMode: BlendMode,\n             image: DecorationImage(\n-                colorFilter: ColorFilter.mode(Colors.black, BlendMode.darken),\n-                image: AssetImage(\"assets/DSG_2.png\"),\n+                colorFilter: ColorFilter.mode(\n+                    Colors.black.withOpacity(0.5), BlendMode.darken),\n+                image: const AssetImage(\"assets/DSG_2.png\"),\n                 fit: BoxFit.cover),\n           ),\n         ),\n         Align(\n"
+                },
+                {
+                    "date": 1660601225601,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n             // color: Color.fromRGBO(113, 21, 156, 1),\n             // backgroundBlendMode: BlendMode,\n             image: DecorationImage(\n                 colorFilter: ColorFilter.mode(\n-                    Colors.black.withOpacity(0.5), BlendMode.darken),\n+                    Colors.black.withOpacity(0.7), BlendMode.darken),\n                 image: const AssetImage(\"assets/DSG_2.png\"),\n                 fit: BoxFit.cover),\n           ),\n         ),\n"
+                },
+                {
+                    "date": 1660601271866,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n             // color: Color.fromRGBO(113, 21, 156, 1),\n             // backgroundBlendMode: BlendMode,\n             image: DecorationImage(\n                 colorFilter: ColorFilter.mode(\n-                    Colors.black.withOpacity(0.7), BlendMode.darken),\n+                    Colors.black.withOpacity(0.3), BlendMode.darken),\n                 image: const AssetImage(\"assets/DSG_2.png\"),\n                 fit: BoxFit.cover),\n           ),\n         ),\n"
+                },
+                {
+                    "date": 1660601280195,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n             // color: Color.fromRGBO(113, 21, 156, 1),\n             // backgroundBlendMode: BlendMode,\n             image: DecorationImage(\n                 colorFilter: ColorFilter.mode(\n-                    Colors.black.withOpacity(0.3), BlendMode.darken),\n+                    Colors.black.withOpacity(0.5), BlendMode.darken),\n                 image: const AssetImage(\"assets/DSG_2.png\"),\n                 fit: BoxFit.cover),\n           ),\n         ),\n"
+                },
+                {
+                    "date": 1660601288814,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n             // color: Color.fromRGBO(113, 21, 156, 1),\n             // backgroundBlendMode: BlendMode,\n             image: DecorationImage(\n                 colorFilter: ColorFilter.mode(\n-                    Colors.black.withOpacity(0.5), BlendMode.darken),\n+                    Colors.black.withOpacity(0.7), BlendMode.darken),\n                 image: const AssetImage(\"assets/DSG_2.png\"),\n                 fit: BoxFit.cover),\n           ),\n         ),\n"
+                },
+                {
+                    "date": 1660601298147,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n             // color: Color.fromRGBO(113, 21, 156, 1),\n             // backgroundBlendMode: BlendMode,\n             image: DecorationImage(\n                 colorFilter: ColorFilter.mode(\n-                    Colors.black.withOpacity(0.7), BlendMode.darken),\n+                    Colors.black.withOpacity(0.6), BlendMode.darken),\n                 image: const AssetImage(\"assets/DSG_2.png\"),\n                 fit: BoxFit.cover),\n           ),\n         ),\n"
+                },
+                {
+                    "date": 1660601336403,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,11 +69,11 @@\n                         filter: ImageFilter.blur(sigmaX: 2, sigmaY: 2),\n                         child: Container(\n                           // height: MediaQuery.of(context).size.height * 0.65,\n                           width: MediaQuery.of(context).size.width * 0.8,\n-                          color: Color.fromARGB(255, 203, 151, 229)\n-                              .withOpacity(0.4),\n-                          // color: Colors.white.withOpacity(0.4),\n+                          // color: Color.fromARGB(255, 203, 151, 229)\n+                          //     .withOpacity(0.4),\n+                          color: Colors.white.withOpacity(0.4),\n                           child: Padding(\n                             padding: const EdgeInsets.symmetric(\n                                 vertical: 0, horizontal: 30),\n                             child: ListView(\n"
+                },
+                {
+                    "date": 1660601398156,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -166,9 +166,9 @@\n                 )\n               : AppText(\n                   text: 'Already a member?',\n                   size: 20,\n-                  color: Colors.black,\n+                  color: Colors.white,\n                   fontWeight: FontWeight.bold,\n                 ),\n           const Icon(\n             Icons.east,\n"
                 }
             ],
             "date": 1659731868624,

@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 4,
+            "activePatchIndex": 6,
             "patches": [
                 {
                     "date": 1659580245337,
@@ -24,6 +24,14 @@
                 {
                     "date": 1659726655859,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n         crossAxisAlignment: CrossAxisAlignment.start,\n         children: [\n           AppText(\n             text: labelText,\n-            color: Colors.red,\n+            color: Colors.white,\n           ),\n           addVerticalSpace(12),\n           SizedBox(\n             height: 52,\n"
+                },
+                {
+                    "date": 1660598235952,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n         crossAxisAlignment: CrossAxisAlignment.start,\n         children: [\n           AppText(\n             text: labelText,\n-            color: Colors.white,\n+            color: Colors.black38,\n           ),\n           addVerticalSpace(12),\n           SizedBox(\n             height: 52,\n"
+                },
+                {
+                    "date": 1660598243541,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n         crossAxisAlignment: CrossAxisAlignment.start,\n         children: [\n           AppText(\n             text: labelText,\n-            color: Colors.black38,\n+            color: Colors.black,\n           ),\n           addVerticalSpace(12),\n           SizedBox(\n             height: 52,\n"
                 }
             ],
             "date": 1659580245337,

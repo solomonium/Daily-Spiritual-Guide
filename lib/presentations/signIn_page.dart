@@ -28,8 +28,6 @@ class _SignInPageState extends State<SignInPage> {
 
   void _incrementCounter() {
     setState(() {
-      _counter++;
-      print(_counter);
       nameVisibilty = !nameVisibilty;
       confirmPinVisibilty = !confirmPinVisibilty;
       isSignIn = !isSignIn;
@@ -42,9 +40,14 @@ class _SignInPageState extends State<SignInPage> {
       body: Stack(children: [
         Container(
           width: double.infinity,
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
+            // color: Color.fromRGBO(113, 21, 156, 1),
+            // backgroundBlendMode: BlendMode,
             image: DecorationImage(
-                image: AssetImage("assets/DSG_bg.jpeg"), fit: BoxFit.cover),
+                colorFilter: ColorFilter.mode(
+                    Colors.black.withOpacity(0.6), BlendMode.darken),
+                image: const AssetImage("assets/DSG_2.png"),
+                fit: BoxFit.cover),
           ),
         ),
         Align(
@@ -67,7 +70,9 @@ class _SignInPageState extends State<SignInPage> {
                         child: Container(
                           // height: MediaQuery.of(context).size.height * 0.65,
                           width: MediaQuery.of(context).size.width * 0.8,
-                          color: Colors.grey.withOpacity(0.3),
+                          // color: Color.fromARGB(255, 203, 151, 229)
+                          //     .withOpacity(0.4),
+                          color: Colors.white.withOpacity(0.4),
                           child: Padding(
                             padding: const EdgeInsets.symmetric(
                                 vertical: 0, horizontal: 30),
@@ -162,7 +167,7 @@ class _SignInPageState extends State<SignInPage> {
               : AppText(
                   text: 'Already a member?',
                   size: 20,
-                  color: Colors.black,
+                  color: Colors.white,
                   fontWeight: FontWeight.bold,
                 ),
           const Icon(

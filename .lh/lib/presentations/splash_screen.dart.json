@@ -1,0 +1,90 @@
+{
+    "sourceFile": "lib/presentations/splash_screen.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 18,
+            "patches": [
+                {
+                    "date": 1660657066802,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1660657804378,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n     // } else if (_authStatus == AuthStatus.LOGGED_OUT) {\n     //   return const WelcomePage();\n     // }\n     return Scaffold(\n-      backgroundColor: Theme.of(context).primaryColor,\n+      backgroundColor: const Color(0xff71159C),\n       body: SafeArea(\n           child: Container(\n         color: Theme.of(context).primaryColor,\n         child: Center(\n"
+                },
+                {
+                    "date": 1660657985933,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n import 'dart:async';\n \n import 'package:flutter/material.dart';\n+import 'package:flutter_svg/svg.dart';\n import 'package:spiritual_daily_guide/presentations/signIn_page.dart';\n \n class SplashScreen extends StatefulWidget {\n   const SplashScreen({Key? key}) : super(key: key);\n@@ -35,9 +36,9 @@\n         child: Center(\n           child: SizedBox(\n               width: 268.69,\n               height: 81.57,\n-              child: Image.asset(\"assets/images/buypower-logo.png\")),\n+              child: SvgPicture.asset(\"assets/dove_splash.svg\")),\n         ),\n       )),\n     );\n   }\n"
+                },
+                {
+                    "date": 1660659279532,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,10 +34,10 @@\n           child: Container(\n         color: Theme.of(context).primaryColor,\n         child: Center(\n           child: SizedBox(\n-              width: 268.69,\n-              height: 81.57,\n+              width: 356,\n+              height: 236,\n               child: SvgPicture.asset(\"assets/dove_splash.svg\")),\n         ),\n       )),\n     );\n"
+                },
+                {
+                    "date": 1660659420203,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n         child: Center(\n           child: SizedBox(\n               width: 356,\n               height: 236,\n-              child: SvgPicture.asset(\"assets/dove_splash.svg\")),\n+              child: Image.asset(\"assets/dove_splash.png\")),\n         ),\n       )),\n     );\n   }\n"
+                },
+                {
+                    "date": 1660659508044,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n \n import 'package:flutter/material.dart';\n import 'package:flutter_svg/svg.dart';\n import 'package:spiritual_daily_guide/presentations/signIn_page.dart';\n+import 'package:spiritual_daily_guide/widgets/app_large_text.dart';\n \n class SplashScreen extends StatefulWidget {\n   const SplashScreen({Key? key}) : super(key: key);\n \n@@ -33,12 +34,17 @@\n       body: SafeArea(\n           child: Container(\n         color: Theme.of(context).primaryColor,\n         child: Center(\n-          child: SizedBox(\n-              width: 356,\n-              height: 236,\n-              child: Image.asset(\"assets/dove_splash.png\")),\n+          child: Column(\n+            children: [\n+              SizedBox(\n+                  width: 356,\n+                  height: 236,\n+                  child: Image.asset(\"assets/dove_splash.png\")),\n+              AppLargeText(text: \"DAILY FELLOWSHIP REMINDER\")\n+            ],\n+          ),\n         ),\n       )),\n     );\n   }\n"
+                },
+                {
+                    "date": 1660659542368,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,12 @@\n               SizedBox(\n                   width: 356,\n                   height: 236,\n                   child: Image.asset(\"assets/dove_splash.png\")),\n-              AppLargeText(text: \"DAILY FELLOWSHIP REMINDER\")\n+              SizedBox(\n+                  width: 372,\n+                  height: 31,\n+                  child: AppLargeText(text: \"DAILY FELLOWSHIP REMINDER\"))\n             ],\n           ),\n         ),\n       )),\n"
+                },
+                {
+                    "date": 1660659563281,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,9 +42,9 @@\n                   height: 236,\n                   child: Image.asset(\"assets/dove_splash.png\")),\n               SizedBox(\n                   width: 372,\n-                  height: 31,\n+                  height: 100,\n                   child: AppLargeText(text: \"DAILY FELLOWSHIP REMINDER\"))\n             ],\n           ),\n         ),\n"
+                },
+                {
+                    "date": 1660659580285,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,8 +35,9 @@\n           child: Container(\n         color: Theme.of(context).primaryColor,\n         child: Center(\n           child: Column(\n+            mainAxisAlignment: MainAxisAlignment.center,\n             children: [\n               SizedBox(\n                   width: 356,\n                   height: 236,\n"
+                },
+                {
+                    "date": 1660659593895,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,9 @@\n import 'package:flutter/material.dart';\n import 'package:flutter_svg/svg.dart';\n import 'package:spiritual_daily_guide/presentations/signIn_page.dart';\n import 'package:spiritual_daily_guide/widgets/app_large_text.dart';\n+import 'package:spiritual_daily_guide/widgets/helper_tools.dart';\n \n class SplashScreen extends StatefulWidget {\n   const SplashScreen({Key? key}) : super(key: key);\n \n@@ -41,8 +42,9 @@\n               SizedBox(\n                   width: 356,\n                   height: 236,\n                   child: Image.asset(\"assets/dove_splash.png\")),\n+              addVerticalSpace(40),\n               SizedBox(\n                   width: 372,\n                   height: 100,\n                   child: AppLargeText(text: \"DAILY FELLOWSHIP REMINDER\"))\n"
+                },
+                {
+                    "date": 1660659610050,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,8 +37,9 @@\n         color: Theme.of(context).primaryColor,\n         child: Center(\n           child: Column(\n             mainAxisAlignment: MainAxisAlignment.center,\n+            crossAxisAlignment: CrossAxisAlignment.center,\n             children: [\n               SizedBox(\n                   width: 356,\n                   height: 236,\n"
+                },
+                {
+                    "date": 1660659635399,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n         color: Theme.of(context).primaryColor,\n         child: Center(\n           child: Column(\n             mainAxisAlignment: MainAxisAlignment.center,\n-            crossAxisAlignment: CrossAxisAlignment.center,\n+            crossAxisAlignment: CrossAxisAlignment.start,\n             children: [\n               SizedBox(\n                   width: 356,\n                   height: 236,\n"
+                },
+                {
+                    "date": 1660659669142,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,22 +35,24 @@\n       body: SafeArea(\n           child: Container(\n         color: Theme.of(context).primaryColor,\n         child: Center(\n-          child: Column(\n-            mainAxisAlignment: MainAxisAlignment.center,\n-            crossAxisAlignment: CrossAxisAlignment.start,\n-            children: [\n-              SizedBox(\n-                  width: 356,\n-                  height: 236,\n-                  child: Image.asset(\"assets/dove_splash.png\")),\n-              addVerticalSpace(40),\n-              SizedBox(\n-                  width: 372,\n-                  height: 100,\n-                  child: AppLargeText(text: \"DAILY FELLOWSHIP REMINDER\"))\n-            ],\n+          child: SizedBox(\n+            child: Column(\n+              mainAxisAlignment: MainAxisAlignment.center,\n+              crossAxisAlignment: CrossAxisAlignment.start,\n+              children: [\n+                SizedBox(\n+                    width: 356,\n+                    height: 236,\n+                    child: Image.asset(\"assets/dove_splash.png\")),\n+                addVerticalSpace(40),\n+                SizedBox(\n+                    width: 372,\n+                    height: 100,\n+                    child: AppLargeText(text: \"DAILY FELLOWSHIP REMINDER\"))\n+              ],\n+            ),\n           ),\n         ),\n       )),\n     );\n"
+                },
+                {
+                    "date": 1660659726858,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,9 +48,12 @@\n                 addVerticalSpace(40),\n                 SizedBox(\n                     width: 372,\n                     height: 100,\n-                    child: AppLargeText(text: \"DAILY FELLOWSHIP REMINDER\"))\n+                    child: AppLargeText(\n+                      text: \"DAILY FELLOWSHIP REMINDER\",\n+                      color: Colors.white,\n+                    ))\n               ],\n             ),\n           ),\n         ),\n"
+                },
+                {
+                    "date": 1660659754649,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,15 +45,17 @@\n                     width: 356,\n                     height: 236,\n                     child: Image.asset(\"assets/dove_splash.png\")),\n                 addVerticalSpace(40),\n-                SizedBox(\n-                    width: 372,\n-                    height: 100,\n-                    child: AppLargeText(\n-                      text: \"DAILY FELLOWSHIP REMINDER\",\n-                      color: Colors.white,\n-                    ))\n+                Center(\n+                  child: SizedBox(\n+                      width: 372,\n+                      height: 100,\n+                      child: AppLargeText(\n+                        text: \"DAILY FELLOWSHIP REMINDER\",\n+                        color: Colors.white,\n+                      )),\n+                )\n               ],\n             ),\n           ),\n         ),\n"
+                },
+                {
+                    "date": 1660659857438,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,17 +45,15 @@\n                     width: 356,\n                     height: 236,\n                     child: Image.asset(\"assets/dove_splash.png\")),\n                 addVerticalSpace(40),\n-                Center(\n-                  child: SizedBox(\n-                      width: 372,\n-                      height: 100,\n-                      child: AppLargeText(\n-                        text: \"DAILY FELLOWSHIP REMINDER\",\n-                        color: Colors.white,\n-                      )),\n-                )\n+                SizedBox(\n+                    width: 372,\n+                    height: 100,\n+                    child: AppLargeText(\n+                      text: \"DAILY FELLOWSHIP REMINDER\",\n+                      color: Colors.white,\n+                    ))\n               ],\n             ),\n           ),\n         ),\n"
+                },
+                {
+                    "date": 1660659926263,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,8 +51,9 @@\n                     height: 100,\n                     child: AppLargeText(\n                       text: \"DAILY FELLOWSHIP REMINDER\",\n                       color: Colors.white,\n+                      textAlign: TextAlign.justify,\n                     ))\n               ],\n             ),\n           ),\n"
+                },
+                {
+                    "date": 1660659935110,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,9 @@\n                     height: 100,\n                     child: AppLargeText(\n                       text: \"DAILY FELLOWSHIP REMINDER\",\n                       color: Colors.white,\n-                      textAlign: TextAlign.justify,\n+                      textAlign: TextAlign.center,\n                     ))\n               ],\n             ),\n           ),\n"
+                },
+                {
+                    "date": 1660660581936,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n     // } else if (_authStatus == AuthStatus.LOGGED_OUT) {\n     //   return const WelcomePage();\n     // }\n     return Scaffold(\n-      backgroundColor: const Color(0xff71159C),\n+      backgroundColor: const Color(0xe671159C),\n       body: SafeArea(\n           child: Container(\n         color: Theme.of(context).primaryColor,\n         child: Center(\n"
+                }
+            ],
+            "date": 1660657066802,
+            "name": "Commit-0",
+            "content": "import 'dart:async';\n\nimport 'package:flutter/material.dart';\nimport 'package:spiritual_daily_guide/presentations/signIn_page.dart';\n\nclass SplashScreen extends StatefulWidget {\n  const SplashScreen({Key? key}) : super(key: key);\n\n  @override\n  State<SplashScreen> createState() => _SplashScreenState();\n}\n\nclass _SplashScreenState extends State<SplashScreen> {\n  var _authStatus;\n\n  @override\n  void initState() {\n    super.initState();\n    // LocalStoreHelper.getTheme();\n    Timer(const Duration(seconds: 3), () => const SignInPage());\n  }\n\n  @override\n  Widget build(BuildContext context) {\n    // if (_authStatus == AuthStatus.LOGGED_IN) {\n    //   return const Dashboard();\n    // } else if (_authStatus == AuthStatus.LOGGED_OUT) {\n    //   return const WelcomePage();\n    // }\n    return Scaffold(\n      backgroundColor: Theme.of(context).primaryColor,\n      body: SafeArea(\n          child: Container(\n        color: Theme.of(context).primaryColor,\n        child: Center(\n          child: SizedBox(\n              width: 268.69,\n              height: 81.57,\n              child: Image.asset(\"assets/images/buypower-logo.png\")),\n        ),\n      )),\n    );\n  }\n\n  // void getAuthStatus() async {\n  //   final authStatus = await LocalStoreHelper.isAuth();\n  //   setState(() {\n  //     _authStatus = authStatus;\n  //   });\n  // }\n}\n"
+        }
+    ]
+}

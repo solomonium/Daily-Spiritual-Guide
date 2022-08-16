@@ -3,11 +3,23 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 3,
             "patches": [
                 {
                     "date": 1659579619599,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1660659837179,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,36 @@\n+import 'package:flutter/material.dart';\n+import 'package:google_fonts/google_fonts.dart';\n+\n+class AppLargeText extends StatelessWidget {\n+  double size;\n+  final String text;\n+  final Color? color;\n+  // final TextAlign? textAlign;\n+  TextTheme? textTheme;\n+  TextOverflow? overflow;\n+\n+  AppLargeText(\n+      {Key? key,\n+      this.size = 30,\n+      required this.text,\n+      // this.textAlign = TextAlign.left,\n+      this.textTheme,\n+      this.overflow,\n+      this.color})\n+      : super(key: key);\n+\n+  @override\n+  Widget build(BuildContext context) {\n+    return Text(\n+      text,\n+      overflow: overflow,\n+      textAlign: textAlign,\n+      style: GoogleFonts.nunitoSans(\n+        color: color,\n+        fontSize: size,\n+        fontWeight: FontWeight.bold,\n+        textStyle: Theme.of(context).textTheme.bodyText1,\n+      ),\n+    );\n+  }\n+}\n"
+                },
+                {
+                    "date": 1660659847998,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n   Widget build(BuildContext context) {\n     return Text(\n       text,\n       overflow: overflow,\n-      textAlign: textAlign,\n+      // textAlign: textAlign,\n       style: GoogleFonts.nunitoSans(\n         color: color,\n         fontSize: size,\n         fontWeight: FontWeight.bold,\n@@ -33,40 +33,4 @@\n       ),\n     );\n   }\n }\n-import 'package:flutter/material.dart';\n-import 'package:google_fonts/google_fonts.dart';\n-\n-class AppLargeText extends StatelessWidget {\n-  double size;\n-  final String text;\n-  final Color? color;\n-  final TextAlign? textAlign;\n-  TextTheme? textTheme;\n-  TextOverflow? overflow;\n-\n-  AppLargeText(\n-      {Key? key,\n-      this.size = 30,\n-      required this.text,\n-      this.textAlign = TextAlign.left,\n-      this.textTheme,\n-      this.overflow,\n-      this.color})\n-      : super(key: key);\n-\n-  @override\n-  Widget build(BuildContext context) {\n-    return Text(\n-      text,\n-      overflow: overflow,\n-      textAlign: textAlign,\n-      style: GoogleFonts.nunitoSans(\n-        color: color,\n-        fontSize: size,\n-        fontWeight: FontWeight.bold,\n-        textStyle: Theme.of(context).textTheme.bodyText1,\n-      ),\n-    );\n-  }\n-}\n"
+                },
+                {
+                    "date": 1660659915363,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,17 +4,17 @@\n class AppLargeText extends StatelessWidget {\n   double size;\n   final String text;\n   final Color? color;\n-  // final TextAlign? textAlign;\n+  final TextAlign? textAlign;\n   TextTheme? textTheme;\n   TextOverflow? overflow;\n \n   AppLargeText(\n       {Key? key,\n       this.size = 30,\n       required this.text,\n-      // this.textAlign = TextAlign.left,\n+      this.textAlign = TextAlign.left,\n       this.textTheme,\n       this.overflow,\n       this.color})\n       : super(key: key);\n@@ -23,9 +23,9 @@\n   Widget build(BuildContext context) {\n     return Text(\n       text,\n       overflow: overflow,\n-      // textAlign: textAlign,\n+      textAlign: textAlign,\n       style: GoogleFonts.nunitoSans(\n         color: color,\n         fontSize: size,\n         fontWeight: FontWeight.bold,\n"
                 }
             ],
             "date": 1659579619599,

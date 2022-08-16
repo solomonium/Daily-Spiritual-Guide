@@ -17,9 +17,18 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-          endDrawer: Drawer(
+          appBar: AppBar(
+            title: const Text('Spiritual Daily Guide'),
+          ),
+          drawer: Drawer(
             child: ListView(
               children: const [
+                DrawerHeader(
+                  decoration: BoxDecoration(
+                    color: Colors.blue,
+                  ),
+                  child: Center(child: Text('Drawer Header')),
+                ),
                 ListTile(
                   title: Text('Jeremy'),
                   subtitle: Text('example@gmail.com'),

@@ -1,6 +1,8 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Router;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:spiritual_daily_guide/presentations/signIn_page.dart';
+
+import 'route_folder/router.dart';
 
 void main() {
   runApp(const ProviderScope(child: MyApp()));
@@ -18,7 +20,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.purple,
       ),
-      home: const SignInPage(),
+      onGenerateRoute: Router.generateRoute,
+      // home: const SignInPage(),
     );
   }
 }

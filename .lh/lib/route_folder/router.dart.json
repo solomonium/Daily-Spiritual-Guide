@@ -1,0 +1,18 @@
+{
+    "sourceFile": "lib/route_folder/router.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1660658603589,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1660658603589,
+            "name": "Commit-0",
+            "content": "import 'package:flutter/material.dart';\nimport 'package:spiritual_daily_guide/presentations/homepage.dart';\nimport 'package:spiritual_daily_guide/presentations/signIn_page.dart';\n\nimport '../presentations/splash_screen.dart';\nimport 'route_names.dart';\n\nclass Router {\n  static Route<dynamic> generateRoute(RouteSettings settings) {\n    switch (settings.name) {\n      case '/':\n        return MaterialPageRoute(builder: (_) => const SplashScreen());\n      case RouteName.signInPage:\n        return MaterialPageRoute(builder: (_) => const SignInPage());\n      default:\n        return MaterialPageRoute(builder: (_) => const HomePage());\n    }\n  }\n}\n"
+        }
+    ]
+}

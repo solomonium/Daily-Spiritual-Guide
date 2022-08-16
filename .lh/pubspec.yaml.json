@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 7,
+            "activePatchIndex": 15,
             "patches": [
                 {
                     "date": 1659635001261,
@@ -36,6 +36,38 @@
                 {
                     "date": 1659923946890,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,9 +66,8 @@\n     - assets/spirit_of_God.png\n     - assets/spirit_1.png\n     - assets/spirit of God.jpeg\n     - assets/Holy spirit.jpeg\n-    - assets/bgVideo2.mp4\n   #   - images/a_dot_ham.jpeg\n \n   # An image asset can refer to one or more resolution-specific \"variants\", see\n   # https://flutter.dev/assets-and-images/#resolution-aware\n"
+                },
+                {
+                    "date": 1660600265113,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -62,8 +62,9 @@\n \n   # To add assets to your application, add an assets section, like this:\n   assets:\n     - assets/DSG_bg.jpeg\n+    - assets/DSG_bg1.jpeg\n     - assets/spirit_of_God.png\n     - assets/spirit_1.png\n     - assets/spirit of God.jpeg\n     - assets/Holy spirit.jpeg\n"
+                },
+                {
+                    "date": 1660600343526,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -62,9 +62,9 @@\n \n   # To add assets to your application, add an assets section, like this:\n   assets:\n     - assets/DSG_bg.jpeg\n-    - assets/DSG_bg1.jpeg\n+    - assets/DSG_bg1.jpg\n     - assets/spirit_of_God.png\n     - assets/spirit_1.png\n     - assets/spirit of God.jpeg\n     - assets/Holy spirit.jpeg\n"
+                },
+                {
+                    "date": 1660600830207,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -63,8 +63,9 @@\n   # To add assets to your application, add an assets section, like this:\n   assets:\n     - assets/DSG_bg.jpeg\n     - assets/DSG_bg1.jpg\n+    - assets/DSG_bg2.png\n     - assets/spirit_of_God.png\n     - assets/spirit_1.png\n     - assets/spirit of God.jpeg\n     - assets/Holy spirit.jpeg\n"
+                },
+                {
+                    "date": 1660600847648,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -63,9 +63,9 @@\n   # To add assets to your application, add an assets section, like this:\n   assets:\n     - assets/DSG_bg.jpeg\n     - assets/DSG_bg1.jpg\n-    - assets/DSG_bg2.png\n+    - assets/DSG_2.png\n     - assets/spirit_of_God.png\n     - assets/spirit_1.png\n     - assets/spirit of God.jpeg\n     - assets/Holy spirit.jpeg\n"
+                },
+                {
+                    "date": 1660657334394,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,8 +68,9 @@\n     - assets/spirit_of_God.png\n     - assets/spirit_1.png\n     - assets/spirit of God.jpeg\n     - assets/Holy spirit.jpeg\n+    - assets/dove_splash.svg\n   #   - images/a_dot_ham.jpeg\n \n   # An image asset can refer to one or more resolution-specific \"variants\", see\n   # https://flutter.dev/assets-and-images/#resolution-aware\n"
+                },
+                {
+                    "date": 1660657894703,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,8 +37,9 @@\n   google_fonts: ^3.0.1\n   validators: ^3.0.0\n   intl: ^0.17.0\n   shimmer: ^2.0.0\n+  flutter_svg: ^1.0.3\n \n dev_dependencies:\n   flutter_test:\n     sdk: flutter\n"
+                },
+                {
+                    "date": 1660657913219,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,8 @@\n   google_fonts: ^3.0.1\n   validators: ^3.0.0\n   intl: ^0.17.0\n   shimmer: ^2.0.0\n-  flutter_svg: ^1.0.3\n \n dev_dependencies:\n   flutter_test:\n     sdk: flutter\n"
+                },
+                {
+                    "date": 1660659398316,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,8 +37,9 @@\n   google_fonts: ^3.0.1\n   validators: ^3.0.0\n   intl: ^0.17.0\n   shimmer: ^2.0.0\n+  flutter_svg: ^1.1.3\n \n dev_dependencies:\n   flutter_test:\n     sdk: flutter\n@@ -69,8 +70,9 @@\n     - assets/spirit_1.png\n     - assets/spirit of God.jpeg\n     - assets/Holy spirit.jpeg\n     - assets/dove_splash.svg\n+    - assets/dove_splash.png\n   #   - images/a_dot_ham.jpeg\n \n   # An image asset can refer to one or more resolution-specific \"variants\", see\n   # https://flutter.dev/assets-and-images/#resolution-aware\n"
                 }
             ],
             "date": 1659635001260,

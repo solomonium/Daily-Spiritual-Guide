@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 314,
+            "activePatchIndex": 318,
             "patches": [
                 {
                     "date": 1659575717121,
@@ -1264,6 +1264,22 @@
                 {
                     "date": 1660517769605,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,8 @@\n   Widget build(BuildContext context) {\n     return SafeArea(\n       child: Scaffold(\n           endDrawer: Drawer(\n-            backgroundColor: Colors.red,\n             child: ListView(\n               children: const [\n                 ListTile(\n                   title: Text('Jeremy'),\n"
+                },
+                {
+                    "date": 1660518450787,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,8 +16,11 @@\n   @override\n   Widget build(BuildContext context) {\n     return SafeArea(\n       child: Scaffold(\n+          appBar: AppBar(\n+            title: const Text('Spiritual Daily Guide'),\n+          ),\n           endDrawer: Drawer(\n             child: ListView(\n               children: const [\n                 ListTile(\n"
+                },
+                {
+                    "date": 1660518728836,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n       child: Scaffold(\n           appBar: AppBar(\n             title: const Text('Spiritual Daily Guide'),\n           ),\n-          endDrawer: Drawer(\n+          drawer: Drawer(\n             child: ListView(\n               children: const [\n                 ListTile(\n                   title: Text('Jeremy'),\n"
+                },
+                {
+                    "date": 1660518823771,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,8 +22,14 @@\n           ),\n           drawer: Drawer(\n             child: ListView(\n               children: const [\n+                DrawerHeader(\n+                  decoration: BoxDecoration(\n+                    color: Colors.blue,\n+                  ),\n+                  child: Text('Drawer Header'),\n+                ),\n                 ListTile(\n                   title: Text('Jeremy'),\n                   subtitle: Text('example@gmail.com'),\n                   leading: CircleAvatar(backgroundColor: Colors.purpleAccent),\n"
+                },
+                {
+                    "date": 1660518846416,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n                 DrawerHeader(\n                   decoration: BoxDecoration(\n                     color: Colors.blue,\n                   ),\n-                  child: Text('Drawer Header'),\n+                  child: Center(child: Text('Drawer Header')),\n                 ),\n                 ListTile(\n                   title: Text('Jeremy'),\n                   subtitle: Text('example@gmail.com'),\n"
                 }
             ],
             "date": 1659575717121,
