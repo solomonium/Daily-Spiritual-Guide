@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart' hide Router;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:spiritual_daily_guide/presentations/signIn_page.dart';
+import 'package:spiritual_daily_guide/utils/colors.dart';
 
 import 'route_folder/router.dart';
 
@@ -16,12 +16,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Daily Spiritual Guide',
       debugShowCheckedModeBanner: false,
-      color: Colors.purple.shade300,
+      color: MyColors.primaryColor,
       theme: ThemeData(
-        primarySwatch: Colors.purple,
+        primaryColor: MyColors.primaryColor,
       ),
       onGenerateRoute: Router.generateRoute,
-      // home: const SignInPage(),
     );
   }
 }

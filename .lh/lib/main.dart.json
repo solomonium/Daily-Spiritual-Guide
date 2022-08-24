@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 16,
+            "activePatchIndex": 20,
             "patches": [
                 {
                     "date": 1659575562768,
@@ -72,6 +72,22 @@
                 {
                     "date": 1660658909063,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,8 +20,8 @@\n       theme: ThemeData(\n         primarySwatch: Colors.purple,\n       ),\n       onGenerateRoute: Router.generateRoute,\n-      home: const SignInPage(),\n+      // home: const SignInPage(),\n     );\n   }\n }\n"
+                },
+                {
+                    "date": 1661214745642,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,8 +20,7 @@\n       theme: ThemeData(\n         primarySwatch: Colors.purple,\n       ),\n       onGenerateRoute: Router.generateRoute,\n-      // home: const SignInPage(),\n     );\n   }\n }\n"
+                },
+                {
+                    "date": 1661223260464,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,6 @@\n import 'package:flutter/material.dart' hide Router;\n import 'package:flutter_riverpod/flutter_riverpod.dart';\n-import 'package:spiritual_daily_guide/presentations/signIn_page.dart';\n \n import 'route_folder/router.dart';\n \n void main() {\n"
+                },
+                {
+                    "date": 1661304694315,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n import 'package:flutter/material.dart' hide Router;\n import 'package:flutter_riverpod/flutter_riverpod.dart';\n+import 'package:spiritual_daily_guide/utils/colors.dart';\n \n import 'route_folder/router.dart';\n \n void main() {\n@@ -16,9 +17,9 @@\n       title: 'Daily Spiritual Guide',\n       debugShowCheckedModeBanner: false,\n       color: Colors.purple.shade300,\n       theme: ThemeData(\n-        primarySwatch: Colors.purple,\n+        primaryColor: MyColors.primaryColor,\n       ),\n       onGenerateRoute: Router.generateRoute,\n     );\n   }\n"
+                },
+                {
+                    "date": 1661304718724,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n   Widget build(BuildContext context) {\n     return MaterialApp(\n       title: 'Daily Spiritual Guide',\n       debugShowCheckedModeBanner: false,\n-      color: Colors.purple.shade300,\n+      color: MyColors.primaryColor,\n       theme: ThemeData(\n         primaryColor: MyColors.primaryColor,\n       ),\n       onGenerateRoute: Router.generateRoute,\n"
                 }
             ],
             "date": 1659575562768,

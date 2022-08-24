@@ -1,0 +1,218 @@
+{
+    "sourceFile": "lib/presentations/onboarding_page.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 50,
+            "patches": [
+                {
+                    "date": 1661299853039,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1661299961243,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,20 @@\n             color: Colors.red,\n             child: Center(\n               child: Text('Page 1'),\n             ),\n+          ),\n+          Container(\n+            color: Colors.amber,\n+            child: Center(\n+              child: Text('Page 1'),\n+            ),\n+          ),\n+          Container(\n+            color: Colors.purple,\n+            child: Center(\n+              child: Text('Page 1'),\n+            ),\n           )\n         ],\n       ),\n     );\n"
+                },
+                {
+                    "date": 1661300050633,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,15 +23,15 @@\n           ),\n           Container(\n             color: Colors.amber,\n             child: Center(\n-              child: Text('Page 1'),\n+              child: Text('Page 2'),\n             ),\n           ),\n           Container(\n             color: Colors.purple,\n             child: Center(\n-              child: Text('Page 1'),\n+              child: Text('Page 3'),\n             ),\n           )\n         ],\n       ),\n"
+                },
+                {
+                    "date": 1661300481643,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,29 +12,32 @@\n class _OnboardingScreensState extends State<OnboardingScreens> {\n   @override\n   Widget build(BuildContext context) {\n     return Scaffold(\n-      body: PageView(\n-        children: [\n-          Container(\n-            color: Colors.red,\n-            child: Center(\n-              child: Text('Page 1'),\n+      body: Container(\n+        padding: EdgeInsets.only(bottom: 24),\n+        child: PageView(\n+          children: [\n+            Container(\n+              color: Colors.red,\n+              child: Center(\n+                child: Text('Page 1'),\n+              ),\n             ),\n-          ),\n-          Container(\n-            color: Colors.amber,\n-            child: Center(\n-              child: Text('Page 2'),\n+            Container(\n+              color: Colors.amber,\n+              child: Center(\n+                child: Text('Page 2'),\n+              ),\n             ),\n-          ),\n-          Container(\n-            color: Colors.purple,\n-            child: Center(\n-              child: Text('Page 3'),\n-            ),\n-          )\n-        ],\n+            Container(\n+              color: Colors.purple,\n+              child: Center(\n+                child: Text('Page 3'),\n+              ),\n+            )\n+          ],\n+        ),\n       ),\n     );\n   }\n }\n"
+                },
+                {
+                    "date": 1661300498533,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n   @override\n   Widget build(BuildContext context) {\n     return Scaffold(\n       body: Container(\n-        padding: EdgeInsets.only(bottom: 24),\n+        padding: EdgeInsets.only(bottom: 80),\n         child: PageView(\n           children: [\n             Container(\n               color: Colors.red,\n"
+                },
+                {
+                    "date": 1661300643066,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,7 +37,11 @@\n             )\n           ],\n         ),\n       ),\n+      bottomSheet: Container(\n+          child: Row(\n+        children: [Text('Skip'), Text('Next')],\n+      )),\n     );\n   }\n }\n"
+                },
+                {
+                    "date": 1661300712017,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,10 +38,12 @@\n           ],\n         ),\n       ),\n       bottomSheet: Container(\n+          padding: EdgeInsets.symmetric(horizontal: 10),\n           child: Row(\n-        children: [Text('Skip'), Text('Next')],\n-      )),\n+            mainAxisAlignment: MainAxisAlignment.spaceBetween,\n+            children: [Text('Skip'), Text('Next')],\n+          )),\n     );\n   }\n }\n"
+                },
+                {
+                    "date": 1661300804441,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,9 +41,9 @@\n       bottomSheet: Container(\n           padding: EdgeInsets.symmetric(horizontal: 10),\n           child: Row(\n             mainAxisAlignment: MainAxisAlignment.spaceBetween,\n-            children: [Text('Skip'), Text('Next')],\n+            children: [TextButton(onPressed: () {}, child: Text('SKIP'))],\n           )),\n     );\n   }\n }\n"
+                },
+                {
+                    "date": 1661300830685,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,9 +41,12 @@\n       bottomSheet: Container(\n           padding: EdgeInsets.symmetric(horizontal: 10),\n           child: Row(\n             mainAxisAlignment: MainAxisAlignment.spaceBetween,\n-            children: [TextButton(onPressed: () {}, child: Text('SKIP'))],\n+            children: [\n+              TextButton(onPressed: () {}, child: Text('SKIP')),\n+              TextButton(onPressed: () {}, child: Text('NEXT'))\n+            ],\n           )),\n     );\n   }\n }\n"
+                },
+                {
+                    "date": 1661300983554,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,5 @@\n import 'package:flutter/material.dart';\n-import 'package:flutter/src/foundation/key.dart';\n-import 'package:flutter/src/widgets/framework.dart';\n \n class OnboardingScreens extends StatefulWidget {\n   const OnboardingScreens({Key? key}) : super(key: key);\n \n@@ -9,8 +7,9 @@\n   State<OnboardingScreens> createState() => _OnboardingScreensState();\n }\n \n class _OnboardingScreensState extends State<OnboardingScreens> {\n+  final controller = PageController();\n   @override\n   Widget build(BuildContext context) {\n     return Scaffold(\n       body: Container(\n"
+                },
+                {
+                    "date": 1661301072066,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,14 @@\n \n class _OnboardingScreensState extends State<OnboardingScreens> {\n   final controller = PageController();\n   @override\n+  void dispose() {\n+    controller.dispose();\n+    super.dispose();\n+  }\n+\n+  @override\n   Widget build(BuildContext context) {\n     return Scaffold(\n       body: Container(\n         padding: EdgeInsets.only(bottom: 80),\n"
+                },
+                {
+                    "date": 1661301469538,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import 'package:flutter/material.dart';\n+import 'package:smooth_page_indicator/smooth_page_indicator.dart';\n \n class OnboardingScreens extends StatefulWidget {\n   const OnboardingScreens({Key? key}) : super(key: key);\n \n@@ -48,8 +49,13 @@\n           child: Row(\n             mainAxisAlignment: MainAxisAlignment.spaceBetween,\n             children: [\n               TextButton(onPressed: () {}, child: Text('SKIP')),\n+              Center(\n+                  child: SmoothPageIndicator(\n+                controller: controller,\n+                count: 3,\n+              )),\n               TextButton(onPressed: () {}, child: Text('NEXT'))\n             ],\n           )),\n     );\n"
+                },
+                {
+                    "date": 1661301510330,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,9 +52,9 @@\n               TextButton(onPressed: () {}, child: Text('SKIP')),\n               Center(\n                   child: SmoothPageIndicator(\n                 controller: controller,\n-                count: 3,\n+                count: 2,\n               )),\n               TextButton(onPressed: () {}, child: Text('NEXT'))\n             ],\n           )),\n"
+                },
+                {
+                    "date": 1661301515937,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,63 @@\n+import 'package:flutter/material.dart';\n+import 'package:smooth_page_indicator/smooth_page_indicator.dart';\n+\n+class OnboardingScreens extends StatefulWidget {\n+  const OnboardingScreens({Key? key}) : super(key: key);\n+\n+  @override\n+  State<OnboardingScreens> createState() => _OnboardingScreensState();\n+}\n+\n+class _OnboardingScreensState extends State<OnboardingScreens> {\n+  final controller = PageController();\n+  @override\n+  void dispose() {\n+    controller.dispose();\n+    super.dispose();\n+  }\n+\n+  @override\n+  Widget build(BuildContext context) {\n+    return Scaffold(\n+      body: Container(\n+        padding: EdgeInsets.only(bottom: 80),\n+        child: PageView(\n+          children: [\n+            Container(\n+              color: Colors.red,\n+              child: Center(\n+                child: Text('Page 1'),\n+              ),\n+            ),\n+            Container(\n+              color: Colors.amber,\n+              child: Center(\n+                child: Text('Page 2'),\n+              ),\n+            ),\n+            Container(\n+              color: Colors.purple,\n+              child: Center(\n+                child: Text('Page 3'),\n+              ),\n+            )\n+          ],\n+        ),\n+      ),\n+      bottomSheet: Container(\n+          padding: EdgeInsets.symmetric(horizontal: 10),\n+          child: Row(\n+            mainAxisAlignment: MainAxisAlignment.spaceBetween,\n+            children: [\n+              TextButton(onPressed: () {}, child: Text('SKIP')),\n+              Center(\n+                  child: SmoothPageIndicator(\n+                controller: controller,\n+                count: 3,\n+              )),\n+              TextButton(onPressed: () {}, child: Text('NEXT'))\n+            ],\n+          )),\n+    );\n+  }\n+}\n"
+                },
+                {
+                    "date": 1661301648886,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,78 +49,15 @@\n           child: Row(\n             mainAxisAlignment: MainAxisAlignment.spaceBetween,\n             children: [\n               TextButton(onPressed: () {}, child: Text('SKIP')),\n-              Center(\n-                  child: SmoothPageIndicator(\n-                controller: controller,\n-                count: 3,\n-              )),\n+              // Center(\n+              //     child: SmoothPageIndicator(\n+              //   controller: controller,\n+              //   count: 3,\n+              // )),\n               TextButton(onPressed: () {}, child: Text('NEXT'))\n             ],\n           )),\n     );\n   }\n }\n-import 'package:flutter/material.dart';\n-import 'package:smooth_page_indicator/smooth_page_indicator.dart';\n-\n-class OnboardingScreens extends StatefulWidget {\n-  const OnboardingScreens({Key? key}) : super(key: key);\n-\n-  @override\n-  State<OnboardingScreens> createState() => _OnboardingScreensState();\n-}\n-\n-class _OnboardingScreensState extends State<OnboardingScreens> {\n-  final controller = PageController();\n-  @override\n-  void dispose() {\n-    controller.dispose();\n-    super.dispose();\n-  }\n-\n-  @override\n-  Widget build(BuildContext context) {\n-    return Scaffold(\n-      body: Container(\n-        padding: EdgeInsets.only(bottom: 80),\n-        child: PageView(\n-          children: [\n-            Container(\n-              color: Colors.red,\n-              child: Center(\n-                child: Text('Page 1'),\n-              ),\n-            ),\n-            Container(\n-              color: Colors.amber,\n-              child: Center(\n-                child: Text('Page 2'),\n-              ),\n-            ),\n-            Container(\n-              color: Colors.purple,\n-              child: Center(\n-                child: Text('Page 3'),\n-              ),\n-            )\n-          ],\n-        ),\n-      ),\n-      bottomSheet: Container(\n-          padding: EdgeInsets.symmetric(horizontal: 10),\n-          child: Row(\n-            mainAxisAlignment: MainAxisAlignment.spaceBetween,\n-            children: [\n-              TextButton(onPressed: () {}, child: Text('SKIP')),\n-              Center(\n-                  child: SmoothPageIndicator(\n-                controller: controller,\n-                count: 2,\n-              )),\n-              TextButton(onPressed: () {}, child: Text('NEXT'))\n-            ],\n-          )),\n-    );\n-  }\n-}\n"
+                },
+                {
+                    "date": 1661301677193,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,13 +49,13 @@\n           child: Row(\n             mainAxisAlignment: MainAxisAlignment.spaceBetween,\n             children: [\n               TextButton(onPressed: () {}, child: Text('SKIP')),\n-              // Center(\n-              //     child: SmoothPageIndicator(\n-              //   controller: controller,\n-              //   count: 3,\n-              // )),\n+              Center(\n+                  child: SmoothPageIndicator(\n+                controller: controller,\n+                count: 3,\n+              )),\n               TextButton(onPressed: () {}, child: Text('NEXT'))\n             ],\n           )),\n     );\n"
+                },
+                {
+                    "date": 1661301873024,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,8 +51,9 @@\n             children: [\n               TextButton(onPressed: () {}, child: Text('SKIP')),\n               Center(\n                   child: SmoothPageIndicator(\n+                effect: WormEffect(activeDotColor: Colors.black),\n                 controller: controller,\n                 count: 3,\n               )),\n               TextButton(onPressed: () {}, child: Text('NEXT'))\n"
+                },
+                {
+                    "date": 1661301927476,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,12 @@\n             children: [\n               TextButton(onPressed: () {}, child: Text('SKIP')),\n               Center(\n                   child: SmoothPageIndicator(\n-                effect: WormEffect(activeDotColor: Colors.black),\n+                effect: WormEffect(\n+                    spacing: 16,\n+                    dotColor: Colors.red,\n+                    activeDotColor: Colors.black),\n                 controller: controller,\n                 count: 3,\n               )),\n               TextButton(onPressed: () {}, child: Text('NEXT'))\n"
+                },
+                {
+                    "date": 1661302253956,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,8 +44,9 @@\n           ],\n         ),\n       ),\n       bottomSheet: Container(\n+        height: 80,\n           padding: EdgeInsets.symmetric(horizontal: 10),\n           child: Row(\n             mainAxisAlignment: MainAxisAlignment.spaceBetween,\n             children: [\n"
+                },
+                {
+                    "date": 1661304336373,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n           ],\n         ),\n       ),\n       bottomSheet: Container(\n-        height: 80,\n+          height: 80,\n           padding: EdgeInsets.symmetric(horizontal: 10),\n           child: Row(\n             mainAxisAlignment: MainAxisAlignment.spaceBetween,\n             children: [\n@@ -54,9 +54,9 @@\n               Center(\n                   child: SmoothPageIndicator(\n                 effect: WormEffect(\n                     spacing: 16,\n-                    dotColor: Colors.red,\n+                    dotColor: Color.fromRGBO(113, 21, 156, 0),\n                     activeDotColor: Colors.black),\n                 controller: controller,\n                 count: 3,\n               )),\n"
+                },
+                {
+                    "date": 1661304351082,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,9 +54,9 @@\n               Center(\n                   child: SmoothPageIndicator(\n                 effect: WormEffect(\n                     spacing: 16,\n-                    dotColor: Color.fromRGBO(113, 21, 156, 0),\n+                    dotColor: Color.fromRGBO(113, 21, 156, 1),\n                     activeDotColor: Colors.black),\n                 controller: controller,\n                 count: 3,\n               )),\n"
+                },
+                {
+                    "date": 1661304370483,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n         padding: EdgeInsets.only(bottom: 80),\n         child: PageView(\n           children: [\n             Container(\n-              color: Colors.red,\n+              color: Color.fromRGBO(113, 21, 156, 1),\n               child: Center(\n                 child: Text('Page 1'),\n               ),\n             ),\n"
+                },
+                {
+                    "date": 1661304519376,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n import 'package:flutter/material.dart';\n import 'package:smooth_page_indicator/smooth_page_indicator.dart';\n+import 'package:spiritual_daily_guide/utils/colors.dart';\n \n class OnboardingScreens extends StatefulWidget {\n   const OnboardingScreens({Key? key}) : super(key: key);\n \n@@ -23,9 +24,9 @@\n         padding: EdgeInsets.only(bottom: 80),\n         child: PageView(\n           children: [\n             Container(\n-              color: Color.fromRGBO(113, 21, 156, 1),\n+              color: MyColors.secondaryColorLightTheme,\n               child: Center(\n                 child: Text('Page 1'),\n               ),\n             ),\n"
+                },
+                {
+                    "date": 1661304536829,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n         padding: EdgeInsets.only(bottom: 80),\n         child: PageView(\n           children: [\n             Container(\n-              color: MyColors.secondaryColorLightTheme,\n+              color: MyColors.primary,\n               child: Center(\n                 child: Text('Page 1'),\n               ),\n             ),\n"
+                },
+                {
+                    "date": 1661304544414,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n         padding: EdgeInsets.only(bottom: 80),\n         child: PageView(\n           children: [\n             Container(\n-              color: MyColors.primary,\n+              color: MyColors.primaryColor,\n               child: Center(\n                 child: Text('Page 1'),\n               ),\n             ),\n"
+                },
+                {
+                    "date": 1661305124717,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n         padding: EdgeInsets.only(bottom: 80),\n         child: PageView(\n           children: [\n             Container(\n-              color: MyColors.primaryColor,\n+              color: MyColors.backgroundColor,\n               child: Center(\n                 child: Text('Page 1'),\n               ),\n             ),\n"
+                },
+                {
+                    "date": 1661305297776,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,11 +25,13 @@\n         child: PageView(\n           children: [\n             Container(\n               color: MyColors.backgroundColor,\n-              child: Center(\n-                child: Text('Page 1'),\n-              ),\n+              child: Stack(children: [\n+                Container(\n+                  height: MediaQuery.of(context).size.height * 0.5,\n+                )\n+              ]),\n             ),\n             Container(\n               color: Colors.amber,\n               child: Center(\n"
+                },
+                {
+                    "date": 1661305395682,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,8 +27,10 @@\n             Container(\n               color: MyColors.backgroundColor,\n               child: Stack(children: [\n                 Container(\n+                  decoration:\n+                      BoxDecoration(borderRadius: BorderRadius.circular(10)),\n                   height: MediaQuery.of(context).size.height * 0.5,\n                 )\n               ]),\n             ),\n"
+                },
+                {
+                    "date": 1661305412589,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,10 +27,11 @@\n             Container(\n               color: MyColors.backgroundColor,\n               child: Stack(children: [\n                 Container(\n-                  decoration:\n-                      BoxDecoration(borderRadius: BorderRadius.circular(10)),\n+                  decoration: BoxDecoration(\n+                      borderRadius: BorderRadius.circular(10),\n+                      color: MyColors.primaryColor),\n                   height: MediaQuery.of(context).size.height * 0.5,\n                 )\n               ]),\n             ),\n"
+                },
+                {
+                    "date": 1661305529264,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,13 +26,16 @@\n           children: [\n             Container(\n               color: MyColors.backgroundColor,\n               child: Stack(children: [\n-                Container(\n-                  decoration: BoxDecoration(\n-                      borderRadius: BorderRadius.circular(10),\n-                      color: MyColors.primaryColor),\n-                  height: MediaQuery.of(context).size.height * 0.5,\n+                Positioned(\n+                  top: MediaQuery.of(context).,\n+                  child: Container(\n+                    decoration: BoxDecoration(\n+                        borderRadius: BorderRadius.circular(10),\n+                        color: MyColors.primaryColor),\n+                    height: MediaQuery.of(context).size.height * - 0.5,\n+                  ),\n                 )\n               ]),\n             ),\n             Container(\n"
+                },
+                {
+                    "date": 1661305536593,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,14 +27,13 @@\n             Container(\n               color: MyColors.backgroundColor,\n               child: Stack(children: [\n                 Positioned(\n-                  top: MediaQuery.of(context).,\n                   child: Container(\n                     decoration: BoxDecoration(\n                         borderRadius: BorderRadius.circular(10),\n                         color: MyColors.primaryColor),\n-                    height: MediaQuery.of(context).size.height * - 0.5,\n+                    height: MediaQuery.of(context).size.height * -0.5,\n                   ),\n                 )\n               ]),\n             ),\n"
+                },
+                {
+                    "date": 1661305545260,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n                   child: Container(\n                     decoration: BoxDecoration(\n                         borderRadius: BorderRadius.circular(10),\n                         color: MyColors.primaryColor),\n-                    height: MediaQuery.of(context).size.height * -0.5,\n+                    height: MediaQuery.of(context).size.height * 0.5,\n                   ),\n                 )\n               ]),\n             ),\n"
+                },
+                {
+                    "date": 1661305558546,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,8 +27,9 @@\n             Container(\n               color: MyColors.backgroundColor,\n               child: Stack(children: [\n                 Positioned(\n+                  top: 50,\n                   child: Container(\n                     decoration: BoxDecoration(\n                         borderRadius: BorderRadius.circular(10),\n                         color: MyColors.primaryColor),\n"
+                },
+                {
+                    "date": 1661305568424,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n             Container(\n               color: MyColors.backgroundColor,\n               child: Stack(children: [\n                 Positioned(\n-                  top: 50,\n+                  bottom: 50,\n                   child: Container(\n                     decoration: BoxDecoration(\n                         borderRadius: BorderRadius.circular(10),\n                         color: MyColors.primaryColor),\n"
+                },
+                {
+                    "date": 1661305607635,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n             Container(\n               color: MyColors.backgroundColor,\n               child: Stack(children: [\n                 Positioned(\n-                  bottom: 50,\n+                  bottom: 0,\n                   child: Container(\n                     decoration: BoxDecoration(\n                         borderRadius: BorderRadius.circular(10),\n                         color: MyColors.primaryColor),\n"
+                },
+                {
+                    "date": 1661305617496,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n             Container(\n               color: MyColors.backgroundColor,\n               child: Stack(children: [\n                 Positioned(\n-                  bottom: 0,\n+                  top: 0,\n                   child: Container(\n                     decoration: BoxDecoration(\n                         borderRadius: BorderRadius.circular(10),\n                         color: MyColors.primaryColor),\n"
+                },
+                {
+                    "date": 1661305622818,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n             Container(\n               color: MyColors.backgroundColor,\n               child: Stack(children: [\n                 Positioned(\n-                  top: 0,\n+                  top: 5,\n                   child: Container(\n                     decoration: BoxDecoration(\n                         borderRadius: BorderRadius.circular(10),\n                         color: MyColors.primaryColor),\n"
+                },
+                {
+                    "date": 1661305636861,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,8 @@\n             Container(\n               color: MyColors.backgroundColor,\n               child: Stack(children: [\n                 Positioned(\n-                  top: 5,\n                   child: Container(\n                     decoration: BoxDecoration(\n                         borderRadius: BorderRadius.circular(10),\n                         color: MyColors.primaryColor),\n"
+                },
+                {
+                    "date": 1661305668531,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,10 @@\n           children: [\n             Container(\n               color: MyColors.backgroundColor,\n               child: Stack(children: [\n-                Positioned(\n+                Align(\n+                  alignment: Alignment.bottomCenter,\n                   child: Container(\n                     decoration: BoxDecoration(\n                         borderRadius: BorderRadius.circular(10),\n                         color: MyColors.primaryColor),\n"
+                },
+                {
+                    "date": 1661305692927,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,17 +59,17 @@\n           child: Row(\n             mainAxisAlignment: MainAxisAlignment.spaceBetween,\n             children: [\n               TextButton(onPressed: () {}, child: Text('SKIP')),\n-              Center(\n-                  child: SmoothPageIndicator(\n-                effect: WormEffect(\n-                    spacing: 16,\n-                    dotColor: Color.fromRGBO(113, 21, 156, 1),\n-                    activeDotColor: Colors.black),\n-                controller: controller,\n-                count: 3,\n-              )),\n+              // Center(\n+              //     child: SmoothPageIndicator(\n+              //   effect: WormEffect(\n+              //       spacing: 16,\n+              //       dotColor: Color.fromRGBO(113, 21, 156, 1),\n+              //       activeDotColor: Colors.black),\n+              //   controller: controller,\n+              //   count: 3,\n+              // )),\n               TextButton(onPressed: () {}, child: Text('NEXT'))\n             ],\n           )),\n     );\n"
+                },
+                {
+                    "date": 1661305730912,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,8 +53,9 @@\n           ],\n         ),\n       ),\n       bottomSheet: Container(\n+          color: MyColors.primaryColor,\n           height: 80,\n           padding: EdgeInsets.symmetric(horizontal: 10),\n           child: Row(\n             mainAxisAlignment: MainAxisAlignment.spaceBetween,\n"
+                },
+                {
+                    "date": 1661305750515,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,17 +60,17 @@\n           child: Row(\n             mainAxisAlignment: MainAxisAlignment.spaceBetween,\n             children: [\n               TextButton(onPressed: () {}, child: Text('SKIP')),\n-              // Center(\n-              //     child: SmoothPageIndicator(\n-              //   effect: WormEffect(\n-              //       spacing: 16,\n-              //       dotColor: Color.fromRGBO(113, 21, 156, 1),\n-              //       activeDotColor: Colors.black),\n-              //   controller: controller,\n-              //   count: 3,\n-              // )),\n+              Center(\n+                  child: SmoothPageIndicator(\n+                effect: WormEffect(\n+                    spacing: 16,\n+                    dotColor: Color.fromRGBO(113, 21, 156, 1),\n+                    activeDotColor: Colors.black),\n+                controller: controller,\n+                count: 3,\n+              )),\n               TextButton(onPressed: () {}, child: Text('NEXT'))\n             ],\n           )),\n     );\n"
+                },
+                {
+                    "date": 1661305772752,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -64,9 +64,9 @@\n               Center(\n                   child: SmoothPageIndicator(\n                 effect: WormEffect(\n                     spacing: 16,\n-                    dotColor: Color.fromRGBO(113, 21, 156, 1),\n+                    dotColor: MyColors.backgroundColor,\n                     activeDotColor: Colors.black),\n                 controller: controller,\n                 count: 3,\n               )),\n"
+                },
+                {
+                    "date": 1661305941480,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,17 +26,17 @@\n           children: [\n             Container(\n               color: MyColors.backgroundColor,\n               child: Stack(children: [\n-                Align(\n-                  alignment: Alignment.bottomCenter,\n-                  child: Container(\n-                    decoration: BoxDecoration(\n-                        borderRadius: BorderRadius.circular(10),\n-                        color: MyColors.primaryColor),\n-                    height: MediaQuery.of(context).size.height * 0.5,\n-                  ),\n-                )\n+                // Align(\n+                //   alignment: Alignment.bottomCenter,\n+                //   child: Container(\n+                //     decoration: BoxDecoration(\n+                //         borderRadius: BorderRadius.circular(10),\n+                //         color: MyColors.primaryColor),\n+                //     height: MediaQuery.of(context).size.height * 0.5,\n+                //   ),\n+                // )\n               ]),\n             ),\n             Container(\n               color: Colors.amber,\n"
+                },
+                {
+                    "date": 1661305965973,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,9 +54,9 @@\n         ),\n       ),\n       bottomSheet: Container(\n           color: MyColors.primaryColor,\n-          height: 80,\n+          height: MediaQuery.of(context).size.height * 0.5,\n           padding: EdgeInsets.symmetric(horizontal: 10),\n           child: Row(\n             mainAxisAlignment: MainAxisAlignment.spaceBetween,\n             children: [\n"
+                },
+                {
+                    "date": 1661305993701,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,17 +60,18 @@\n           child: Row(\n             mainAxisAlignment: MainAxisAlignment.spaceBetween,\n             children: [\n               TextButton(onPressed: () {}, child: Text('SKIP')),\n-              Center(\n+              Align(\n+                  alignment: Alignment.bottomCenter,\n                   child: SmoothPageIndicator(\n-                effect: WormEffect(\n-                    spacing: 16,\n-                    dotColor: MyColors.backgroundColor,\n-                    activeDotColor: Colors.black),\n-                controller: controller,\n-                count: 3,\n-              )),\n+                    effect: WormEffect(\n+                        spacing: 16,\n+                        dotColor: MyColors.backgroundColor,\n+                        activeDotColor: Colors.black),\n+                    controller: controller,\n+                    count: 3,\n+                  )),\n               TextButton(onPressed: () {}, child: Text('NEXT'))\n             ],\n           )),\n     );\n"
+                },
+                {
+                    "date": 1661306056124,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,24 +56,26 @@\n       bottomSheet: Container(\n           color: MyColors.primaryColor,\n           height: MediaQuery.of(context).size.height * 0.5,\n           padding: EdgeInsets.symmetric(horizontal: 10),\n-          child: Row(\n-            mainAxisAlignment: MainAxisAlignment.spaceBetween,\n-            children: [\n-              TextButton(onPressed: () {}, child: Text('SKIP')),\n-              Align(\n-                  alignment: Alignment.bottomCenter,\n-                  child: SmoothPageIndicator(\n-                    effect: WormEffect(\n-                        spacing: 16,\n-                        dotColor: MyColors.backgroundColor,\n-                        activeDotColor: Colors.black),\n-                    controller: controller,\n-                    count: 3,\n-                  )),\n-              TextButton(onPressed: () {}, child: Text('NEXT'))\n-            ],\n+          child: Align(\n+            alignment: Alignment.bottomCenter,\n+            child: Row(\n+              mainAxisAlignment: MainAxisAlignment.spaceBetween,\n+              children: [\n+                TextButton(onPressed: () {}, child: Text('SKIP')),\n+                Center(\n+                    child: SmoothPageIndicator(\n+                  effect: WormEffect(\n+                      spacing: 16,\n+                      dotColor: MyColors.backgroundColor,\n+                      activeDotColor: Colors.black),\n+                  controller: controller,\n+                  count: 3,\n+                )),\n+                TextButton(onPressed: () {}, child: Text('NEXT'))\n+              ],\n+            ),\n           )),\n     );\n   }\n }\n"
+                },
+                {
+                    "date": 1661306110682,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,10 +56,11 @@\n       bottomSheet: Container(\n           color: MyColors.primaryColor,\n           height: MediaQuery.of(context).size.height * 0.5,\n           padding: EdgeInsets.symmetric(horizontal: 10),\n-          child: Align(\n-            alignment: Alignment.bottomCenter,\n+          child: Positioned(\n+            top: 100,\n+            // alignment: Alignment.bottomCenter,\n             child: Row(\n               mainAxisAlignment: MainAxisAlignment.spaceBetween,\n               children: [\n                 TextButton(onPressed: () {}, child: Text('SKIP')),\n"
+                },
+                {
+                    "date": 1661306122475,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,9 +57,9 @@\n           color: MyColors.primaryColor,\n           height: MediaQuery.of(context).size.height * 0.5,\n           padding: EdgeInsets.symmetric(horizontal: 10),\n           child: Positioned(\n-            top: 100,\n+            bottom: 100,\n             // alignment: Alignment.bottomCenter,\n             child: Row(\n               mainAxisAlignment: MainAxisAlignment.spaceBetween,\n               children: [\n"
+                },
+                {
+                    "date": 1661306156949,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,9 +54,9 @@\n         ),\n       ),\n       bottomSheet: Container(\n           color: MyColors.primaryColor,\n-          height: MediaQuery.of(context).size.height * 0.5,\n+          height: 80, //MediaQuery.of(context).size.height * 0.5,\n           padding: EdgeInsets.symmetric(horizontal: 10),\n           child: Positioned(\n             bottom: 100,\n             // alignment: Alignment.bottomCenter,\n"
+                },
+                {
+                    "date": 1661306165755,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,9 +54,9 @@\n         ),\n       ),\n       bottomSheet: Container(\n           color: MyColors.primaryColor,\n-          height: 80, //MediaQuery.of(context).size.height * 0.5,\n+          height: MediaQuery.of(context).size.height * 0.5,\n           padding: EdgeInsets.symmetric(horizontal: 10),\n           child: Positioned(\n             bottom: 100,\n             // alignment: Alignment.bottomCenter,\n"
+                }
+            ],
+            "date": 1661299853039,
+            "name": "Commit-0",
+            "content": "import 'package:flutter/material.dart';\nimport 'package:flutter/src/foundation/key.dart';\nimport 'package:flutter/src/widgets/framework.dart';\n\nclass OnboardingScreens extends StatefulWidget {\n  const OnboardingScreens({Key? key}) : super(key: key);\n\n  @override\n  State<OnboardingScreens> createState() => _OnboardingScreensState();\n}\n\nclass _OnboardingScreensState extends State<OnboardingScreens> {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      body: PageView(\n        children: [\n          Container(\n            color: Colors.red,\n            child: Center(\n              child: Text('Page 1'),\n            ),\n          )\n        ],\n      ),\n    );\n  }\n}\n"
+        }
+    ]
+}

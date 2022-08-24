@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 18,
+            "activePatchIndex": 36,
             "patches": [
                 {
                     "date": 1660657066802,
@@ -80,6 +80,78 @@
                 {
                     "date": 1660660581936,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n     // } else if (_authStatus == AuthStatus.LOGGED_OUT) {\n     //   return const WelcomePage();\n     // }\n     return Scaffold(\n-      backgroundColor: const Color(0xff71159C),\n+      backgroundColor: const Color(0xe671159C),\n       body: SafeArea(\n           child: Container(\n         color: Theme.of(context).primaryColor,\n         child: Center(\n"
+                },
+                {
+                    "date": 1660665999285,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,10 @@\n import 'package:spiritual_daily_guide/presentations/signIn_page.dart';\n import 'package:spiritual_daily_guide/widgets/app_large_text.dart';\n import 'package:spiritual_daily_guide/widgets/helper_tools.dart';\n \n+import '../route_folder/route_names.dart';\n+\n class SplashScreen extends StatefulWidget {\n   const SplashScreen({Key? key}) : super(key: key);\n \n   @override\n@@ -19,9 +21,9 @@\n   @override\n   void initState() {\n     super.initState();\n     // LocalStoreHelper.getTheme();\n-    Timer(const Duration(seconds: 3), () => const SignInPage());\n+    Timer(const Duration(seconds: 3), () => RouteName.signInPage);\n   }\n \n   @override\n   Widget build(BuildContext context) {\n"
+                },
+                {
+                    "date": 1660666070755,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n   @override\n   void initState() {\n     super.initState();\n     // LocalStoreHelper.getTheme();\n-    Timer(const Duration(seconds: 3), () => RouteName.signInPage);\n+    Timer(const Duration(seconds: 1), () => RouteName.signInPage);\n   }\n \n   @override\n   Widget build(BuildContext context) {\n"
+                },
+                {
+                    "date": 1661215117354,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,8 @@\n \n   @override\n   void initState() {\n     super.initState();\n-    // LocalStoreHelper.getTheme();\n     Timer(const Duration(seconds: 1), () => RouteName.signInPage);\n   }\n \n   @override\n"
+                },
+                {
+                    "date": 1661223354128,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n \n   @override\n   void initState() {\n     super.initState();\n-    Timer(const Duration(seconds: 1), () => RouteName.signInPage);\n+    Timer(const Duration(seconds: 1), () => const SignInPage());\n   }\n \n   @override\n   Widget build(BuildContext context) {\n"
+                },
+                {
+                    "date": 1661223429215,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n \n   @override\n   void initState() {\n     super.initState();\n-    Timer(const Duration(seconds: 1), () => const SignInPage());\n+    Timer(const Duration(seconds: 3), () => const SignInPage());\n   }\n \n   @override\n   Widget build(BuildContext context) {\n"
+                },
+                {
+                    "date": 1661224006734,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n \n   @override\n   void initState() {\n     super.initState();\n-    Timer(const Duration(seconds: 3), () => const SignInPage());\n+    Timer(const Duration(seconds: 3), () => RouteName.signInPage);\n   }\n \n   @override\n   Widget build(BuildContext context) {\n"
+                },
+                {
+                    "date": 1661224061922,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,10 @@\n \n   @override\n   void initState() {\n     super.initState();\n-    Timer(const Duration(seconds: 3), () => RouteName.signInPage);\n+    // Timer(const Duration(seconds: 3), () =>\n+    RouteName.signInPage;\n   }\n \n   @override\n   Widget build(BuildContext context) {\n"
+                },
+                {
+                    "date": 1661224088064,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n   @override\n   void initState() {\n     super.initState();\n     // Timer(const Duration(seconds: 3), () =>\n-    RouteName.signInPage;\n+    SignInPage();\n   }\n \n   @override\n   Widget build(BuildContext context) {\n"
+                },
+                {
+                    "date": 1661224233154,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,10 +20,9 @@\n \n   @override\n   void initState() {\n     super.initState();\n-    // Timer(const Duration(seconds: 3), () =>\n-    SignInPage();\n+    Timer(const Duration(seconds: 3), () => SignInPage());\n   }\n \n   @override\n   Widget build(BuildContext context) {\n"
+                },
+                {
+                    "date": 1661224379438,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,13 +25,8 @@\n   }\n \n   @override\n   Widget build(BuildContext context) {\n-    // if (_authStatus == AuthStatus.LOGGED_IN) {\n-    //   return const Dashboard();\n-    // } else if (_authStatus == AuthStatus.LOGGED_OUT) {\n-    //   return const WelcomePage();\n-    // }\n     return Scaffold(\n       backgroundColor: const Color(0xe671159C),\n       body: SafeArea(\n           child: Container(\n"
+                },
+                {
+                    "date": 1661224387562,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,10 +15,8 @@\n   State<SplashScreen> createState() => _SplashScreenState();\n }\n \n class _SplashScreenState extends State<SplashScreen> {\n-  var _authStatus;\n-\n   @override\n   void initState() {\n     super.initState();\n     Timer(const Duration(seconds: 3), () => SignInPage());\n"
+                },
+                {
+                    "date": 1661224393960,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,11 @@\n import 'dart:async';\n \n import 'package:flutter/material.dart';\n-import 'package:flutter_svg/svg.dart';\n import 'package:spiritual_daily_guide/presentations/signIn_page.dart';\n import 'package:spiritual_daily_guide/widgets/app_large_text.dart';\n import 'package:spiritual_daily_guide/widgets/helper_tools.dart';\n \n-import '../route_folder/route_names.dart';\n-\n class SplashScreen extends StatefulWidget {\n   const SplashScreen({Key? key}) : super(key: key);\n \n   @override\n"
+                },
+                {
+                    "date": 1661224413837,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,10 +14,10 @@\n \n class _SplashScreenState extends State<SplashScreen> {\n   @override\n   void initState() {\n+    Timer(const Duration(seconds: 3), () => SignInPage());\n     super.initState();\n-    Timer(const Duration(seconds: 3), () => SignInPage());\n   }\n \n   @override\n   Widget build(BuildContext context) {\n"
+                },
+                {
+                    "date": 1661299018463,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n import 'dart:async';\n \n import 'package:flutter/material.dart';\n import 'package:spiritual_daily_guide/presentations/signIn_page.dart';\n+import 'package:spiritual_daily_guide/route_folder/route_names.dart';\n import 'package:spiritual_daily_guide/widgets/app_large_text.dart';\n import 'package:spiritual_daily_guide/widgets/helper_tools.dart';\n \n class SplashScreen extends StatefulWidget {\n@@ -22,35 +23,38 @@\n   @override\n   Widget build(BuildContext context) {\n     return Scaffold(\n       backgroundColor: const Color(0xe671159C),\n-      body: SafeArea(\n-          child: Container(\n-        color: Theme.of(context).primaryColor,\n-        child: Center(\n-          child: SizedBox(\n-            child: Column(\n-              mainAxisAlignment: MainAxisAlignment.center,\n-              crossAxisAlignment: CrossAxisAlignment.start,\n-              children: [\n-                SizedBox(\n-                    width: 356,\n-                    height: 236,\n-                    child: Image.asset(\"assets/dove_splash.png\")),\n-                addVerticalSpace(40),\n-                SizedBox(\n-                    width: 372,\n-                    height: 100,\n-                    child: AppLargeText(\n-                      text: \"DAILY FELLOWSHIP REMINDER\",\n-                      color: Colors.white,\n-                      textAlign: TextAlign.center,\n-                    ))\n-              ],\n+      body: InkWell(\n+        onTap: () => Navigator.pushNamed(context, RouteName.signInPage),\n+        child: SafeArea(\n+            child: Container(\n+          color: Theme.of(context).primaryColor,\n+          child: Center(\n+            child: SizedBox(\n+              child: Column(\n+                mainAxisAlignment: MainAxisAlignment.center,\n+                crossAxisAlignment: CrossAxisAlignment.start,\n+                children: [\n+                  SizedBox(\n+                      width: 356,\n+                      height: 236,\n+                      child: Image.asset(\"assets/dove_splash.png\")),\n+                  addVerticalSpace(40),\n+                  SizedBox(\n+                      width: 372,\n+                      height: 100,\n+                      child: AppLargeText(\n+                        text: \"DAILY FELLOWSHIP REMINDER\",\n+                        color: Colors.white,\n+                        textAlign: TextAlign.center,\n+                      ))\n+                ],\n+              ),\n             ),\n           ),\n-        ),\n-      )),\n+        )),\n+      ),\n     );\n   }\n \n   // void getAuthStatus() async {\n"
+                },
+                {
+                    "date": 1661300259014,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n   Widget build(BuildContext context) {\n     return Scaffold(\n       backgroundColor: const Color(0xe671159C),\n       body: InkWell(\n-        onTap: () => Navigator.pushNamed(context, RouteName.signInPage),\n+        onTap: () => Navigator.pushNamed(context, RouteName.onboarding_page),\n         child: SafeArea(\n             child: Container(\n           color: Theme.of(context).primaryColor,\n           child: Center(\n"
+                },
+                {
+                    "date": 1661304394687,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n \n   @override\n   Widget build(BuildContext context) {\n     return Scaffold(\n-      backgroundColor: const Color(0xe671159C),\n+      backgroundColor: Color.fromRGBO(113, 21, 156, 1),\n       body: InkWell(\n         onTap: () => Navigator.pushNamed(context, RouteName.onboarding_page),\n         child: SafeArea(\n             child: Container(\n"
+                },
+                {
+                    "date": 1661304568062,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n \n import 'package:flutter/material.dart';\n import 'package:spiritual_daily_guide/presentations/signIn_page.dart';\n import 'package:spiritual_daily_guide/route_folder/route_names.dart';\n+import 'package:spiritual_daily_guide/utils/colors.dart';\n import 'package:spiritual_daily_guide/widgets/app_large_text.dart';\n import 'package:spiritual_daily_guide/widgets/helper_tools.dart';\n \n class SplashScreen extends StatefulWidget {\n@@ -22,9 +23,9 @@\n \n   @override\n   Widget build(BuildContext context) {\n     return Scaffold(\n-      backgroundColor: Color.fromRGBO(113, 21, 156, 1),\n+      backgroundColor: MyColors.primaryColor,\n       body: InkWell(\n         onTap: () => Navigator.pushNamed(context, RouteName.onboarding_page),\n         child: SafeArea(\n             child: Container(\n"
+                },
+                {
+                    "date": 1661304614857,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n       body: InkWell(\n         onTap: () => Navigator.pushNamed(context, RouteName.onboarding_page),\n         child: SafeArea(\n             child: Container(\n-          color: Theme.of(context).primaryColor,\n+          color: MyColors.primaryColor,\n           child: Center(\n             child: SizedBox(\n               child: Column(\n                 mainAxisAlignment: MainAxisAlignment.center,\n"
                 }
             ],
             "date": 1660657066802,
