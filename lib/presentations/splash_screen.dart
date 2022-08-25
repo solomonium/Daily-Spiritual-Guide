@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:spiritual_daily_guide/presentations/signIn_page.dart';
 import 'package:spiritual_daily_guide/route_folder/route_names.dart';
@@ -48,7 +49,21 @@ class _SplashScreenState extends State<SplashScreen> {
                         text: "DAILY FELLOWSHIP REMINDER",
                         color: Colors.white,
                         textAlign: TextAlign.center,
-                      ))
+                      )),
+                  addVerticalSpace(40),
+                  Center(
+                    child: AnimatedTextKit(
+                      totalRepeatCount: 40,
+                      animatedTexts: [
+                        ScaleAnimatedText(
+                          'Tap the Screen Proceed',
+                          duration: Duration(milliseconds: 2000),
+                          textStyle: const TextStyle(
+                              color: MyColors.backgroundColor, fontSize: 20.0),
+                        ),
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),

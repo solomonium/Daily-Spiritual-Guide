@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 36,
+            "activePatchIndex": 42,
             "patches": [
                 {
                     "date": 1660657066802,
@@ -152,6 +152,30 @@
                 {
                     "date": 1661304614857,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n       body: InkWell(\n         onTap: () => Navigator.pushNamed(context, RouteName.onboarding_page),\n         child: SafeArea(\n             child: Container(\n-          color: Theme.of(context).primaryColor,\n+          color: MyColors.primaryColor,\n           child: Center(\n             child: SizedBox(\n               child: Column(\n                 mainAxisAlignment: MainAxisAlignment.center,\n"
+                },
+                {
+                    "date": 1661388800149,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n import 'dart:async';\n \n+import 'package:animated_text_kit/animated_text_kit.dart';\n import 'package:flutter/material.dart';\n import 'package:spiritual_daily_guide/presentations/signIn_page.dart';\n import 'package:spiritual_daily_guide/route_folder/route_names.dart';\n import 'package:spiritual_daily_guide/utils/colors.dart';\n@@ -47,9 +48,23 @@\n                       child: AppLargeText(\n                         text: \"DAILY FELLOWSHIP REMINDER\",\n                         color: Colors.white,\n                         textAlign: TextAlign.center,\n-                      ))\n+                      )),\n+                  addVerticalSpace(40),\n+                  Center(\n+                    child: AnimatedTextKit(\n+                      totalRepeatCount: 40,\n+                      animatedTexts: [\n+                        ScaleAnimatedText(\n+                          'Then Get Bigger',\n+                          duration: Duration(milliseconds: 4000),\n+                          textStyle: const TextStyle(\n+                              color: Colors.indigo, fontSize: 50.0),\n+                        ),\n+                      ],\n+                    ),\n+                  ),\n                 ],\n               ),\n             ),\n           ),\n"
+                },
+                {
+                    "date": 1661388842541,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,11 +56,11 @@\n                       totalRepeatCount: 40,\n                       animatedTexts: [\n                         ScaleAnimatedText(\n                           'Then Get Bigger',\n-                          duration: Duration(milliseconds: 4000),\n+                          duration: Duration(milliseconds: 400),\n                           textStyle: const TextStyle(\n-                              color: Colors.indigo, fontSize: 50.0),\n+                              color: MyColors.backgroundColor, fontSize: 20.0),\n                         ),\n                       ],\n                     ),\n                   ),\n"
+                },
+                {
+                    "date": 1661388882991,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,9 +56,9 @@\n                       totalRepeatCount: 40,\n                       animatedTexts: [\n                         ScaleAnimatedText(\n                           'Then Get Bigger',\n-                          duration: Duration(milliseconds: 400),\n+                          duration: Duration(milliseconds: 4000),\n                           textStyle: const TextStyle(\n                               color: MyColors.backgroundColor, fontSize: 20.0),\n                         ),\n                       ],\n"
+                },
+                {
+                    "date": 1661388911557,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,9 +55,9 @@\n                     child: AnimatedTextKit(\n                       totalRepeatCount: 40,\n                       animatedTexts: [\n                         ScaleAnimatedText(\n-                          'Then Get Bigger',\n+                          'Tap to proceed',\n                           duration: Duration(milliseconds: 4000),\n                           textStyle: const TextStyle(\n                               color: MyColors.backgroundColor, fontSize: 20.0),\n                         ),\n"
+                },
+                {
+                    "date": 1661388936639,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,9 +55,9 @@\n                     child: AnimatedTextKit(\n                       totalRepeatCount: 40,\n                       animatedTexts: [\n                         ScaleAnimatedText(\n-                          'Tap to proceed',\n+                          'Tap the Screen Proceed',\n                           duration: Duration(milliseconds: 4000),\n                           textStyle: const TextStyle(\n                               color: MyColors.backgroundColor, fontSize: 20.0),\n                         ),\n"
+                },
+                {
+                    "date": 1661388949798,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,9 +56,9 @@\n                       totalRepeatCount: 40,\n                       animatedTexts: [\n                         ScaleAnimatedText(\n                           'Tap the Screen Proceed',\n-                          duration: Duration(milliseconds: 4000),\n+                          duration: Duration(milliseconds: 2000),\n                           textStyle: const TextStyle(\n                               color: MyColors.backgroundColor, fontSize: 20.0),\n                         ),\n                       ],\n"
                 }
             ],
             "date": 1660657066802,

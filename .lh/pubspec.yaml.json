@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 22,
+            "activePatchIndex": 24,
             "patches": [
                 {
                     "date": 1659635001261,
@@ -96,6 +96,14 @@
                 {
                     "date": 1661216475355,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,9 +48,9 @@\n flutter_icons:\n   android: true\n   ios: true\n   adaptive_icon_foreground: \"assets/white_holy_spirit.png\"\n-  adaptive_icon_background: : \"#ffffff\"\n+  adaptive_icon_background: \"#ffffff\"\n   image_path:\n     \"assets/white-Holy spirit.png\"\n \n     # The \"flutter_lints\" package below contains a set of recommended lints to\n"
+                },
+                {
+                    "date": 1661382826413,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,8 +38,9 @@\n   validators: ^3.0.0\n   intl: ^0.17.0\n   shimmer: ^2.0.0\n   flutter_svg: ^1.1.3\n+  smooth_page_indicator: ^1.0.0+2\n \n dev_dependencies:\n   flutter_test:\n     sdk: flutter\n@@ -81,8 +82,11 @@\n     - assets/dove_splash.svg\n     - assets/dove_splash.png\n     - assets/white-Holy spirit.png\n     - assets/white_holy_spirit.png\n+    - assets/slide1.svg\n+    - assets/slide2.svg\n+    - assets/slide3.svg\n   #   - images/a_dot_ham.jpeg\n \n   # An image asset can refer to one or more resolution-specific \"variants\", see\n   # https://flutter.dev/assets-and-images/#resolution-aware\n"
+                },
+                {
+                    "date": 1661383217711,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -82,11 +82,11 @@\n     - assets/dove_splash.svg\n     - assets/dove_splash.png\n     - assets/white-Holy spirit.png\n     - assets/white_holy_spirit.png\n-    - assets/slide1.svg\n-    - assets/slide2.svg\n-    - assets/slide3.svg\n+    - assets/slide1.png\n+    - assets/slide2.png\n+    - assets/slide3.png\n   #   - images/a_dot_ham.jpeg\n \n   # An image asset can refer to one or more resolution-specific \"variants\", see\n   # https://flutter.dev/assets-and-images/#resolution-aware\n"
                 }
             ],
             "date": 1659635001260,
