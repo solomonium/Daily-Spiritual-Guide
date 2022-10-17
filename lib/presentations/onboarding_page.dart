@@ -81,7 +81,7 @@ class _OnboardingScreensState extends State<OnboardingScreens> {
                               fit: BoxFit.contain,
                             ),
                           ),
-                          addVerticalSpace(67),
+                          addVerticalSpace(50),
                           AppLargeText(
                             text: 'Anywhere & Anytime',
                             color: MyColors.backgroundColor,
@@ -95,7 +95,7 @@ class _OnboardingScreensState extends State<OnboardingScreens> {
                                     'Read and  complete your bible task anywhere and anytime .',
                                 color: MyColors.backgroundColor),
                           ),
-                          addVerticalSpace(70),
+                          addVerticalSpace(100),
                           SmoothPageIndicator(
                               effect: ExpandingDotsEffect(
                                   dotWidth: 10,
@@ -151,7 +151,7 @@ class _OnboardingScreensState extends State<OnboardingScreens> {
                               fit: BoxFit.contain,
                             ),
                           ),
-                          addVerticalSpace(67),
+                          addVerticalSpace(50),
                           AppLargeText(
                             text: 'Audio Feature',
                             color: MyColors.backgroundColor,
@@ -165,7 +165,7 @@ class _OnboardingScreensState extends State<OnboardingScreens> {
                                     'With our audio feature you can now listen to bible verses.',
                                 color: MyColors.backgroundColor),
                           ),
-                          addVerticalSpace(70),
+                          addVerticalSpace(100),
                           SmoothPageIndicator(
                               effect: ExpandingDotsEffect(
                                   dotWidth: 10,
@@ -221,7 +221,7 @@ class _OnboardingScreensState extends State<OnboardingScreens> {
                               fit: BoxFit.contain,
                             ),
                           ),
-                          // addVerticalSpace(67),
+                          addVerticalSpace(50),
                           AppLargeText(
                             text: 'Set Reminder',
                             color: MyColors.backgroundColor,
@@ -235,7 +235,7 @@ class _OnboardingScreensState extends State<OnboardingScreens> {
                                     'Set a reminder for a particular time to read day and night.',
                                 color: MyColors.backgroundColor),
                           ),
-                          addVerticalSpace(70),
+                          addVerticalSpace(100),
                           SmoothPageIndicator(
                               effect: ExpandingDotsEffect(
                                   dotWidth: 10,
@@ -243,7 +243,7 @@ class _OnboardingScreensState extends State<OnboardingScreens> {
                                   activeDotColor: MyColors.backgroundColor),
                               controller: controller,
                               count: 3),
-                          addVerticalSpace(140),
+                          // addVerticalSpace(50),
                           Align(
                             alignment: Alignment.bottomRight,
                             child: SizedBox(

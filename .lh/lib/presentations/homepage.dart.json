@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 318,
+            "activePatchIndex": 320,
             "patches": [
                 {
                     "date": 1659575717121,
@@ -1280,6 +1280,14 @@
                 {
                     "date": 1660518846416,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n                 DrawerHeader(\n                   decoration: BoxDecoration(\n                     color: Colors.blue,\n                   ),\n-                  child: Text('Drawer Header'),\n+                  child: Center(child: Text('Drawer Header')),\n                 ),\n                 ListTile(\n                   title: Text('Jeremy'),\n                   subtitle: Text('example@gmail.com'),\n"
+                },
+                {
+                    "date": 1666038787312,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,7 @@\n import 'package:flutter/material.dart';\n-import 'package:intl/intl.dart';\n-import 'package:spiritual_daily_guide/widgets/app_large_text.dart';\n-import 'package:spiritual_daily_guide/widgets/app_text.dart';\n-import 'package:spiritual_daily_guide/widgets/helper_tools.dart';\n-import 'package:spiritual_daily_guide/widgets/my_card.dart';\n+import 'package:spiritual_daily_guide/exports.dart';\n+// import 'package:intl/intl.dart';\n \n class HomePage extends StatefulWidget {\n   const HomePage({Key? key}) : super(key: key);\n \n"
+                },
+                {
+                    "date": 1666040950596,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import 'package:flutter/material.dart';\n import 'package:spiritual_daily_guide/exports.dart';\n-// import 'package:intl/intl.dart';\n+import 'package:intl/intl.dart';\n \n class HomePage extends StatefulWidget {\n   const HomePage({Key? key}) : super(key: key);\n \n"
                 }
             ],
             "date": 1659575717121,

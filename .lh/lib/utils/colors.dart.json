@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 4,
+            "activePatchIndex": 5,
             "patches": [
                 {
                     "date": 1661304490957,
@@ -24,6 +24,10 @@
                 {
                     "date": 1661305103406,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,5 +2,6 @@\n \n class MyColors {\n   // Light Theme\n   static const Color primaryColor = Color.fromRGBO(113, 21, 156, 1);\n+  static const Color backgroundColor = Color.fromRGBO(255, 255, 255, 1);\n }\n"
+                },
+                {
+                    "date": 1666038555480,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,56 @@\n-import 'dart:ui';\n+import 'package:flutter/material.dart';\n \n class MyColors {\n   // Light Theme\n   static const Color primaryColor = Color.fromRGBO(113, 21, 156, 1);\n   static const Color backgroundColor = Color.fromRGBO(255, 255, 255, 1);\n }\n+\n+class ColorHelper {\n+  static Color shiftHsl(Color c, [double amt = 0]) {\n+    HSLColor hslc = HSLColor.fromColor(c);\n+    return hslc.withLightness((hslc.lightness + amt).clamp(0.0, 1.0)).toColor();\n+  }\n+\n+  static Color parseHex(String value) =>\n+      Color(int.parse(value.substring(1, 7), radix: 16) + 0xFF000000);\n+\n+  static Color blend(Color dst, Color src, double opacity) {\n+    return Color.fromARGB(\n+      255,\n+      (dst.red.toDouble() * (1.0 - opacity) + src.red.toDouble() * opacity)\n+          .toInt(),\n+      (dst.green.toDouble() * (1.0 - opacity) + src.green.toDouble() * opacity)\n+          .toInt(),\n+      (dst.blue.toDouble() * (1.0 - opacity) + src.blue.toDouble() * opacity)\n+          .toInt(),\n+    );\n+  }\n+\n+  static Color getShade(Color color, {bool darker = false, double value = .1}) {\n+    assert(value > 0 && value <= 1);\n+    final hsl = HSLColor.fromColor(color);\n+    final darkHsl = hsl.withLightness(darker\n+        ? (hsl.lightness - value)\n+        : (hsl.lightness + value).clamp(0.0, 1.0));\n+\n+    return darkHsl.toColor();\n+  }\n+\n+  static MaterialColor getMaterialColorFromColor(Color color) {\n+    /// create different color shades ranging from 50 .... 900\n+    Map<int, Color> colorShades = {\n+      50: getShade(color, value: 0.5),\n+      100: getShade(color, value: 0.4),\n+      200: getShade(color, value: 0.3),\n+      300: getShade(color, value: 0.2),\n+      400: getShade(color, value: 0.1),\n+      500: color,\n+      600: getShade(color, value: 0.1, darker: true),\n+      700: getShade(color, value: 0.15, darker: true),\n+      800: getShade(color, value: 0.2, darker: true),\n+      900: getShade(color, value: 0.25, darker: true)\n+    };\n+    return MaterialColor(color.value, colorShades);\n+  }\n+}\n"
                 }
             ],
             "date": 1661304490957,

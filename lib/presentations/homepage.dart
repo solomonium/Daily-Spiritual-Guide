@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:spiritual_daily_guide/exports.dart';
 import 'package:intl/intl.dart';
-import 'package:spiritual_daily_guide/widgets/app_large_text.dart';
-import 'package:spiritual_daily_guide/widgets/app_text.dart';
-import 'package:spiritual_daily_guide/widgets/helper_tools.dart';
-import 'package:spiritual_daily_guide/widgets/my_card.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);

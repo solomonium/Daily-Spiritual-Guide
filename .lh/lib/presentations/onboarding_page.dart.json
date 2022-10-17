@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 230,
+            "activePatchIndex": 250,
             "patches": [
                 {
                     "date": 1661299853039,
@@ -928,6 +928,86 @@
                 {
                     "date": 1661388048350,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -242,9 +242,9 @@\n                                   dotHeight: 7,\n                                   activeDotColor: MyColors.backgroundColor),\n                               controller: controller,\n                               count: 3),\n-                          addVerticalSpace(110),\n+                          addVerticalSpace(140),\n                           Align(\n                             alignment: Alignment.bottomRight,\n                             child: SizedBox(\n                               height: 40,\n"
+                },
+                {
+                    "date": 1661389721509,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -94,9 +94,9 @@\n                                 text:\n                                     'Read and  complete your bible task anywhere and anytime .',\n                                 color: MyColors.backgroundColor),\n                           ),\n-                          addVerticalSpace(70),\n+                          addVerticalSpace(100),\n                           SmoothPageIndicator(\n                               effect: ExpandingDotsEffect(\n                                   dotWidth: 10,\n                                   dotHeight: 7,\n"
+                },
+                {
+                    "date": 1661389744116,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -94,9 +94,9 @@\n                                 text:\n                                     'Read and  complete your bible task anywhere and anytime .',\n                                 color: MyColors.backgroundColor),\n                           ),\n-                          addVerticalSpace(100),\n+                          addVerticalSpace(120),\n                           SmoothPageIndicator(\n                               effect: ExpandingDotsEffect(\n                                   dotWidth: 10,\n                                   dotHeight: 7,\n"
+                },
+                {
+                    "date": 1661389757129,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -94,9 +94,9 @@\n                                 text:\n                                     'Read and  complete your bible task anywhere and anytime .',\n                                 color: MyColors.backgroundColor),\n                           ),\n-                          addVerticalSpace(120),\n+                          addVerticalSpace(150),\n                           SmoothPageIndicator(\n                               effect: ExpandingDotsEffect(\n                                   dotWidth: 10,\n                                   dotHeight: 7,\n"
+                },
+                {
+                    "date": 1661389786868,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -164,9 +164,9 @@\n                                 text:\n                                     'With our audio feature you can now listen to bible verses.',\n                                 color: MyColors.backgroundColor),\n                           ),\n-                          addVerticalSpace(70),\n+                          addVerticalSpace(150),\n                           SmoothPageIndicator(\n                               effect: ExpandingDotsEffect(\n                                   dotWidth: 10,\n                                   dotHeight: 7,\n"
+                },
+                {
+                    "date": 1661389826888,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -234,9 +234,9 @@\n                                 text:\n                                     'Set a reminder for a particular time to read day and night.',\n                                 color: MyColors.backgroundColor),\n                           ),\n-                          addVerticalSpace(70),\n+                          addVerticalSpace(150),\n                           SmoothPageIndicator(\n                               effect: ExpandingDotsEffect(\n                                   dotWidth: 10,\n                                   dotHeight: 7,\n"
+                },
+                {
+                    "date": 1661389837616,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -242,9 +242,9 @@\n                                   dotHeight: 7,\n                                   activeDotColor: MyColors.backgroundColor),\n                               controller: controller,\n                               count: 3),\n-                          addVerticalSpace(140),\n+                          addVerticalSpace(40),\n                           Align(\n                             alignment: Alignment.bottomRight,\n                             child: SizedBox(\n                               height: 40,\n"
+                },
+                {
+                    "date": 1661389843631,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -242,9 +242,9 @@\n                                   dotHeight: 7,\n                                   activeDotColor: MyColors.backgroundColor),\n                               controller: controller,\n                               count: 3),\n-                          addVerticalSpace(40),\n+                          addVerticalSpace(50),\n                           Align(\n                             alignment: Alignment.bottomRight,\n                             child: SizedBox(\n                               height: 40,\n"
+                },
+                {
+                    "date": 1661389883678,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -220,9 +220,9 @@\n                               \"assets/slide3.png\",\n                               fit: BoxFit.contain,\n                             ),\n                           ),\n-                          // addVerticalSpace(67),\n+                          addVerticalSpace(67),\n                           AppLargeText(\n                             text: 'Set Reminder',\n                             color: MyColors.backgroundColor,\n                           ),\n"
+                },
+                {
+                    "date": 1661389903466,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -242,9 +242,9 @@\n                                   dotHeight: 7,\n                                   activeDotColor: MyColors.backgroundColor),\n                               controller: controller,\n                               count: 3),\n-                          addVerticalSpace(50),\n+                          // addVerticalSpace(50),\n                           Align(\n                             alignment: Alignment.bottomRight,\n                             child: SizedBox(\n                               height: 40,\n"
+                },
+                {
+                    "date": 1661390349867,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -234,9 +234,9 @@\n                                 text:\n                                     'Set a reminder for a particular time to read day and night.',\n                                 color: MyColors.backgroundColor),\n                           ),\n-                          addVerticalSpace(150),\n+                          addVerticalSpace(100),\n                           SmoothPageIndicator(\n                               effect: ExpandingDotsEffect(\n                                   dotWidth: 10,\n                                   dotHeight: 7,\n"
+                },
+                {
+                    "date": 1661390450270,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -164,9 +164,9 @@\n                                 text:\n                                     'With our audio feature you can now listen to bible verses.',\n                                 color: MyColors.backgroundColor),\n                           ),\n-                          addVerticalSpace(150),\n+                          addVerticalSpace(100),\n                           SmoothPageIndicator(\n                               effect: ExpandingDotsEffect(\n                                   dotWidth: 10,\n                                   dotHeight: 7,\n"
+                },
+                {
+                    "date": 1661390474844,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -94,9 +94,9 @@\n                                 text:\n                                     'Read and  complete your bible task anywhere and anytime .',\n                                 color: MyColors.backgroundColor),\n                           ),\n-                          addVerticalSpace(150),\n+                          addVerticalSpace(100),\n                           SmoothPageIndicator(\n                               effect: ExpandingDotsEffect(\n                                   dotWidth: 10,\n                                   dotHeight: 7,\n"
+                },
+                {
+                    "date": 1661390514561,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -220,9 +220,9 @@\n                               \"assets/slide3.png\",\n                               fit: BoxFit.contain,\n                             ),\n                           ),\n-                          addVerticalSpace(67),\n+                          // addVerticalSpace(67),\n                           AppLargeText(\n                             text: 'Set Reminder',\n                             color: MyColors.backgroundColor,\n                           ),\n"
+                },
+                {
+                    "date": 1661390525519,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -220,9 +220,9 @@\n                               \"assets/slide3.png\",\n                               fit: BoxFit.contain,\n                             ),\n                           ),\n-                          // addVerticalSpace(67),\n+                          addVerticalSpace(67),\n                           AppLargeText(\n                             text: 'Set Reminder',\n                             color: MyColors.backgroundColor,\n                           ),\n"
+                },
+                {
+                    "date": 1661390588940,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -207,9 +207,9 @@\n                   Center(\n                     child: Padding(\n                       padding: const EdgeInsets.only(\n                           left: 22, right: 22, top: 50, bottom: 22),\n-                      child: Column(\n+                      child: Listv(\n                         crossAxisAlignment: CrossAxisAlignment.center,\n                         children: [\n                           Container(\n                             height: 340,\n"
+                },
+                {
+                    "date": 1661390596173,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -207,10 +207,10 @@\n                   Center(\n                     child: Padding(\n                       padding: const EdgeInsets.only(\n                           left: 22, right: 22, top: 50, bottom: 22),\n-                      child: Listv(\n-                        crossAxisAlignment: CrossAxisAlignment.center,\n+                      child: ListView(\n+                        // crossAxisAlignment: CrossAxisAlignment.center,\n                         children: [\n                           Container(\n                             height: 340,\n                             width: 330,\n"
+                },
+                {
+                    "date": 1661390614276,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -207,10 +207,10 @@\n                   Center(\n                     child: Padding(\n                       padding: const EdgeInsets.only(\n                           left: 22, right: 22, top: 50, bottom: 22),\n-                      child: ListView(\n-                        // crossAxisAlignment: CrossAxisAlignment.center,\n+                      child: Column(\n+                        crossAxisAlignment: CrossAxisAlignment.center,\n                         children: [\n                           Container(\n                             height: 340,\n                             width: 330,\n"
+                },
+                {
+                    "date": 1661390629456,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -220,9 +220,9 @@\n                               \"assets/slide3.png\",\n                               fit: BoxFit.contain,\n                             ),\n                           ),\n-                          addVerticalSpace(67),\n+                          addVerticalSpace(50),\n                           AppLargeText(\n                             text: 'Set Reminder',\n                             color: MyColors.backgroundColor,\n                           ),\n"
+                },
+                {
+                    "date": 1661390649132,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -80,9 +80,9 @@\n                               \"assets/slide1.png\",\n                               fit: BoxFit.contain,\n                             ),\n                           ),\n-                          addVerticalSpace(67),\n+                          addVerticalSpace(50),\n                           AppLargeText(\n                             text: 'Anywhere & Anytime',\n                             color: MyColors.backgroundColor,\n                           ),\n"
+                },
+                {
+                    "date": 1661390672809,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -150,9 +150,9 @@\n                               \"assets/slide2.png\",\n                               fit: BoxFit.contain,\n                             ),\n                           ),\n-                          addVerticalSpace(67),\n+                          addVerticalSpace(50),\n                           AppLargeText(\n                             text: 'Audio Feature',\n                             color: MyColors.backgroundColor,\n                           ),\n"
                 }
             ],
             "date": 1661299853039,

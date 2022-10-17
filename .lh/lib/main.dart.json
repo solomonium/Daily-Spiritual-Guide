@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 20,
+            "activePatchIndex": 25,
             "patches": [
                 {
                     "date": 1659575562768,
@@ -88,6 +88,26 @@
                 {
                     "date": 1661304718724,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n   Widget build(BuildContext context) {\n     return MaterialApp(\n       title: 'Daily Spiritual Guide',\n       debugShowCheckedModeBanner: false,\n-      color: Colors.purple.shade300,\n+      color: MyColors.primaryColor,\n       theme: ThemeData(\n         primaryColor: MyColors.primaryColor,\n       ),\n       onGenerateRoute: Router.generateRoute,\n"
+                },
+                {
+                    "date": 1666041193314,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,26 +1,76 @@\n-import 'package:flutter/material.dart' hide Router;\n-import 'package:flutter_riverpod/flutter_riverpod.dart';\n-import 'package:spiritual_daily_guide/utils/colors.dart';\n+// import 'package:flutter/material.dart' hide Router;\n+// import 'package:flutter_riverpod/flutter_riverpod.dart';\n+// import 'package:spiritual_daily_guide/utils/colors.dart';\n \n-import 'route_folder/router.dart';\n+// import 'route_folder/router.dart';\n \n+// void main() {\n+//   runApp(const ProviderScope(child: MyApp()));\n+// }\n+\n+// class MyApp extends StatelessWidget {\n+//   const MyApp({Key? key}) : super(key: key);\n+\n+//   @override\n+//   Widget build(BuildContext context) {\n+//     return MaterialApp(\n+//       title: 'Daily Spiritual Guide',\n+//       debugShowCheckedModeBanner: false,\n+//       color: MyColors.primaryColor,\n+//       theme: ThemeData(\n+//         primaryColor: MyColors.primaryColor,\n+//       ),\n+//       onGenerateRoute: Router.generateRoute,\n+//     );\n+//   }\n+// }\n+\n+import 'package:flutter/material.dart';\n+import 'package:spiritual_daily_guide/misc/in_app_notification.dart';\n+import 'package:spiritual_daily_guide/presentations/onboarding_page.dart';\n+import 'package:spiritual_daily_guide/providers/app_providers.dart';\n+import 'package:spiritual_daily_guide/exports.dart';\n+import 'package:spiritual_daily_guide/res/res.dart';\n+\n void main() {\n-  runApp(const ProviderScope(child: MyApp()));\n+  runApp(\n+    SpiritualGuide(),\n+  );\n }\n \n-class MyApp extends StatelessWidget {\n-  const MyApp({Key? key}) : super(key: key);\n+class SpiritualGuide extends StatefulWidget {\n+  const SpiritualGuide({Key? key}) : super(key: key);\n \n   @override\n+  State<SpiritualGuide> createState() => _SpiritualGuideState();\n+}\n+\n+class _SpiritualGuideState extends State<SpiritualGuide> {\n+  @override\n   Widget build(BuildContext context) {\n-    return MaterialApp(\n-      title: 'Daily Spiritual Guide',\n-      debugShowCheckedModeBanner: false,\n-      color: MyColors.primaryColor,\n-      theme: ThemeData(\n-        primaryColor: MyColors.primaryColor,\n+    var themeType = context.select<AppProvider, ThemeType>((val) => val.theme);\n+\n+    AppTheme theme = AppTheme.fromType(themeType);\n+    return Provider.value(\n+      value: theme,\n+      child: MaterialApp(\n+        navigatorKey: R.N.navKey,\n+        title: 'Renndaar Giver',\n+        theme: theme.themeData,\n+        debugShowCheckedModeBanner: false,\n+        home: const OnboardingScreens(),\n+        builder: (context, child) => MediaQuery(\n+          data: context.widthPx < 600\n+              ? context.mq.copyWith(textScaleFactor: .8)\n+              : context.mq.copyWith(textScaleFactor: 1),\n+          child: InAppNotification(\n+            key: R.N.notifyKey,\n+            safeAreaPadding: EdgeInsets.zero,\n+            minAlertHeight: 40.0,\n+            child: child,\n+          ),\n+        ),\n       ),\n-      onGenerateRoute: Router.generateRoute,\n     );\n   }\n }\n"
+                },
+                {
+                    "date": 1666041341015,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,9 +54,9 @@\n     return Provider.value(\n       value: theme,\n       child: MaterialApp(\n         navigatorKey: R.N.navKey,\n-        title: 'Renndaar Giver',\n+        title: 'Daily Spiritual Guide',\n         theme: theme.themeData,\n         debugShowCheckedModeBanner: false,\n         home: const OnboardingScreens(),\n         builder: (context, child) => MediaQuery(\n"
+                },
+                {
+                    "date": 1666041556115,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,11 @@\n import 'package:spiritual_daily_guide/res/res.dart';\n \n void main() {\n   runApp(\n-    SpiritualGuide(),\n+    MultiProvider(providers: [\n+      ChangeNotifierProvider(create: (_) => AppProvider()),\n+    ], child: SpiritualGuide()),\n   );\n }\n \n class SpiritualGuide extends StatefulWidget {\n"
+                },
+                {
+                    "date": 1666041830518,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n //     );\n //   }\n // }\n \n-import 'package:flutter/material.dart';\n+// import 'package:flutter/material.dart' hide Router;\n import 'package:spiritual_daily_guide/misc/in_app_notification.dart';\n import 'package:spiritual_daily_guide/presentations/onboarding_page.dart';\n import 'package:spiritual_daily_guide/providers/app_providers.dart';\n import 'package:spiritual_daily_guide/exports.dart';\n@@ -60,8 +60,9 @@\n         title: 'Daily Spiritual Guide',\n         theme: theme.themeData,\n         debugShowCheckedModeBanner: false,\n         home: const OnboardingScreens(),\n+        onGenerateRoute: Router.generateRoute,\n         builder: (context, child) => MediaQuery(\n           data: context.widthPx < 600\n               ? context.mq.copyWith(textScaleFactor: .8)\n               : context.mq.copyWith(textScaleFactor: 1),\n"
+                },
+                {
+                    "date": 1666041880893,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,8 @@\n //     );\n //   }\n // }\n \n-// import 'package:flutter/material.dart' hide Router;\n import 'package:spiritual_daily_guide/misc/in_app_notification.dart';\n import 'package:spiritual_daily_guide/presentations/onboarding_page.dart';\n import 'package:spiritual_daily_guide/providers/app_providers.dart';\n import 'package:spiritual_daily_guide/exports.dart';\n"
                 }
             ],
             "date": 1659575562768,
