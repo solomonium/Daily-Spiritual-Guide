@@ -8,3 +8,8 @@ export 'package:provider/provider.dart';
 export 'package:spiritual_daily_guide/utils/size.dart';
 export 'package:flutter/material.dart' hide Router;
 export 'package:spiritual_daily_guide/route_folder/router.dart';
+export 'package:dio/dio.dart';
+export 'package:dio_smart_retry/dio_smart_retry.dart';
+export 'package:pretty_dio_logger/pretty_dio_logger.dart';
+export 'package:spiritual_daily_guide/utils/extentions.dart';
+export 'package:spiritual_daily_guide/route_folder/routes.dart';
