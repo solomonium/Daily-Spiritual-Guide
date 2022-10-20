@@ -29,6 +29,15 @@ class _SignUpPageState extends State<SignUpPage> {
   String get _email => _emailController.text;
   String get _password => _passwordControler.text;
 
+  final FocusNode _nameFocusNode = FocusNode();
+  final FocusNode _emailFocusNode = FocusNode();
+  final FocusNode _passwordFocusNode = FocusNode();
+  final FocusNode _confirmPasswordFocusNode = FocusNode();
+
+  void _getEditingComplete(FocusNode target) {
+    FocusScope.of(context).requestFocus(target);
+  }
+
   void _register() async {
     try {
       await widget.auth.createEmailAndPassword(_email, _password);
@@ -70,7 +79,11 @@ class _SignUpPageState extends State<SignUpPage> {
                       labelText: 'Name',
                       obscure: false,
                       textInputAction: TextInputAction.next,
+                      focusNode: _nameFocusNode,
                       onChanged: (String) {},
+                      onEditingComplete: () {
+                        _getEditingComplete(_nameFocusNode);
+                      },
                     ),
                     addVerticalSpace(54),
                     InputField(
@@ -79,7 +92,11 @@ class _SignUpPageState extends State<SignUpPage> {
                       labelText: 'E-mail',
                       obscure: false,
                       textInputAction: TextInputAction.next,
+                      focusNode: _emailFocusNode,
                       onChanged: (String) {},
+                      onEditingComplete: () {
+                        _getEditingComplete(_emailFocusNode);
+                      },
                     ),
                     addVerticalSpace(63),
                     InputField(
@@ -87,7 +104,8 @@ class _SignUpPageState extends State<SignUpPage> {
                       textController: _passwordControler,
                       keyboardType: TextInputType.text,
                       labelText: 'Password',
-                       textInputAction: TextInputAction.next,
+                      focusNode: _passwordFocusNode,
+                      textInputAction: TextInputAction.next,
                       suffixIcon: IconButton(
                           onPressed: () {
                             setState(() {
@@ -100,6 +118,9 @@ class _SignUpPageState extends State<SignUpPage> {
                                 : Icons.visibility_off,
                           )),
                       onChanged: (String) {},
+                      onEditingComplete: () {
+                        _getEditingComplete(_passwordFocusNode);
+                      },
                     ),
                     addVerticalSpace(62),
                     InputField(
@@ -107,6 +128,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       textController: _passwordControler,
                       keyboardType: TextInputType.text,
                       labelText: 'Confirm Password',
+                      focusNode: _confirmPasswordFocusNode,
                       textInputAction: TextInputAction.done,
                       suffixIcon: IconButton(
                           onPressed: () {
@@ -120,11 +142,15 @@ class _SignUpPageState extends State<SignUpPage> {
                                 : Icons.visibility_off,
                           )),
                       onChanged: (String) {},
+                      onEditingComplete: () {
+                        _getEditingComplete(_confirmPasswordFocusNode);
+                      },
                     ),
 
                     addVerticalSpace(59),
                     Center(
-                        child: CustomButton(onpressed: _register, text: 'Sign Up')),
+                        child: CustomButton(
+                            onpressed: _register, text: 'Sign Up')),
                     addVerticalSpace(46),
 
                     Row(

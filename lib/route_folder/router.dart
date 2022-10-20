@@ -24,11 +24,11 @@ class Router {
         );
       case RouteName.loginPage:
         return MaterialPageRoute(
-          builder: (_) => const LoginPage(),
+          builder: (_) =>  LoginPage(auth: Auth(),),
         );
       case RouteName.SignUpPage:
         return MaterialPageRoute(
-          builder: (_) => const SignUpPage(),
+          builder: (_) => SignUpPage(auth: Auth(),),
         );
       case RouteName.landing_page:
         return MaterialPageRoute(
@@ -36,7 +36,7 @@ class Router {
                   auth: Auth(),
                 ));
       default:
-        return MaterialPageRoute(builder: (_) => const LoginPage());
+        return MaterialPageRoute(builder: (_) =>  LoginPage(auth: Auth(),));
     }
   }
 }

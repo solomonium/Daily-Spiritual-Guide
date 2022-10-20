@@ -19,8 +19,8 @@ class InputField extends StatelessWidget {
     this.color = MyColors.primaryColor,
     this.suffixIcon,
     required this.obscure,
-    this.hinttext, 
-    required this.onChanged,
+    this.hinttext,
+    required this.onChanged, required this.onEditingComplete,
   }) : super(key: key);
 
   final TextEditingController textController;
@@ -34,26 +34,30 @@ class InputField extends StatelessWidget {
   final bool obscure;
   final String? hinttext;
   final Function(String) onChanged;
+  final VoidCallback onEditingComplete;
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         TextFormField(
           onChanged: onChanged,
-         // textAlign: TextAlign.end,
-           textAlignVertical: TextAlignVertical(y: -0.0),
+          // textAlign: TextAlign.end,
+          onEditingComplete: onEditingComplete,
+          textAlignVertical: TextAlignVertical(y: -0.0),
           obscureText: obscure,
           focusNode: focusNode,
           textInputAction: textInputAction,
           controller: textController,
           keyboardType: keyboardType,
           autocorrect: false,
+
           decoration: InputDecoration(
             labelStyle: TextStyle(fontSize: fontSize, color: color),
             labelText: labelText,
             hintText: hinttext,
-          //  contentPadding: EdgeInsets.only(bottom: 50),
-           // isDense: true,
+
+            //  contentPadding: EdgeInsets.only(bottom: 50),
+            // isDense: true,
             enabledBorder: UnderlineInputBorder(
               borderSide: BorderSide(
                 color: MyColors.primaryColor,

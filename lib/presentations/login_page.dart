@@ -28,6 +28,9 @@ class _LoginPageState extends State<LoginPage> {
   String get _email => _emailController.text;
   String get _password => _passwordControler.text;
 
+  final FocusNode _emailFocusNode = FocusNode();
+  final FocusNode _passwordFocusNode = FocusNode();
+
   void _submit() async {
     try {
       await widget.auth.signInWithEmailAndPassword(_email, _password);
@@ -36,7 +39,9 @@ class _LoginPageState extends State<LoginPage> {
       print(e.toString());
     }
   }
-
+void _emailEditingComplete(){
+  FocusScope.of(context).requestFocus(_passwordFocusNode);
+}
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -92,34 +97,9 @@ class _LoginPageState extends State<LoginPage> {
                             addVerticalSpace(45),
                             Column(
                               children: [
-                                InputField(
-                                  textController: _emailController,
-                                  keyboardType: TextInputType.emailAddress,
-                                  labelText: 'E-mail',
-                                  obscure: false,
-                                  textInputAction: TextInputAction.next,
-                                  onChanged: (String email) {},
-                                ),
+                                EmailInputField(),
                                 addVerticalSpace(77),
-                                InputField(
-                                  obscure: _secureText,
-                                  textController: _passwordControler,
-                                  keyboardType: TextInputType.text,
-                                  textInputAction: TextInputAction.done,
-                                  labelText: 'Password',
-                                  suffixIcon: IconButton(
-                                      onPressed: () {
-                                        setState(() {
-                                          _secureText = !_secureText;
-                                        });
-                                      },
-                                      icon: Icon(
-                                        _secureText
-                                            ? Icons.visibility
-                                            : Icons.visibility_off,
-                                      )),
-                                  onChanged: (String) {},
-                                ),
+                                PasswordInputField(),
                               ],
                             ),
                             Row(
@@ -179,4 +159,39 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
   }
+
+  InputField EmailInputField() {
+    return InputField(
+      textController: _emailController,
+      keyboardType: TextInputType.emailAddress,
+      labelText: 'E-mail',
+      obscure: false,
+      focusNode: _passwordFocusNode,
+      textInputAction: TextInputAction.next,
+      onEditingComplete: _emailEditingComplete,
+      onChanged: (String email) {},
+    );
+  }
+    InputField PasswordInputField() {
+    return InputField(
+      obscure: _secureText,
+      textController: _passwordControler,
+      keyboardType: TextInputType.text,
+      textInputAction: TextInputAction.done,
+      labelText: 'Password',
+      focusNode: _emailFocusNode,
+      suffixIcon: IconButton(
+          onPressed: () {
+            setState(() {
+              _secureText = !_secureText;
+            });
+          },
+          icon: Icon(
+            _secureText ? Icons.visibility : Icons.visibility_off,
+          )),
+          onEditingComplete:_submit ,
+      onChanged: (String) {},
+    );
+  }
+
 }
