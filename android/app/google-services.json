@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1010076342202",
+    "project_id": "daily-spiritual-guide",
+    "storage_bucket": "daily-spiritual-guide.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1010076342202:android:476ab8970211b184bb6f83",
+        "android_client_info": {
+          "package_name": "com.example.spiritual_daily_guide"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1010076342202-3cunjc1fvqlkfraptnblujsb1sk4ers9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.spiritual_daily_guide",
+            "certificate_hash": "810f6dfc6d553ec3b49eec4cb7dea69be9e972b1"
+          }
+        },
+        {
+          "client_id": "1010076342202-dcq9ns0nkd8grua1dtfe7ulrosf49mdg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDuU982OuI87ME2uT6OWGMmxbxE9lQ7394"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1010076342202-dcq9ns0nkd8grua1dtfe7ulrosf49mdg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -17,17 +17,17 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   @override
-  void initState() {
-    Timer(const Duration(seconds: 3), () => SignInPage());
-    super.initState();
-  }
+  // void initState() {
+  //   Timer(const Duration(seconds: 3), () => SignInPage());
+  //   super.initState();
+  // }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: MyColors.primaryColor,
       body: InkWell(
-        onTap: () => Navigator.pushNamed(context, RouteName.onboarding_page),
+        onTap: () => Navigator.pushNamed(context, RouteName.landing_page),
         child: SafeArea(
             child: Container(
           color: MyColors.primaryColor,
@@ -35,7 +35,7 @@ class _SplashScreenState extends State<SplashScreen> {
             child: SizedBox(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   SizedBox(
                       width: 356,
@@ -48,21 +48,19 @@ class _SplashScreenState extends State<SplashScreen> {
                       child: AppLargeText(
                         text: "DAILY FELLOWSHIP REMINDER",
                         color: Colors.white,
-                        textAlign: TextAlign.center,
+                      //  textAlign: TextAlign.center,
                       )),
                   addVerticalSpace(40),
-                  Center(
-                    child: AnimatedTextKit(
-                      totalRepeatCount: 40,
-                      animatedTexts: [
-                        ScaleAnimatedText(
-                          'Tap the Screen Proceed',
-                          duration: Duration(milliseconds: 2000),
-                          textStyle: const TextStyle(
-                              color: MyColors.backgroundColor, fontSize: 20.0),
-                        ),
-                      ],
-                    ),
+                  AnimatedTextKit(
+                    totalRepeatCount: 40,
+                    animatedTexts: [
+                      ScaleAnimatedText(
+                        'Tap the Screen Proceed',
+                        duration: Duration(milliseconds: 2000),
+                        textStyle: const TextStyle(
+                            color: MyColors.backgroundColor, fontSize: 20.0),
+                      ),
+                    ],
                   ),
                 ],
               ),

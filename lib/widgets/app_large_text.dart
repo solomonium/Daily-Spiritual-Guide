@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AppLargeText extends StatelessWidget {
@@ -28,7 +29,7 @@ class AppLargeText extends StatelessWidget {
       style: GoogleFonts.nunitoSans(
         color: color,
         fontSize: size,
-        fontWeight: FontWeight.bold,
+        fontWeight: FontWeight.w600,
         textStyle: Theme.of(context).textTheme.bodyText1,
       ),
     );
