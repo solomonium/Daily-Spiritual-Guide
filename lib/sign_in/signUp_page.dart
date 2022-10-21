@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:spiritual_daily_guide/sign_in/validators.dart';
 import 'package:spiritual_daily_guide/widgets/up_layout_container.dart';
 
 import '../route_folder/route_names.dart';
@@ -13,8 +13,8 @@ import '../widgets/down_layouts_container.dart';
 import '../widgets/helper_tools.dart';
 import '../widgets/input__field.dart';
 
-class SignUpPage extends StatefulWidget {
-  const SignUpPage({required this.auth, super.key});
+class SignUpPage extends StatefulWidget with EmailAndPasswordValidators {
+  SignUpPage({required this.auth, super.key});
   final AuthBase auth;
   @override
   State<SignUpPage> createState() => _SignUpPageState();
@@ -25,9 +25,11 @@ class _SignUpPageState extends State<SignUpPage> {
   final _nameController = TextEditingController();
   final _emailController = TextEditingController();
   final _passwordControler = TextEditingController();
-
+  final _confirmPasswordControler = TextEditingController();
   String get _email => _emailController.text;
   String get _password => _passwordControler.text;
+  String get _name => _passwordControler.text;
+  String get _confirmPassword => _confirmPasswordControler.text;
 
   final FocusNode _nameFocusNode = FocusNode();
   final FocusNode _emailFocusNode = FocusNode();
@@ -49,6 +51,8 @@ class _SignUpPageState extends State<SignUpPage> {
 
   @override
   Widget build(BuildContext context) {
+    bool submitEnabled = widget.emailValidator.isValid(_email) &&
+        widget.passwordValidator.isValid(_password);
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Stack(
@@ -73,84 +77,19 @@ class _SignUpPageState extends State<SignUpPage> {
                       fontWeight: FontWeight.bold,
                     ),
                     addVerticalSpace(23),
-                    InputField(
-                      textController: _nameController,
-                      keyboardType: TextInputType.name,
-                      labelText: 'Name',
-                      obscure: false,
-                      textInputAction: TextInputAction.next,
-                      focusNode: _nameFocusNode,
-                      onChanged: (String) {},
-                      onEditingComplete: () {
-                        _getEditingComplete(_nameFocusNode);
-                      },
-                    ),
+                    nameTextField(),
                     addVerticalSpace(54),
-                    InputField(
-                      textController: _emailController,
-                      keyboardType: TextInputType.emailAddress,
-                      labelText: 'E-mail',
-                      obscure: false,
-                      textInputAction: TextInputAction.next,
-                      focusNode: _emailFocusNode,
-                      onChanged: (String) {},
-                      onEditingComplete: () {
-                        _getEditingComplete(_emailFocusNode);
-                      },
-                    ),
+                    EmailTextField(),
                     addVerticalSpace(63),
-                    InputField(
-                      obscure: _secureText,
-                      textController: _passwordControler,
-                      keyboardType: TextInputType.text,
-                      labelText: 'Password',
-                      focusNode: _passwordFocusNode,
-                      textInputAction: TextInputAction.next,
-                      suffixIcon: IconButton(
-                          onPressed: () {
-                            setState(() {
-                              _secureText = !_secureText;
-                            });
-                          },
-                          icon: Icon(
-                            _secureText
-                                ? Icons.visibility
-                                : Icons.visibility_off,
-                          )),
-                      onChanged: (String) {},
-                      onEditingComplete: () {
-                        _getEditingComplete(_passwordFocusNode);
-                      },
-                    ),
+                    PasswordTextField(),
                     addVerticalSpace(62),
-                    InputField(
-                      obscure: _secureText,
-                      textController: _passwordControler,
-                      keyboardType: TextInputType.text,
-                      labelText: 'Confirm Password',
-                      focusNode: _confirmPasswordFocusNode,
-                      textInputAction: TextInputAction.done,
-                      suffixIcon: IconButton(
-                          onPressed: () {
-                            setState(() {
-                              _secureText = !_secureText;
-                            });
-                          },
-                          icon: Icon(
-                            _secureText
-                                ? Icons.visibility
-                                : Icons.visibility_off,
-                          )),
-                      onChanged: (String) {},
-                      onEditingComplete: () {
-                        _getEditingComplete(_confirmPasswordFocusNode);
-                      },
-                    ),
+                    ConfirmPasswordTextField(),
 
                     addVerticalSpace(59),
                     Center(
                         child: CustomButton(
-                            onpressed: _register, text: 'Sign Up')),
+                            onpressed: submitEnabled ? _register : null,
+                            text: 'Sign Up')),
                     addVerticalSpace(46),
 
                     Row(
@@ -182,6 +121,97 @@ class _SignUpPageState extends State<SignUpPage> {
           DownLayoutContainer(),
         ],
       ),
+    );
+  }
+
+  InputField ConfirmPasswordTextField() {
+    bool matched = widget.confirmPasswordValidator.isValid(_confirmPassword);
+
+    return InputField(
+      obscure: _secureText,
+      textController: _passwordControler,
+      keyboardType: TextInputType.text,
+      labelText: 'Confirm Password',
+      focusNode: _confirmPasswordFocusNode,
+      textInputAction: TextInputAction.done,
+      suffixIcon: IconButton(
+          onPressed: () {
+            setState(() {
+              _secureText = !_secureText;
+            });
+          },
+          icon: Icon(
+            _secureText ? Icons.visibility : Icons.visibility_off,
+          )),
+      onChanged: (String) {},
+      onEditingComplete: _register,
+      errorText: matched ? null : widget.invalidConfirmPassword,
+      validator: (confirmPassword) {
+        // if (_confirmPassword == _password) {
+        //   return null;
+        // }
+        // return 'Pasword not matched';
+      },
+    );
+  }
+
+  InputField PasswordTextField() {
+    bool passwordValid = widget.passwordValidator.isValid(_password);
+    return InputField(
+      obscure: _secureText,
+      textController: _passwordControler,
+      keyboardType: TextInputType.text,
+      labelText: 'Password',
+      focusNode: _passwordFocusNode,
+      textInputAction: TextInputAction.next,
+      suffixIcon: IconButton(
+          onPressed: () {
+            setState(() {
+              _secureText = !_secureText;
+            });
+          },
+          icon: Icon(
+            _secureText ? Icons.visibility : Icons.visibility_off,
+          )),
+      onChanged: (String) {},
+      onEditingComplete: () {
+        _getEditingComplete(_confirmPasswordFocusNode);
+      },
+      errorText: passwordValid ? null : widget.inValidPasswordErrorText,
+    );
+  }
+
+  InputField EmailTextField() {
+    bool emailValid = widget.emailValidator.isValid(_email);
+    return InputField(
+      textController: _emailController,
+      keyboardType: TextInputType.emailAddress,
+      labelText: 'E-mail',
+      obscure: false,
+      textInputAction: TextInputAction.next,
+      focusNode: _emailFocusNode,
+      onChanged: (String) {},
+      onEditingComplete: () {
+        _getEditingComplete(_passwordFocusNode);
+      },
+      errorText: emailValid ? null : widget.inValidPasswordErrorText,
+    );
+  }
+
+  InputField nameTextField() {
+    bool nameValid = widget.nameValidator.isValid(_name);
+    return InputField(
+      textController: _nameController,
+      keyboardType: TextInputType.name,
+      labelText: 'Name',
+      obscure: false,
+      textInputAction: TextInputAction.next,
+      focusNode: _nameFocusNode,
+      onChanged: (String) {},
+      onEditingComplete: () {
+        _getEditingComplete(_emailFocusNode);
+      },
+      errorText: nameValid ? null : widget.inValidNameErrorText,
     );
   }
 }

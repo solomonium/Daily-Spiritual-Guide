@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:spiritual_daily_guide/services/auth.dart';
+import 'package:spiritual_daily_guide/sign_in/validators.dart';
 import 'package:spiritual_daily_guide/utils/colors.dart';
 import 'package:spiritual_daily_guide/widgets/app_text.dart';
 import 'package:spiritual_daily_guide/widgets/custom_button.dart';
@@ -13,8 +14,8 @@ import '../route_folder/route_names.dart';
 import '../widgets/app_large_text.dart';
 import '../widgets/up_layout_container.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({required this.auth, super.key});
+class LoginPage extends StatefulWidget with EmailAndPasswordValidators {
+  LoginPage({required this.auth, super.key});
   final AuthBase auth;
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -39,11 +40,15 @@ class _LoginPageState extends State<LoginPage> {
       print(e.toString());
     }
   }
-void _emailEditingComplete(){
-  FocusScope.of(context).requestFocus(_passwordFocusNode);
-}
+
+  void _emailEditingComplete() {
+    FocusScope.of(context).requestFocus(_passwordFocusNode);
+  }
+
   @override
   Widget build(BuildContext context) {
+    bool submitEnabled = widget.emailValidator.isValid(_email) &&
+        widget.passwordValidator.isValid(_password);
     var size = MediaQuery.of(context).size;
     return Scaffold(
       resizeToAvoidBottomInset: false,
@@ -118,7 +123,8 @@ void _emailEditingComplete(){
                             addVerticalSpace(46),
                             Center(
                                 child: CustomButton(
-                                    onpressed: _submit, text: 'Log In')),
+                                    onpressed: submitEnabled ? _submit : null,
+                                    text: 'Log In')),
                           ],
                         ),
                       ),
@@ -161,6 +167,7 @@ void _emailEditingComplete(){
   }
 
   InputField EmailInputField() {
+    bool emailValid = widget.emailValidator.isValid(_email);
     return InputField(
       textController: _emailController,
       keyboardType: TextInputType.emailAddress,
@@ -169,29 +176,37 @@ void _emailEditingComplete(){
       focusNode: _passwordFocusNode,
       textInputAction: TextInputAction.next,
       onEditingComplete: _emailEditingComplete,
-      onChanged: (String email) {},
-    );
-  }
-    InputField PasswordInputField() {
-    return InputField(
-      obscure: _secureText,
-      textController: _passwordControler,
-      keyboardType: TextInputType.text,
-      textInputAction: TextInputAction.done,
-      labelText: 'Password',
-      focusNode: _emailFocusNode,
-      suffixIcon: IconButton(
-          onPressed: () {
-            setState(() {
-              _secureText = !_secureText;
-            });
-          },
-          icon: Icon(
-            _secureText ? Icons.visibility : Icons.visibility_off,
-          )),
-          onEditingComplete:_submit ,
-      onChanged: (String) {},
+      onChanged: (String email) => _updateState(),
+      errorText: emailValid ? null : widget.inValidEmailErrorText,
     );
   }
 
+  InputField PasswordInputField() {
+     bool passwordValid = widget.emailValidator.isValid(_email);
+    return InputField(
+        obscure: _secureText,
+        textController: _passwordControler,
+        keyboardType: TextInputType.text,
+        textInputAction: TextInputAction.done,
+        labelText: 'Password',
+        focusNode: _emailFocusNode,
+        suffixIcon: IconButton(
+            onPressed: () {
+              setState(() {
+                _secureText = !_secureText;
+              });
+            },
+            icon: Icon(
+              _secureText ? Icons.visibility : Icons.visibility_off,
+            )),
+        onEditingComplete: _submit,
+        onChanged: (String password) => _updateState,
+        errorText: passwordValid ? null : widget.inValidPasswordErrorText,
+        );
+        
+  }
+
+  void _updateState() {
+    setState(() {});
+  }
 }

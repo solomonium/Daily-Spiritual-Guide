@@ -20,7 +20,10 @@ class InputField extends StatelessWidget {
     this.suffixIcon,
     required this.obscure,
     this.hinttext,
-    required this.onChanged, required this.onEditingComplete,
+    required this.onChanged,
+    required this.onEditingComplete,
+    this.errorText,
+    this.validator
   }) : super(key: key);
 
   final TextEditingController textController;
@@ -35,11 +38,14 @@ class InputField extends StatelessWidget {
   final String? hinttext;
   final Function(String) onChanged;
   final VoidCallback onEditingComplete;
+  final String? errorText;
+  final String? Function(String?)? validator;
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         TextFormField(
+          validator: validator,
           onChanged: onChanged,
           // textAlign: TextAlign.end,
           onEditingComplete: onEditingComplete,
@@ -55,7 +61,7 @@ class InputField extends StatelessWidget {
             labelStyle: TextStyle(fontSize: fontSize, color: color),
             labelText: labelText,
             hintText: hinttext,
-
+            errorText: errorText,
             //  contentPadding: EdgeInsets.only(bottom: 50),
             // isDense: true,
             enabledBorder: UnderlineInputBorder(

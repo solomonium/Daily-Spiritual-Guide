@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:spiritual_daily_guide/presentations/home_page.dart';
 import 'package:spiritual_daily_guide/presentations/homepage.dart';
 import 'package:spiritual_daily_guide/presentations/page_2.dart';
 import 'package:spiritual_daily_guide/presentations/page_3.dart';
 import 'package:spiritual_daily_guide/presentations/settings_page.dart';
+import 'package:spiritual_daily_guide/services/auth.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({Key? key}) : super(key: key);
@@ -12,8 +14,8 @@ class Dashboard extends StatefulWidget {
 }
 
 class _DashboardState extends State<Dashboard> {
-  List pages = const [
-    HomePage(),
+  List pages =  [
+    HomePage(auth: Auth(),),
     Bible(),
     Favorites(),
     SettingsPage(),
