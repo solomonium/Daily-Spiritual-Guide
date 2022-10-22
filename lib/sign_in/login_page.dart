@@ -32,12 +32,24 @@ class _LoginPageState extends State<LoginPage> {
   final FocusNode _emailFocusNode = FocusNode();
   final FocusNode _passwordFocusNode = FocusNode();
 
+  bool _submitted = false;
+  bool _isLoading = false;
+
   void _submit() async {
+    setState(() {
+      _submitted = true;
+      _isLoading = true;
+    });
     try {
       await widget.auth.signInWithEmailAndPassword(_email, _password);
       Navigator.of(context).pop();
     } catch (e) {
       print(e.toString());
+    } finally {
+      setState(() {
+          _isLoading = false;
+      });
+    
     }
   }
 
@@ -48,7 +60,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     bool submitEnabled = widget.emailValidator.isValid(_email) &&
-        widget.passwordValidator.isValid(_password);
+        widget.passwordValidator.isValid(_password) && !_isLoading ;
     var size = MediaQuery.of(context).size;
     return Scaffold(
       resizeToAvoidBottomInset: false,
@@ -167,43 +179,44 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   InputField EmailInputField() {
-    bool emailValid = widget.emailValidator.isValid(_email);
+    bool showErrorText = _submitted && !widget.emailValidator.isValid(_email);
     return InputField(
       textController: _emailController,
       keyboardType: TextInputType.emailAddress,
       labelText: 'E-mail',
       obscure: false,
+      enabled: !_isLoading,
       focusNode: _passwordFocusNode,
       textInputAction: TextInputAction.next,
       onEditingComplete: _emailEditingComplete,
       onChanged: (String email) => _updateState(),
-      errorText: emailValid ? null : widget.inValidEmailErrorText,
+      errorText: showErrorText ? widget.inValidEmailErrorText : null,
     );
   }
 
   InputField PasswordInputField() {
-     bool passwordValid = widget.emailValidator.isValid(_email);
+    bool showErrorText = _submitted && !widget.emailValidator.isValid(_email);
     return InputField(
-        obscure: _secureText,
-        textController: _passwordControler,
-        keyboardType: TextInputType.text,
-        textInputAction: TextInputAction.done,
-        labelText: 'Password',
-        focusNode: _emailFocusNode,
-        suffixIcon: IconButton(
-            onPressed: () {
-              setState(() {
-                _secureText = !_secureText;
-              });
-            },
-            icon: Icon(
-              _secureText ? Icons.visibility : Icons.visibility_off,
-            )),
-        onEditingComplete: _submit,
-        onChanged: (String password) => _updateState,
-        errorText: passwordValid ? null : widget.inValidPasswordErrorText,
-        );
-        
+      obscure: _secureText,
+      textController: _passwordControler,
+      keyboardType: TextInputType.text,
+      textInputAction: TextInputAction.done,
+      labelText: 'Password',
+      focusNode: _emailFocusNode,
+      enabled: !_isLoading,
+      suffixIcon: IconButton(
+          onPressed: () {
+            setState(() {
+              _secureText = !_secureText;
+            });
+          },
+          icon: Icon(
+            _secureText ? Icons.visibility : Icons.visibility_off,
+          )),
+      onEditingComplete: _submit,
+      onChanged: (String password) => _updateState,
+      errorText: showErrorText ? widget.inValidPasswordErrorText : null,
+    );
   }
 
   void _updateState() {

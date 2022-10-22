@@ -28,7 +28,7 @@ class _SignUpPageState extends State<SignUpPage> {
   final _confirmPasswordControler = TextEditingController();
   String get _email => _emailController.text;
   String get _password => _passwordControler.text;
-  String get _name => _passwordControler.text;
+  String get _name => _nameController.text;
   String get _confirmPassword => _confirmPasswordControler.text;
 
   final FocusNode _nameFocusNode = FocusNode();
@@ -40,7 +40,12 @@ class _SignUpPageState extends State<SignUpPage> {
     FocusScope.of(context).requestFocus(target);
   }
 
+  bool _submitted = false;
+
   void _register() async {
+    setState(() {
+      _submitted = true;
+    });
     try {
       await widget.auth.createEmailAndPassword(_email, _password);
       Navigator.of(context).pushNamed(RouteName.loginPage);
@@ -52,7 +57,9 @@ class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
     bool submitEnabled = widget.emailValidator.isValid(_email) &&
-        widget.passwordValidator.isValid(_password);
+        widget.passwordValidator.isValid(_password) &&
+        widget.nameValidator.isValid(_name) &&
+        widget.confirmPasswordValidator.isValid(_confirmPassword);
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Stack(
@@ -84,14 +91,12 @@ class _SignUpPageState extends State<SignUpPage> {
                     PasswordTextField(),
                     addVerticalSpace(62),
                     ConfirmPasswordTextField(),
-
                     addVerticalSpace(59),
                     Center(
                         child: CustomButton(
                             onpressed: submitEnabled ? _register : null,
                             text: 'Sign Up')),
                     addVerticalSpace(46),
-
                     Row(
                       children: [
                         AppLargeText(text: 'already a member?'),
@@ -125,11 +130,12 @@ class _SignUpPageState extends State<SignUpPage> {
   }
 
   InputField ConfirmPasswordTextField() {
-    bool matched = widget.confirmPasswordValidator.isValid(_confirmPassword);
+    bool showErrorText = _submitted &&
+        !widget.confirmPasswordValidator.isValid(_confirmPassword);
 
     return InputField(
       obscure: _secureText,
-      textController: _passwordControler,
+      textController: _confirmPasswordControler,
       keyboardType: TextInputType.text,
       labelText: 'Confirm Password',
       focusNode: _confirmPasswordFocusNode,
@@ -145,18 +151,19 @@ class _SignUpPageState extends State<SignUpPage> {
           )),
       onChanged: (String) {},
       onEditingComplete: _register,
-      errorText: matched ? null : widget.invalidConfirmPassword,
-      validator: (confirmPassword) {
-        // if (_confirmPassword == _password) {
-        //   return null;
-        // }
-        // return 'Pasword not matched';
-      },
+      errorText: showErrorText ? widget.invalidConfirmPassword : null,
+      // validator: (confirmPassword) {
+      //   // if (_confirmPassword == _password) {
+      //   //   return null;
+      //   // }
+      //   // return 'Pasword not matched';
+      // },
     );
   }
 
   InputField PasswordTextField() {
-    bool passwordValid = widget.passwordValidator.isValid(_password);
+    bool showErrorText =
+        _submitted && !widget.passwordValidator.isValid(_password);
     return InputField(
       obscure: _secureText,
       textController: _passwordControler,
@@ -177,12 +184,12 @@ class _SignUpPageState extends State<SignUpPage> {
       onEditingComplete: () {
         _getEditingComplete(_confirmPasswordFocusNode);
       },
-      errorText: passwordValid ? null : widget.inValidPasswordErrorText,
+      errorText: showErrorText ? widget.inValidPasswordErrorText : null,
     );
   }
 
   InputField EmailTextField() {
-    bool emailValid = widget.emailValidator.isValid(_email);
+    bool showErrorText = _submitted && !widget.emailValidator.isValid(_email);
     return InputField(
       textController: _emailController,
       keyboardType: TextInputType.emailAddress,
@@ -194,12 +201,12 @@ class _SignUpPageState extends State<SignUpPage> {
       onEditingComplete: () {
         _getEditingComplete(_passwordFocusNode);
       },
-      errorText: emailValid ? null : widget.inValidPasswordErrorText,
+      errorText: showErrorText ? widget.inValidPasswordErrorText : null,
     );
   }
 
   InputField nameTextField() {
-    bool nameValid = widget.nameValidator.isValid(_name);
+    bool showErrorText = _submitted && !widget.nameValidator.isValid(_name);
     return InputField(
       textController: _nameController,
       keyboardType: TextInputType.name,
@@ -211,7 +218,7 @@ class _SignUpPageState extends State<SignUpPage> {
       onEditingComplete: () {
         _getEditingComplete(_emailFocusNode);
       },
-      errorText: nameValid ? null : widget.inValidNameErrorText,
+      errorText: showErrorText ? widget.inValidNameErrorText : null,
     );
   }
 }

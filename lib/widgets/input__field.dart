@@ -23,7 +23,8 @@ class InputField extends StatelessWidget {
     required this.onChanged,
     required this.onEditingComplete,
     this.errorText,
-    this.validator
+    this.validator,
+    this.enabled,
   }) : super(key: key);
 
   final TextEditingController textController;
@@ -40,6 +41,7 @@ class InputField extends StatelessWidget {
   final VoidCallback onEditingComplete;
   final String? errorText;
   final String? Function(String?)? validator;
+  final bool? enabled;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -47,6 +49,7 @@ class InputField extends StatelessWidget {
         TextFormField(
           validator: validator,
           onChanged: onChanged,
+          enabled: enabled,
           // textAlign: TextAlign.end,
           onEditingComplete: onEditingComplete,
           textAlignVertical: TextAlignVertical(y: -0.0),

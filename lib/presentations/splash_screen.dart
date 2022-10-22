@@ -1,8 +1,6 @@
-import 'dart:async';
 
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
-import 'package:spiritual_daily_guide/presentations/signIn_page.dart';
 import 'package:spiritual_daily_guide/route_folder/route_names.dart';
 import 'package:spiritual_daily_guide/utils/colors.dart';
 import 'package:spiritual_daily_guide/widgets/app_large_text.dart';
