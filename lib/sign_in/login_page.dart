@@ -9,6 +9,7 @@ import 'package:spiritual_daily_guide/widgets/custom_button.dart';
 import 'package:spiritual_daily_guide/widgets/down_layouts_container.dart';
 import 'package:spiritual_daily_guide/widgets/helper_tools.dart';
 import 'package:spiritual_daily_guide/widgets/input__field.dart';
+import 'package:spiritual_daily_guide/widgets/show_alert_dialogue.dart';
 
 import '../route_folder/route_names.dart';
 import '../widgets/app_large_text.dart';
@@ -32,6 +33,15 @@ class _LoginPageState extends State<LoginPage> {
   final FocusNode _emailFocusNode = FocusNode();
   final FocusNode _passwordFocusNode = FocusNode();
 
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordControler.dispose();
+    _emailFocusNode.dispose();
+    _passwordFocusNode.dispose();
+    super.dispose();
+  }
+
   bool _submitted = false;
   bool _isLoading = false;
 
@@ -44,12 +54,14 @@ class _LoginPageState extends State<LoginPage> {
       await widget.auth.signInWithEmailAndPassword(_email, _password);
       Navigator.of(context).pop();
     } catch (e) {
-      print(e.toString());
+      showAlertDialogue(context,
+          title: "Sign in Failed",
+          content: e.toString(),
+          defaultActionText: 'ok');
     } finally {
       setState(() {
-          _isLoading = false;
+        _isLoading = false;
       });
-    
     }
   }
 
@@ -60,7 +72,8 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     bool submitEnabled = widget.emailValidator.isValid(_email) &&
-        widget.passwordValidator.isValid(_password) && !_isLoading ;
+        widget.passwordValidator.isValid(_password) &&
+        !_isLoading;
     var size = MediaQuery.of(context).size;
     return Scaffold(
       resizeToAvoidBottomInset: false,
