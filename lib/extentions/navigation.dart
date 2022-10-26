@@ -3,9 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:spiritual_daily_guide/utils/animation.dart';
 import 'package:spiritual_daily_guide/utils/app_styles.dart';
 
+import '../route_folder/routes.dart';
+
 //Requires the animations package
 
 typedef PageBuilder = Widget Function();
+
+class R {
+  static final N = MyRoutes();
+}
 
 class RouteHelper {
   static const double kDefaultDuration = .35;

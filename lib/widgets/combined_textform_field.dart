@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:spiritual_daily_guide/utils/app_styles.dart';
 import 'package:spiritual_daily_guide/utils/input_field_formatter.dart';
-import 'package:spiritual_daily_guide/utils/size.dart';
+import 'package:spiritual_daily_guide/extentions/size.dart';
 import 'package:spiritual_daily_guide/widgets/helper_tools.dart';
 // import 'package:render_seeker_app/export.dart';
 

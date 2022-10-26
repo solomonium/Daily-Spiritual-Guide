@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:spiritual_daily_guide/utils/extentions.dart';
-import 'package:spiritual_daily_guide/utils/textstyles.dart';
+import 'package:spiritual_daily_guide/extentions/time.dart';
+import 'package:spiritual_daily_guide/extentions/textstyles.dart';
 
 class Durations {
   static Duration get fastest => .15.seconds;

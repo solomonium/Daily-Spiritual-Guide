@@ -1,12 +1,8 @@
 import 'dart:ui';
 
-import 'package:flutter/material.dart';
+import 'package:spiritual_daily_guide/exports.dart';
 import 'package:spiritual_daily_guide/nav_pages.dart';
-import 'package:spiritual_daily_guide/widgets/app_text.dart';
-import 'package:spiritual_daily_guide/widgets/helper_tools.dart';
 import 'package:spiritual_daily_guide/widgets/input_field.dart';
-
-import '../widgets/app_large_text.dart';
 
 class SignInPage extends StatefulWidget {
   const SignInPage({Key? key}) : super(key: key);
@@ -88,21 +84,21 @@ class _SignInPageState extends State<SignInPage> {
                                       autoFocus: true,
                                       textInputAction: TextInputAction.next),
                                 ),
-                                addVerticalSpace(10),
+                                10.vs,
                                 InputFieldWidget(
                                     textInputType: TextInputType.emailAddress,
                                     labelText: 'Email',
                                     textController: emailEditingController,
                                     autoFocus: true,
                                     textInputAction: TextInputAction.next),
-                                addVerticalSpace(10),
+                                10.vs,
                                 InputFieldWidget(
                                     textInputType: TextInputType.emailAddress,
                                     labelText: 'Pin',
                                     textController: pinEditingController,
                                     autoFocus: true,
                                     textInputAction: TextInputAction.next),
-                                addVerticalSpace(10),
+                                10.vs,
                                 Visibility(
                                   visible: confirmPinVisibilty,
                                   child: InputFieldWidget(
@@ -140,7 +136,7 @@ class _SignInPageState extends State<SignInPage> {
                                           size: 20,
                                           color: Colors.white,
                                         )),
-                                addVerticalSpace(10)
+                                10.vs
                               ],
                             ),
                           ),

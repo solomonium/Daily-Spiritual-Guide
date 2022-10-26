@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 79,
+            "activePatchIndex": 81,
             "patches": [
                 {
                     "date": 1659731868624,
@@ -324,6 +324,14 @@
                 {
                     "date": 1660601398156,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -166,9 +166,9 @@\n                 )\n               : AppText(\n                   text: 'Already a member?',\n                   size: 20,\n-                  color: Colors.black,\n+                  color: Colors.white,\n                   fontWeight: FontWeight.bold,\n                 ),\n           const Icon(\n             Icons.east,\n"
+                },
+                {
+                    "date": 1666744408613,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -87,23 +87,23 @@\n                                       textController: nameEditingController,\n                                       autoFocus: true,\n                                       textInputAction: TextInputAction.next),\n                                 ),\n-                                addVerticalSpace(10),\n+                                10.vs,\n                                 InputFieldWidget(\n                                     textInputType: TextInputType.emailAddress,\n                                     labelText: 'Email',\n                                     textController: emailEditingController,\n                                     autoFocus: true,\n                                     textInputAction: TextInputAction.next),\n-                                addVerticalSpace(10),\n+                                10.vs,\n                                 InputFieldWidget(\n                                     textInputType: TextInputType.emailAddress,\n                                     labelText: 'Pin',\n                                     textController: pinEditingController,\n                                     autoFocus: true,\n                                     textInputAction: TextInputAction.next),\n-                                addVerticalSpace(10),\n+                                10.vs,\n                                 Visibility(\n                                   visible: confirmPinVisibilty,\n                                   child: InputFieldWidget(\n                                       textInputType: TextInputType.number,\n@@ -139,9 +139,9 @@\n                                           text: 'Sign Up',\n                                           size: 20,\n                                           color: Colors.white,\n                                         )),\n-                                addVerticalSpace(10)\n+                                10.vs\n                               ],\n                             ),\n                           ),\n                         ),\n"
+                },
+                {
+                    "date": 1666744446054,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,10 @@\n import 'dart:ui';\n \n-import 'package:flutter/material.dart';\n+import 'package:spiritual_daily_guide/exports.dart';\n import 'package:spiritual_daily_guide/nav_pages.dart';\n-import 'package:spiritual_daily_guide/widgets/app_text.dart';\n-import 'package:spiritual_daily_guide/widgets/helper_tools.dart';\n import 'package:spiritual_daily_guide/widgets/input_field.dart';\n \n-import '../widgets/app_large_text.dart';\n-\n class SignInPage extends StatefulWidget {\n   const SignInPage({Key? key}) : super(key: key);\n \n   @override\n"
                 }
             ],
             "date": 1659731868624,

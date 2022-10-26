@@ -25,17 +25,16 @@
 //   }
 // }
 
-import 'package:spiritual_daily_guide/misc/in_app_notification.dart';
-import 'package:spiritual_daily_guide/presentations/onboarding_page.dart';
-import 'package:spiritual_daily_guide/providers/app_providers.dart';
 import 'package:spiritual_daily_guide/exports.dart';
-import 'package:spiritual_daily_guide/res/res.dart';
+
+import 'extentions/navigation.dart';
 
 void main() {
   runApp(
-    MultiProvider(providers: [
-      ChangeNotifierProvider(create: (_) => AppProvider()),
-    ], child: SpiritualGuide()),
+    MultiProvider(
+      providers: globalProviders,
+      child: SpiritualGuide(),
+    ),
   );
 }
 

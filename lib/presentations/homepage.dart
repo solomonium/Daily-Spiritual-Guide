@@ -41,9 +41,9 @@ class _HomePageState extends State<HomePage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 AppLargeText(text: 'Hi, Jeremy!'),
-                addVerticalSpace(10),
+                10.vs,
                 AppText(text: 'Let the Holy Spirit inspire you today!'),
-                addVerticalSpace(20),
+                20.vs,
                 MyCard(
                   width: double.infinity,
                   height: 250,
@@ -79,7 +79,7 @@ class _HomePageState extends State<HomePage> {
                                       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. '),
                             ),
                           ),
-                          addVerticalSpace(10),
+                          10.vs,
                           Align(
                             alignment: Alignment.center,
                             child: AppLargeText(
@@ -92,7 +92,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                 ),
-                addVerticalSpace(20),
+                20.vs,
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -102,7 +102,7 @@ class _HomePageState extends State<HomePage> {
                       height: 100,
                       child: Column(),
                     )),
-                    addHorizontalSpace(20),
+                    20.hs,
                     Expanded(
                         child: MyCard(
                       width: 150,
@@ -111,7 +111,7 @@ class _HomePageState extends State<HomePage> {
                     ))
                   ],
                 ),
-                addVerticalSpace(10),
+                10.vs,
                 AppLargeText(
                   text: 'Plans for Today',
                   size: 18,

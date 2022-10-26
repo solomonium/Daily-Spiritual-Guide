@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 25,
+            "activePatchIndex": 34,
             "patches": [
                 {
                     "date": 1659575562768,
@@ -108,6 +108,42 @@
                 {
                     "date": 1666041880893,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,8 @@\n //     );\n //   }\n // }\n \n-// import 'package:flutter/material.dart' hide Router;\n import 'package:spiritual_daily_guide/misc/in_app_notification.dart';\n import 'package:spiritual_daily_guide/presentations/onboarding_page.dart';\n import 'package:spiritual_daily_guide/providers/app_providers.dart';\n import 'package:spiritual_daily_guide/exports.dart';\n"
+                },
+                {
+                    "date": 1666740410012,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,8 @@\n //   }\n // }\n \n import 'package:spiritual_daily_guide/misc/in_app_notification.dart';\n-import 'package:spiritual_daily_guide/presentations/onboarding_page.dart';\n import 'package:spiritual_daily_guide/providers/app_providers.dart';\n import 'package:spiritual_daily_guide/exports.dart';\n import 'package:spiritual_daily_guide/res/res.dart';\n \n@@ -58,9 +57,9 @@\n         navigatorKey: R.N.navKey,\n         title: 'Daily Spiritual Guide',\n         theme: theme.themeData,\n         debugShowCheckedModeBanner: false,\n-        home: const OnboardingScreens(),\n+        // home: const OnboardingScreens(),\n         onGenerateRoute: Router.generateRoute,\n         builder: (context, child) => MediaQuery(\n           data: context.widthPx < 600\n               ? context.mq.copyWith(textScaleFactor: .8)\n"
+                },
+                {
+                    "date": 1666740526985,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,8 +25,9 @@\n //   }\n // }\n \n import 'package:spiritual_daily_guide/misc/in_app_notification.dart';\n+import 'package:spiritual_daily_guide/presentations/onboarding_page.dart';\n import 'package:spiritual_daily_guide/providers/app_providers.dart';\n import 'package:spiritual_daily_guide/exports.dart';\n import 'package:spiritual_daily_guide/res/res.dart';\n \n@@ -57,9 +58,9 @@\n         navigatorKey: R.N.navKey,\n         title: 'Daily Spiritual Guide',\n         theme: theme.themeData,\n         debugShowCheckedModeBanner: false,\n-        // home: const OnboardingScreens(),\n+        home: const OnboardingScreens(),\n         onGenerateRoute: Router.generateRoute,\n         builder: (context, child) => MediaQuery(\n           data: context.widthPx < 600\n               ? context.mq.copyWith(textScaleFactor: .8)\n"
+                },
+                {
+                    "date": 1666740620753,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,13 +24,9 @@\n //     );\n //   }\n // }\n \n-import 'package:spiritual_daily_guide/misc/in_app_notification.dart';\n-import 'package:spiritual_daily_guide/presentations/onboarding_page.dart';\n-import 'package:spiritual_daily_guide/providers/app_providers.dart';\n import 'package:spiritual_daily_guide/exports.dart';\n-import 'package:spiritual_daily_guide/res/res.dart';\n \n void main() {\n   runApp(\n     MultiProvider(providers: [\n"
+                },
+                {
+                    "date": 1666740964542,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,11 +28,9 @@\n import 'package:spiritual_daily_guide/exports.dart';\n \n void main() {\n   runApp(\n-    MultiProvider(providers: [\n-      ChangeNotifierProvider(create: (_) => AppProvider()),\n-    ], child: SpiritualGuide()),\n+    MultiProvider(providers: globalProviders, child: SpiritualGuide()),\n   );\n }\n \n class SpiritualGuide extends StatefulWidget {\n"
+                },
+                {
+                    "date": 1666741041662,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,12 @@\n import 'package:spiritual_daily_guide/exports.dart';\n \n void main() {\n   runApp(\n-    MultiProvider(providers: globalProviders, child: SpiritualGuide()),\n+    MultiProvider(\n+      providers: globalProviders,\n+      child: SpiritualGuide(),\n+    ),\n   );\n }\n \n class SpiritualGuide extends StatefulWidget {\n@@ -48,9 +51,9 @@\n     AppTheme theme = AppTheme.fromType(themeType);\n     return Provider.value(\n       value: theme,\n       child: MaterialApp(\n-        navigatorKey: R.N.navKey,\n+        // navigatorKey: R.N.navKey,\n         title: 'Daily Spiritual Guide',\n         theme: theme.themeData,\n         debugShowCheckedModeBanner: false,\n         home: const OnboardingScreens(),\n"
+                },
+                {
+                    "date": 1666741067619,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,9 @@\n     AppTheme theme = AppTheme.fromType(themeType);\n     return Provider.value(\n       value: theme,\n       child: MaterialApp(\n-        // navigatorKey: R.N.navKey,\n+        navigatorKey: R.N.navKey,\n         title: 'Daily Spiritual Guide',\n         theme: theme.themeData,\n         debugShowCheckedModeBanner: false,\n         home: const OnboardingScreens(),\n"
+                },
+                {
+                    "date": 1666741090954,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,9 @@\n     AppTheme theme = AppTheme.fromType(themeType);\n     return Provider.value(\n       value: theme,\n       child: MaterialApp(\n-        navigatorKey: R.N.navKey,\n+        // navigatorKey: R.N.navKey,\n         title: 'Daily Spiritual Guide',\n         theme: theme.themeData,\n         debugShowCheckedModeBanner: false,\n         home: const OnboardingScreens(),\n"
+                },
+                {
+                    "date": 1666741099118,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,9 @@\n     AppTheme theme = AppTheme.fromType(themeType);\n     return Provider.value(\n       value: theme,\n       child: MaterialApp(\n-        // navigatorKey: R.N.navKey,\n+        navigatorKey: R.N.navKey,\n         title: 'Daily Spiritual Guide',\n         theme: theme.themeData,\n         debugShowCheckedModeBanner: false,\n         home: const OnboardingScreens(),\n"
+                },
+                {
+                    "date": 1666745569261,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,8 +26,10 @@\n // }\n \n import 'package:spiritual_daily_guide/exports.dart';\n \n+import 'extentions/navigation.dart';\n+\n void main() {\n   runApp(\n     MultiProvider(\n       providers: globalProviders,\n"
                 }
             ],
             "date": 1659575562768,

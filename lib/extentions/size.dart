@@ -30,3 +30,8 @@ extension SizedContext on BuildContext {
   /// Returns fraction (0-1) of screen height in pixels
   double heightPct(double fraction) => fraction * heightPx;
 }
+
+extension VerticalHorizontalSpace on num {
+  SizedBox get vs => SizedBox(height: toDouble());
+  SizedBox get hs => SizedBox(width: toDouble());
+}

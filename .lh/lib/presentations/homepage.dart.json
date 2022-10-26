@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 321,
+            "activePatchIndex": 330,
             "patches": [
                 {
                     "date": 1659575717121,
@@ -1292,6 +1292,42 @@
                 {
                     "date": 1666052993784,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,4 @@\n-import 'package:flutter/material.dart';\n import 'package:spiritual_daily_guide/exports.dart';\n import 'package:intl/intl.dart';\n \n class HomePage extends StatefulWidget {\n"
+                },
+                {
+                    "date": 1666744207162,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,9 +42,9 @@\n               children: [\n                 AppLargeText(text: 'Hi, Jeremy!'),\n                 addVerticalSpace(10),\n                 AppText(text: 'Let the Holy Spirit inspire you today!'),\n-                addVerticalSpace(20),\n+                // addVerticalSpace(20),\n                 MyCard(\n                   width: double.infinity,\n                   height: 250,\n                   child: Center(\n"
+                },
+                {
+                    "date": 1666744225773,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,8 +43,9 @@\n                 AppLargeText(text: 'Hi, Jeremy!'),\n                 addVerticalSpace(10),\n                 AppText(text: 'Let the Holy Spirit inspire you today!'),\n                 // addVerticalSpace(20),\n+                20.hs,\n                 MyCard(\n                   width: double.infinity,\n                   height: 250,\n                   child: Center(\n"
+                },
+                {
+                    "date": 1666744245541,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n                 AppLargeText(text: 'Hi, Jeremy!'),\n                 addVerticalSpace(10),\n                 AppText(text: 'Let the Holy Spirit inspire you today!'),\n                 // addVerticalSpace(20),\n-                20.hs,\n+                20.vs,\n                 MyCard(\n                   width: double.infinity,\n                   height: 250,\n                   child: Center(\n"
+                },
+                {
+                    "date": 1666744256939,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,9 +42,9 @@\n               children: [\n                 AppLargeText(text: 'Hi, Jeremy!'),\n                 addVerticalSpace(10),\n                 AppText(text: 'Let the Holy Spirit inspire you today!'),\n-                // addVerticalSpace(20),\n+                addVerticalSpace(20),\n                 20.vs,\n                 MyCard(\n                   width: double.infinity,\n                   height: 250,\n"
+                },
+                {
+                    "date": 1666744341426,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,9 +42,9 @@\n               children: [\n                 AppLargeText(text: 'Hi, Jeremy!'),\n                 addVerticalSpace(10),\n                 AppText(text: 'Let the Holy Spirit inspire you today!'),\n-                addVerticalSpace(20),\n+                20.hs,\n                 20.vs,\n                 MyCard(\n                   width: double.infinity,\n                   height: 250,\n@@ -92,9 +92,9 @@\n                       ),\n                     ),\n                   ),\n                 ),\n-                addVerticalSpace(20),\n+                20.hs,\n                 Row(\n                   mainAxisAlignment: MainAxisAlignment.spaceBetween,\n                   children: [\n                     Expanded(\n"
+                },
+                {
+                    "date": 1666744408530,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n             child: Column(\n               crossAxisAlignment: CrossAxisAlignment.start,\n               children: [\n                 AppLargeText(text: 'Hi, Jeremy!'),\n-                addVerticalSpace(10),\n+                10.vs,\n                 AppText(text: 'Let the Holy Spirit inspire you today!'),\n                 20.hs,\n                 20.vs,\n                 MyCard(\n@@ -79,9 +79,9 @@\n                                   text:\n                                       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. '),\n                             ),\n                           ),\n-                          addVerticalSpace(10),\n+                          10.vs,\n                           Align(\n                             alignment: Alignment.center,\n                             child: AppLargeText(\n                               text: 'Tap to Read Anchor Text: Gen 1 vs 1',\n@@ -111,9 +111,9 @@\n                       child: Column(),\n                     ))\n                   ],\n                 ),\n-                addVerticalSpace(10),\n+                10.vs,\n                 AppLargeText(\n                   text: 'Plans for Today',\n                   size: 18,\n                 )\n"
+                },
+                {
+                    "date": 1666744487851,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,10 +42,10 @@\n               children: [\n                 AppLargeText(text: 'Hi, Jeremy!'),\n                 10.vs,\n                 AppText(text: 'Let the Holy Spirit inspire you today!'),\n-                20.hs,\n                 20.vs,\n+                20.vs,\n                 MyCard(\n                   width: double.infinity,\n                   height: 250,\n                   child: Center(\n@@ -92,9 +92,9 @@\n                       ),\n                     ),\n                   ),\n                 ),\n-                20.hs,\n+                20.vs,\n                 Row(\n                   mainAxisAlignment: MainAxisAlignment.spaceBetween,\n                   children: [\n                     Expanded(\n"
+                },
+                {
+                    "date": 1666744494498,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,8 @@\n                 AppLargeText(text: 'Hi, Jeremy!'),\n                 10.vs,\n                 AppText(text: 'Let the Holy Spirit inspire you today!'),\n                 20.vs,\n-                20.vs,\n                 MyCard(\n                   width: double.infinity,\n                   height: 250,\n                   child: Center(\n"
+                },
+                {
+                    "date": 1666744552296,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -101,9 +101,9 @@\n                       width: 150,\n                       height: 100,\n                       child: Column(),\n                     )),\n-                    addHorizontalSpace(20),\n+                    20.hs,\n                     Expanded(\n                         child: MyCard(\n                       width: 150,\n                       height: 100,\n"
                 }
             ],
             "date": 1659575717121,

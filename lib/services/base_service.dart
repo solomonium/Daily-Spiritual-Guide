@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'dart:io';
 import 'package:spiritual_daily_guide/exports.dart';
-import 'package:spiritual_daily_guide/res/res.dart';
 
 abstract class BaseService {
   BaseService() {
